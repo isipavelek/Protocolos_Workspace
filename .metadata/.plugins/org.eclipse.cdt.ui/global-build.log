@@ -1,0 +1,7 @@
+22:35:29 **** Incremental Build of configuration Debug for project LCD_Hola_Mundo ****
+make -j16 all 
+arm-none-eabi-size   LCD_Hola_Mundo.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9544	     36	   1652	  11232	   2be0	LCD_Hola_Mundo.elf
+Finished building: default.size.stdout
+ 

@@ -1,0 +1,42 @@
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "API_debounce.h"
+#include "API_uart.h"
+#include "API_lcd.h"
+#include "API_Lcd_port.h"
+#include "API_init.h"
+
+
+/* Private typedef -----------------------------------------------------------*/
+typedef unsigned char uchar;
+
+/* Private define ------------------------------------------------------------*/
+/* Private macro -------------------------------------------------------------*/
+/* Private variables ---------------------------------------------------------*/
+/* UART handler declaration */
+UART_HandleTypeDef UartHandle;
+
+/**
+  * @brief  Main program
+  * @param  None
+  * @retval None
+  */
+int main(void){
+  HAL_Init();
+  /* Configure the system clock to 180 MHz */
+  SystemClock_Config();
+
+  /* Initialize BSP Led for LED2 */
+  BSP_LED_Init(LED2);
+  BSP_PB_Init(BUTTON_USER, BUTTON_MODE_GPIO);
+
+  LCD_Init();
+  outtext("Hola");
+  while (1){
+	  LCD_Write_Byte(0xaa);
+  }
+}
+
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+

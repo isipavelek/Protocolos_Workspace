@@ -1,0 +1,2 @@
+../Drivers/API/src/API_Init.c:36:6:SystemClock_Config	88	static
+../Drivers/API/src/API_Init.c:86:6:Error_Handler	8	static

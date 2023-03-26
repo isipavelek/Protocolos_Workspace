@@ -1,0 +1,10 @@
+18:37:47 **** Build of configuration Debug for project P5 Ej2 ****
+make -j16 all 
+arm-none-eabi-size   P5\ Ej2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9212	     68	   1652	  10932	   2ab4	P5 Ej2.elf
+Finished building: default.size.stdout
+ 
+
+18:37:48 Build Finished. 0 errors, 0 warnings. (took 708ms)
+

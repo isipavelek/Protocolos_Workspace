@@ -1,0 +1,10 @@
+18:37:44 **** Build of configuration Debug for project P4 Ej1 ****
+make -j16 all 
+arm-none-eabi-size   P4\ Ej1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6784	     36	   1588	   8408	   20d8	P4 Ej1.elf
+Finished building: default.size.stdout
+ 
+
+18:37:45 Build Finished. 0 errors, 0 warnings. (took 718ms)
+

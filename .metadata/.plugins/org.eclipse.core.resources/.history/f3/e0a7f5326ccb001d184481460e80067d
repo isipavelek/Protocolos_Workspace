@@ -1,0 +1,37 @@
+/*
+ * API_lcd.h
+ *
+ *  Created on: 14 mar. 2023
+ *      Author: ipave
+ */
+
+#ifndef API_INC_API_LCD_H_
+#define API_INC_API_LCD_H_
+
+#include <stdio.h>
+#include "stm32f4xx_hal.h"  		/* <- HAL include */
+#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+#include <stdbool.h>
+
+#define DATOS 1
+#define CONTROL 0
+
+
+#define EN (1<<2)
+#define BL (1<<3)
+#define CLR_CMD 1
+#define DelayTime 10
+
+
+
+void LCD_Init(void);
+void sacar (uint8_t valor, _Bool tipo);
+void LCDdelay(uint32_t demora);
+void ControlLCD(uint8_t valor);
+void outtext (uint8_t *texto);
+void DatoLCD (uint8_t dato);
+void envia (uint8_t valor,_Bool tipo);
+void ClrLcd(void);
+
+
+#endif /* API_INC_API_LCD_H_ */
