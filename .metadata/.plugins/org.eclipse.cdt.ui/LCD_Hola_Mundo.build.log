@@ -1,4 +1,4 @@
-22:35:29 **** Incremental Build of configuration Debug for project LCD_Hola_Mundo ****
+22:40:19 **** Build of configuration Debug for project LCD_Hola_Mundo ****
 make -j16 all 
 arm-none-eabi-size   LCD_Hola_Mundo.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   LCD_Hola_Mundo.elf
 Finished building: default.size.stdout
  
 
-22:35:30 Build Finished. 0 errors, 0 warnings. (took 333ms)
+22:40:19 Build Finished. 0 errors, 0 warnings. (took 372ms)
 
