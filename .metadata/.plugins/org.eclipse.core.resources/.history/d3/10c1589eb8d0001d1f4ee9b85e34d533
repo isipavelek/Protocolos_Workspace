@@ -1,0 +1,15 @@
+/*
+ * API_encoder.c
+ *
+ *  Created on: 1 abr. 2023
+ *      Author: ipave
+ */
+
+#include "API_encoder.h"
+
+static uint8_t estado=INICIAL;
+
+
+_Bool Init_Enc(void){
+	estado=INICIAL;
+}

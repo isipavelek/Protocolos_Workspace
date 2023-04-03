@@ -1,0 +1,3 @@
+API_enc_port.c:9:7:Init_Enc_port	1
+API_enc_port.c:33:9:Leer_Enc_Pin	1
+API_enc_port.c:41:7:Leer_Enc_Sw	1

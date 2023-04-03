@@ -40,6 +40,7 @@ typedef enum
 /************************************/
 #define DISPLAY_ON (1<<2)
 #define CURSOR_ON (1<<1)
+#define CURSOR_BLINK 1
 #define AUTOINCREMENT (1<<1)
 #define _4BIT_MODE 0x28
 
@@ -71,12 +72,14 @@ typedef enum
 
 //PROTOTIPOS DE FUNCIONES
 _Bool Init_Lcd(void);
-static void DelayLcd(uint32_t demora);
-static void ControlLcd(uint8_t valor);
-void OutTextLcd (uint8_t *texto);
+void DelayLcd(uint32_t demora);
+void ControlLcd(uint8_t valor);
+void OutTextLcd (int8_t *texto);
 void DatoLcd (uint8_t dato);
-static void Send4bitsLcd (uint8_t valor,_Bool tipo);
-static void Send8bitsLcd (uint8_t valor,_Bool tipo);
+void DatoAsciiLcd (uint8_t dato);
+void DatoBCD (uint8_t dato);
+void Send4bitsLcd (uint8_t valor,_Bool tipo);
+void Send8bitsLcd (uint8_t valor,_Bool tipo);
 void ClrLcd(void);
 void PosCaracHLcd(uint8_t posH);
 void PosCaracLLcd(uint8_t posL);

@@ -1,0 +1,27 @@
+/*
+ * API_reloj.h
+ *
+ *  Created on: 1 abr. 2023
+ *      Author: ipave
+ */
+
+#ifndef API_INC_API_RELOJ_H_
+#define API_INC_API_RELOJ_H_
+
+typedef struct{
+
+	uint8_t seg;
+	uint8_t min;
+	uint8_t hora;
+	uint8_t diasem;
+	uint8_t dia;
+	uint8_t mes;
+	uint8_t anio;
+
+}reloj;
+
+void RelojInit(reloj *);
+void PresentaFechaLCD(reloj*,uint8_t pos,uint8_t linea);
+void PresentaHoraLCD(reloj*,uint8_t pos,uint8_t linea);
+
+#endif /* API_INC_API_RELOJ_H_ */

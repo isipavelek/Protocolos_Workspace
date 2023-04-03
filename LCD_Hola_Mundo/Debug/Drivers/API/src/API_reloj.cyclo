@@ -1,0 +1,15 @@
+API_reloj.c:22:6:PresentaFechaLCD	2
+API_reloj.c:34:6:PresentaHoraLCD	2
+API_reloj.c:45:6:RelojInit	1
+API_reloj.c:57:6:Reloj_Read	1
+API_reloj.c:63:6:Reloj_Write	1
+API_reloj.c:68:6:RelojFSM_Update	9
+API_reloj.c:102:6:ConfiguraDia	20
+API_reloj.c:126:6:ConfiguraMes	8
+API_reloj.c:152:6:ConfiguraAnio	10
+API_reloj.c:179:6:ConfiguraHora	4
+API_reloj.c:194:6:ConfiguraMin	4
+API_reloj.c:209:6:ConfiguraSeg	4
+API_reloj.c:229:6:Decrementa	2
+API_reloj.c:239:6:Incrementa	2
+API_reloj.c:248:9:buscar_indice	3

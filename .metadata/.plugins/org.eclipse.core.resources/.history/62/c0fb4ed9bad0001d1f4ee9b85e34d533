@@ -1,0 +1,33 @@
+/*
+ * API_enc.c
+ *
+ *  Created on: 1 abr. 2023
+ *      Author: ipave
+ */
+#include "API_enc_port.h"
+
+bool_t Init_Enc_port(void){
+
+
+	GPIO_InitTypeDef GPIO_InitStruct;
+
+	  /* Enable the BUTTON Clock */
+  	__HAL_RCC_GPIOD_CLK_ENABLE();
+
+	    /* Configure Button pin as input */
+	GPIO_InitStruct.Pin = PINCANAL_A|PINCANALB;
+	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_InitStruct.Pull = GPIO_PULLUP;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
+	HAL_GPIO_Init(PORTCANAL_A, &GPIO_InitStruct);
+	__HAL_RCC_GPIOG_CLK_ENABLE();
+	GPIO_InitStruct.Pin = PINSW;
+	HAL_GPIO_Init(PORTSW, &GPIO_InitStruct);
+
+}
+
+uint8_t Leer_Enc_Pin(void){
+
+
+
+}

@@ -30,12 +30,12 @@ _Bool Init_Lcd(void){
 
 }
 
-static void DelayLcd(uint32_t demora) {
+void DelayLcd(uint32_t demora){
 	  HAL_Delay(demora);
 }
 
 
-static void ControlLcd(uint8_t valor){
+void ControlLcd(uint8_t valor){
 	Send8bitsLcd(valor,CONTROL);
 }
 
@@ -43,12 +43,23 @@ void DatoLcd (uint8_t dato){
 	Send8bitsLcd(dato,DATOS);
 }
 
+void DatoAsciiLcd (uint8_t dato){
+	Send8bitsLcd(dato+ '0',DATOS);
+}
+
+void DatoBCD (uint8_t dato){
+
+	  DatoAsciiLcd((((dato)&0xf0)>>4));
+	  DatoAsciiLcd(((dato)&0x0f));
+
+}
+
 void Send8bitsLcd (uint8_t valor,_Bool tipo){
 	Send4bitsLcd(valor&HIGH_NIBBLE,tipo); 		//me con quedo y envio los 4 bits más significaticos.
 	Send4bitsLcd(valor<<LOW_NIBBLE,tipo);   	//me quedo y envio los 4 bits menos significativos.
 }
 
-void Send4bitsLcd (uint8_t valor, _Bool tipo){
+void Send4bitsLcd (uint8_t valor,_Bool tipo){
 
 	LCD_Write_Byte(valor+tipo+EN+BL);
 	DelayLcd(DelayTime);
@@ -57,7 +68,7 @@ void Send4bitsLcd (uint8_t valor, _Bool tipo){
 }
 
 
-void OutTextLcd (uint8_t *texto){
+void OutTextLcd (int8_t *texto){
 	while(*texto)DatoLcd(*texto++);
 }
 
@@ -81,5 +92,5 @@ void CursorOffLcd(void){
 }
 
 void CursorOnLcd(void){
-	ControlLcd(DISPLAY_CONTROL+DISPLAY_ON+DISPLAY_ON);
+	ControlLcd(DISPLAY_CONTROL+CURSOR_ON+DISPLAY_ON+CURSOR_BLINK);
 }

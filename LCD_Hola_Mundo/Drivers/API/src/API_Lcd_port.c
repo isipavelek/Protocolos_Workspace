@@ -8,7 +8,7 @@
 #include"API_Lcd_port.h"
 #include"API_init.h"
 
-static I2C_HandleTypeDef hi2c1;
+I2C_HandleTypeDef hi2c1;
 
 _Bool LCD_HW_init(void){
 
@@ -25,7 +25,6 @@ _Bool LCD_HW_init(void){
 	  if (HAL_I2C_Init(&hi2c1) != HAL_OK)return HAL_ERROR;
 	  return HAL_OK;
 
-
 }
 
 void GPIO_I2C(I2C_HandleTypeDef  *hi2c)
@@ -36,8 +35,8 @@ void GPIO_I2C(I2C_HandleTypeDef  *hi2c)
 	  __HAL_RCC_GPIOB_CLK_ENABLE();
 
 	  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9;
-	  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-	  GPIO_InitStruct.Pull = GPIO_PULLUP;
+	  GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
+	  GPIO_InitStruct.Pull = GPIO_NOPULL;
 	  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 	  GPIO_InitStruct.Alternate = GPIO_AF4_I2C1;
 	  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -48,9 +47,8 @@ void GPIO_I2C(I2C_HandleTypeDef  *hi2c)
 }
 
 void LCD_Write_Byte(uint8_t valor){
-
-
-	HAL_I2C_Master_Transmit (&hi2c1,0x27<<1,&valor, sizeof(valor),HAL_MAX_DELAY);
-
+	if(HAL_I2C_Master_Transmit (&hi2c1,0x27<<1,&valor, sizeof(valor),HAL_MAX_DELAY)!=HAL_OK)Error_Handler();
 
 }
+
+

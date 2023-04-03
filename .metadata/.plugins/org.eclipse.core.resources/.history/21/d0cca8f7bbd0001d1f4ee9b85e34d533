@@ -1,0 +1,40 @@
+/*
+ * API_encoder.c
+ *
+ *  Created on: 1 abr. 2023
+ *      Author: ipave
+ */
+
+#include "API_encoder.h"
+#include "API_enc_port.h"
+
+
+static uint8_t estado=INICIAL;
+
+
+_Bool Init_Enc(void){
+	estado=INICIAL;
+
+	Init_Enc_port();
+
+}
+
+void EncUpdate(){
+
+	switch (estado){
+		case (INICIAL):
+				//if(BSP_PB_GetState(BUTTON_USER))estado=BUTTON_FALLING;
+
+				break;
+		case (B):
+				break;
+		case (C):
+				break;
+		case (D):
+
+				break;
+
+
+		}
+
+}

@@ -1,10 +1,17 @@
-22:40:19 **** Build of configuration Debug for project LCD_Hola_Mundo ****
+23:12:53 **** Incremental Build of configuration Debug for project LCD_Hola_Mundo ****
 make -j16 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_reloj.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/CMSIS/Include" -I"C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/Core/Inc" -I"C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_reloj.d" -MT"Drivers/API/src/API_reloj.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_reloj.o"
+arm-none-eabi-gcc -o "LCD_Hola_Mundo.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\ipave\Documents\GitHub\Protocolos_workspace\LCD_Hola_Mundo\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_Hola_Mundo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LCD_Hola_Mundo.elf
+ 
 arm-none-eabi-size   LCD_Hola_Mundo.elf 
+arm-none-eabi-objdump -h -S  LCD_Hola_Mundo.elf  > "LCD_Hola_Mundo.list"
    text	   data	    bss	    dec	    hex	filename
-   9544	     36	   1652	  11232	   2be0	LCD_Hola_Mundo.elf
+  14788	     32	   1696	  16516	   4084	LCD_Hola_Mundo.elf
 Finished building: default.size.stdout
  
+Finished building: LCD_Hola_Mundo.list
+ 
 
-22:40:19 Build Finished. 0 errors, 0 warnings. (took 372ms)
+23:12:54 Build Finished. 0 errors, 0 warnings. (took 843ms)
 

@@ -37,10 +37,15 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_debounce.h \
+ C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_delay.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_uart.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_lcd.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_Lcd_port.h \
- C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_init.h
+ C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_reloj.h \
+ C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_init.h \
+ C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_reloj.h \
+ C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_encoder.h \
+ C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_enc_port.h
 ../Inc/main.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Inc/stm32f4xx_hal_conf.h:
@@ -80,7 +85,12 @@ C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/STM3
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_debounce.h:
+C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_delay.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_uart.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_lcd.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_Lcd_port.h:
+C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_reloj.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_init.h:
+C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_reloj.h:
+C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_encoder.h:
+C:/Users/ipave/Documents/GitHub/Protocolos_workspace/LCD_Hola_Mundo/Drivers/API/inc/API_enc_port.h:

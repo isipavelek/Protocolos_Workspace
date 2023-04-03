@@ -1,9 +1,0 @@
-/*
- * API_LCDport.h
- *
- *  Created on: 25 mar. 2023
- *      Author: ipave
- */
-
-void LCD_HW_init(void);
-void LCD_Write_Byte(uint8_t valor);
