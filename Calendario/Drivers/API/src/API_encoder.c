@@ -8,39 +8,56 @@
 #include "API_encoder.h"
 #include "API_enc_port.h"
 
-
 static uint8_t estado;
-
-uint8_t giro=NOGIRA;
-
-delay_t encoder_time;
+static uint8_t giro=NOGIRA;
+static delay_t encoder_time;
 
 _Bool Init_Enc(void){
 	Init_Enc_port();
     delayInit(&encoder_time,DEMORA_BASE);
-    estado=E00;
+    estado=INI;
 	return 0;
 }
 
 void EncFSM_Update(){
 
 	uint8_t estados_pines=Leer_Enc_Pin();
-
 	switch (estado){
-			case (E00):	if(estados_pines!=E00 && estados_pines!=E11)estado=estados_pines;
-						break;
-			case (E01):	if(estados_pines!=E01){
-							if(estados_pines==E00)giro=IZQ;
-							else giro=DER;
-							estado=E00;
-						}
-						break;
-			case (E10): if(estados_pines!=E10){
-							if(estados_pines==E00)giro=DER;
-							else giro=IZQ;
-							estado=E00;
-						}
-						break;
+		case INI: if(estados_pines==PINDT+PINCLK)estado=E11;
+				  if(estados_pines==NOENC)estado=E00;
+				  break;
+		case E00:if(estados_pines==PINCLK)estado=E01Der;
+				  if(estados_pines==PINDT)estado=E10Izq;
+				  break;
+		case E01Izq:if(estados_pines==PINDT+PINCLK)estado=E11;
+				  if(estados_pines==NOENC){
+					  giro=IZQ;
+					  estado=E00;
+				  }
+				  break;
+		case E10Der:
+				  if(estados_pines==NOENC){
+					  giro=DER;
+					  estado=E00;
+				  }
+				  if(estados_pines==PINDT+PINCLK)estado=E11;
+				  break;
+
+		case E01Der:if(estados_pines==PINDT+PINCLK){
+						giro=DER;
+						estado=E11;
+					}
+				  if(estados_pines==NOENC)estado=E00;
+				  break;
+		case E10Izq:if(estados_pines==PINDT+PINCLK){
+					giro=IZQ;
+					estado=E11;
+				  }
+				  if(estados_pines==NOENC)estado=E00;
+				  break;
+		case E11: if(estados_pines==PINCLK)estado=E01Izq;
+				  if(estados_pines==PINDT)estado=E10Der;
+				  break;
 
 	}
 }

@@ -1,3 +1,4 @@
+"./Drivers/API/src/API_I2C.o"
 "./Drivers/API/src/API_Init.o"
 "./Drivers/API/src/API_debounce.o"
 "./Drivers/API/src/API_delay.o"

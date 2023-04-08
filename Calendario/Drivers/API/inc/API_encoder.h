@@ -23,10 +23,16 @@ typedef enum {
 }giro_encoder_t;
 
 typedef enum{
+	INI,
 	E00,
-	E01,
-	E10,
-	E11
+	E11,
+	E01Der,
+	E10Der,
+	E01Izq,
+	E10Izq,
+
+
+
 } EncState_t;
 
 _Bool Init_Enc(void);

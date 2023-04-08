@@ -15,11 +15,11 @@ _Bool Init_Enc_port(void){
   	__HAL_RCC_GPIOD_CLK_ENABLE();
 
 	    /* Configure Button pin as input */
-	GPIO_InitStruct.Pin = PINCANAL_A| PINCANAL_B;
+	GPIO_InitStruct.Pin = PINCLK| PINDT;
 	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
 	GPIO_InitStruct.Pull = GPIO_PULLUP;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
-	HAL_GPIO_Init(PORTCANAL_A, &GPIO_InitStruct);
+	HAL_GPIO_Init(PORTCLK, &GPIO_InitStruct);
 	__HAL_RCC_GPIOG_CLK_ENABLE();
 	GPIO_InitStruct.Pin = PINSW;
 	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -32,8 +32,8 @@ _Bool Init_Enc_port(void){
 
 uint8_t Leer_Enc_Pin(void){
 	uint8_t estado=0;
-	estado=HAL_GPIO_ReadPin(PORTCANAL_A,PINCANAL_A);
-	estado+=(HAL_GPIO_ReadPin(PORTCANAL_B,PINCANAL_B)<<1);
+	estado=HAL_GPIO_ReadPin(PORTCLK,PINCLK);
+	estado+=(HAL_GPIO_ReadPin(PORTDT,PINDT)<<1);
 	return estado;
 
 }

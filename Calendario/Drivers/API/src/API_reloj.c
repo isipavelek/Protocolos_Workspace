@@ -15,11 +15,23 @@
 static uint8_t estado_reloj;
 
 
-const uint8_t mes31[]={ENERO,MARZO,MAYO,JULIO,AGOSTO,OCTUBRE,DICIEMBRE};
+static const uint8_t mes31[]={ENERO,MARZO,MAYO,JULIO,AGOSTO,OCTUBRE,DICIEMBRE};
+
+static void PresentaFechaLCD(reloj*,uint8_t pos,uint8_t linea);
+static void PresentaHoraLCD(reloj*,uint8_t pos,uint8_t linea);
+static void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup);
+static void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup);
+static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite);
+
+static void ConfiguraDia(reloj* reloj1);
+static void ConfiguraMes(reloj* reloj1);
+static void ConfiguraAnio(reloj* reloj1);
+static void ConfiguraHora(reloj* reloj1);
+static void ConfiguraMin(reloj* reloj1);
+static void ConfiguraSeg(reloj* reloj1);
 
 
-
-void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
+static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 
 	  if(linea==1)PosCaracHLcd(pos);
 	  else PosCaracLLcd(pos);
@@ -31,7 +43,7 @@ void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 
 }
 
-void PresentaHoraLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
+static void PresentaHoraLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 
 	  if(linea==1)PosCaracHLcd(pos);
 	  else PosCaracLLcd(pos);
@@ -99,7 +111,7 @@ void RelojFSM_Update(reloj* reloj1){
 
 }
 
-void ConfiguraDia(reloj* reloj1){
+static void ConfiguraDia(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracHLcd(POSFECHA);
@@ -123,7 +135,7 @@ void ConfiguraDia(reloj* reloj1){
 
 
 
-void ConfiguraMes(reloj* reloj1){
+static void ConfiguraMes(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracHLcd(POSMES);
@@ -149,7 +161,7 @@ void ConfiguraMes(reloj* reloj1){
 	}
 }
 
-void ConfiguraAnio(reloj* reloj1){
+static void ConfiguraAnio(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracHLcd(POSANIO);
@@ -176,7 +188,7 @@ void ConfiguraAnio(reloj* reloj1){
 	}
 }
 
-void ConfiguraHora(reloj* reloj1){
+static void ConfiguraHora(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracLLcd(POSHORA);
@@ -191,7 +203,7 @@ void ConfiguraHora(reloj* reloj1){
 		PresentaHoraLCD(reloj1,POSCOMIENZAHORA,LINEA_2);
 	}
 }
-void ConfiguraMin(reloj* reloj1){
+static void ConfiguraMin(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracLLcd(POSMIN);
@@ -206,7 +218,7 @@ void ConfiguraMin(reloj* reloj1){
 		PresentaHoraLCD(reloj1,POSCOMIENZAHORA,LINEA_2);
 	}
 }
-void ConfiguraSeg(reloj* reloj1){
+static void ConfiguraSeg(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracLLcd(POSSEG);
@@ -226,7 +238,7 @@ void ConfiguraSeg(reloj* reloj1){
 	}
 
 }
-void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
+static void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 
 	uint8_t aux;
 	aux=(*valor&0x0f)+(((*valor&0xf0)>>4)*10);
@@ -236,7 +248,7 @@ void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 
 }
 
-void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
+static void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 	uint8_t aux;
 	aux=(*valor&0x0f)+(((*valor&0xf0)>>4)*10);
 	aux++;
@@ -245,7 +257,7 @@ void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 
 }
 
-uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
+static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
 
 	for(int i=0;i<limite;i++)if(valor[i]==abuscar)return i;
 	return -1;

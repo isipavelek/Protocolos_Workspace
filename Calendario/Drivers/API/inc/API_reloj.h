@@ -75,23 +75,9 @@ typedef enum {
 
 
 void RelojInit(reloj *);
-void PresentaFechaLCD(reloj*,uint8_t pos,uint8_t linea);
-void PresentaHoraLCD(reloj*,uint8_t pos,uint8_t linea);
 void Reloj_Read(reloj* reloj1);
 void Reloj_Write(reloj reloj1);
 void RelojFSM_Update(reloj* reloj1);
-void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup);
-void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup);
-uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite);
-
-
-void ConfiguraDia(reloj* reloj1);
-void ConfiguraMes(reloj* reloj1);
-void ConfiguraAnio(reloj* reloj1);
-void ConfiguraHora(reloj* reloj1);
-void ConfiguraMin(reloj* reloj1);
-void ConfiguraSeg(reloj* reloj1);
-
 
 
 

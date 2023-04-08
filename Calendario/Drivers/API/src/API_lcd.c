@@ -9,6 +9,12 @@
 #include "API_lcd.h"
 #include "API_Lcd_port.h"
 #include "API_delay.h"
+#include "API_I2C.h"
+
+static void DelayLcd(uint32_t demora);
+static void ControlLcd(uint8_t valor);
+static void Send8bitsLcd (uint8_t valor,_Bool tipo);
+static void Send4bitsLcd (uint8_t valor,_Bool tipo);
 
 static const uint8_t LCD_INIT_CMD[]={
 		_4BIT_MODE,DISPLAY_CONTROL,RETURN_HOME,ENTRY_MODE+AUTOINCREMENT,DISPLAY_CONTROL+DISPLAY_ON,CLR_LCD
@@ -16,7 +22,7 @@ static const uint8_t LCD_INIT_CMD[]={
 
 _Bool Init_Lcd(void){
 
-   if(LCD_HW_init()==LCD_ERROR)return LCD_ERROR;
+   if(I2C_HW_init()==LCD_ERROR)return LCD_ERROR;
    DelayLcd(DELAY20ms);
    Send4bitsLcd(COMANDO_INI1,CONTROL);
    DelayLcd(DELAY10ms);
@@ -30,12 +36,12 @@ _Bool Init_Lcd(void){
 
 }
 
-void DelayLcd(uint32_t demora){
+static void DelayLcd(uint32_t demora){
 	  HAL_Delay(demora);
 }
 
 
-void ControlLcd(uint8_t valor){
+static void ControlLcd(uint8_t valor){
 	Send8bitsLcd(valor,CONTROL);
 }
 
@@ -59,7 +65,7 @@ void Send8bitsLcd (uint8_t valor,_Bool tipo){
 	Send4bitsLcd(valor<<LOW_NIBBLE,tipo);   	//me quedo y envio los 4 bits menos significativos.
 }
 
-void Send4bitsLcd (uint8_t valor,_Bool tipo){
+static void Send4bitsLcd (uint8_t valor,_Bool tipo){
 
 	LCD_Write_Byte(valor+tipo+EN+BL);
 	DelayLcd(DelayTime);

@@ -1,0 +1,2 @@
+../Drivers/API/src/API_I2C.c:14:7:I2C_HW_init	8	static
+../Drivers/API/src/API_I2C.c:31:13:GPIO_I2C	48	static

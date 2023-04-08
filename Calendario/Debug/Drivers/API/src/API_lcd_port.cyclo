@@ -1,3 +1,1 @@
-API_lcd_port.c:13:7:LCD_HW_init	2
-API_lcd_port.c:30:6:GPIO_I2C	1
-API_lcd_port.c:49:6:LCD_Write_Byte	2
+API_lcd_port.c:13:6:LCD_Write_Byte	2

@@ -13,8 +13,8 @@
 #include "main.h"
 
 #define TIMEOUT 100
-UART_HandleTypeDef huart1;
-uint8_t TXT_INI[]="UART INICIALIZADA EN 115200 8N1";
+static UART_HandleTypeDef huart1;
+static uint8_t TXT_INI[]="UART INICIALIZADA EN 115200 8N1";
 
 bool uartInit(){
 

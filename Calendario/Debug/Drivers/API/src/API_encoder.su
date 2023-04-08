@@ -1,3 +1,3 @@
-../Drivers/API/src/API_encoder.c:18:7:Init_Enc	8	static
-../Drivers/API/src/API_encoder.c:25:6:EncFSM_Update	16	static
-../Drivers/API/src/API_encoder.c:48:16:ReadEncoder	16	static
+../Drivers/API/src/API_encoder.c:15:7:Init_Enc	8	static
+../Drivers/API/src/API_encoder.c:22:6:EncFSM_Update	16	static
+../Drivers/API/src/API_encoder.c:65:16:ReadEncoder	16	static
