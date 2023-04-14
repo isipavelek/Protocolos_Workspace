@@ -23,6 +23,7 @@
 
 reloj reloj1;
 
+
 int main(void){
   HAL_Init();
   /* Configure the system clock to 180 MHz */
@@ -31,14 +32,14 @@ int main(void){
   BSP_LED_Init(LED2);
   //BSP_PB_Init(BUTTON_USER, BUTTON_MODE_GPIO);
   if(Init_Lcd()==LCD_ERROR)Error_Handler();
-  RelojInit(&reloj1);
+  RelojInit(&reloj1);			//inicializo el reloj
   ClrLcd();
-  Init_Enc();
-  debounceFSM_init();
+  Init_Enc();					//inicializo el encoder
+  debounceFSM_init();			//inicializo el debounce del pulsador del enconder
   while (true){
-	  RelojFSM_Update(&reloj1);
-  	  EncFSM_Update();
-  	  debounceFSM_update();
+	  RelojFSM_Update(&reloj1);		//actualizo la MEF del reloj
+  	  EncFSM_Update();				//actualizo la MEF del enconder
+  	  debounceFSM_update();			//actualizo la MEF del putlsador del enconder
 
   }
 }

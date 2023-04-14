@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  00020018  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00009c49  00000000  00000000  00020048  2**0
+ 13 .debug_info   00009c60  00000000  00000000  00020048  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 000021a3  00000000  00000000  00029c91  2**0
+ 14 .debug_abbrev 000021d7  00000000  00000000  00029ca8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 000009e0  00000000  00000000  0002be38  2**3
+ 15 .debug_aranges 000009e0  00000000  00000000  0002be80  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_ranges 000008b0  00000000  00000000  0002c818  2**3
+ 16 .debug_ranges 000008b0  00000000  00000000  0002c860  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00027830  00000000  00000000  0002d0c8  2**0
+ 17 .debug_macro  00027848  00000000  00000000  0002d110  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000129aa  00000000  00000000  000548f8  2**0
+ 18 .debug_line   000129b3  00000000  00000000  00054958  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e26d4  00000000  00000000  000672a2  2**0
+ 19 .debug_str    000e26ea  00000000  00000000  0006730b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  00149976  2**0
+ 20 .comment      00000050  00000000  00000000  001499f5  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  000024a8  00000000  00000000  001499c8  2**2
+ 21 .debug_frame  000024a8  00000000  00000000  00149a48  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -353,8 +353,8 @@ Disassembly of section .text:
  80004ee:	bf00      	nop
 
 080004f0 <I2C_HW_init>:
+ **********************************************************************************/
 
-I2C_HandleTypeDef hi2c1;
 
 static void GPIO_I2C(I2C_HandleTypeDef  *hi2c);
 
@@ -420,9 +420,12 @@ _Bool I2C_HW_init(void){
  8000550:	000186a0 	.word	0x000186a0
 
 08000554 <GPIO_I2C>:
-
-static void GPIO_I2C(I2C_HandleTypeDef  *hi2c)
-{
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+static void GPIO_I2C(I2C_HandleTypeDef  *hi2c){
  8000554:	b580      	push	{r7, lr}
  8000556:	b08a      	sub	sp, #40	; 0x28
  8000558:	af00      	add	r7, sp, #0
@@ -636,9 +639,9 @@ void Error_Handler(void)
  8000696:	e7fe      	b.n	8000696 <Error_Handler+0xa>
 
 08000698 <debounceFSM_init>:
-static delay_t estructura_tiempo;
-static bool_t tecla=0;
-
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 
 void debounceFSM_init(){
@@ -660,6 +663,11 @@ void debounceFSM_init(){
  80006b4:	20000088 	.word	0x20000088
 
 080006b8 <debounceFSM_update>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
 void debounceFSM_update(){
  80006b8:	b580      	push	{r7, lr}
  80006ba:	af00      	add	r7, sp, #0
@@ -738,7 +746,6 @@ void debounceFSM_update(){
  800073c:	4812      	ldr	r0, [pc, #72]	; (8000788 <debounceFSM_update+0xd0>)
  800073e:	f000 f84c 	bl	80007da <delayRead>
 								}
-
 								break;
  8000742:	e019      	b.n	8000778 <debounceFSM_update+0xc0>
 			case (BUTTON_RAISING):
@@ -796,6 +803,8 @@ void debounceFSM_update(){
  800078c:	20000098 	.word	0x20000098
 
 08000790 <readKey>:
+  *
+ **********************************************************************************/
 
 
 
@@ -1083,7 +1092,11 @@ _Bool Init_Enc(void){
  8000930:	20000099 	.word	0x20000099
 
 08000934 <EncFSM_Update>:
-
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 void EncFSM_Update(){
  8000934:	b580      	push	{r7, lr}
  8000936:	b082      	sub	sp, #8
@@ -1277,6 +1290,10 @@ void EncFSM_Update(){
  8000a64:	2000009a 	.word	0x2000009a
 
 08000a68 <ReadEncoder>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 giro_encoder_t ReadEncoder(){
  8000a68:	b480      	push	{r7}
@@ -1305,10 +1322,10 @@ giro_encoder_t ReadEncoder(){
  8000a8c:	2000009a 	.word	0x2000009a
 
 08000a90 <Init_Lcd>:
-
-static const uint8_t LCD_INIT_CMD[]={
-		_4BIT_MODE,DISPLAY_CONTROL,RETURN_HOME,ENTRY_MODE+AUTOINCREMENT,DISPLAY_CONTROL+DISPLAY_ON,CLR_LCD
-};
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 _Bool Init_Lcd(void){
  8000a90:	b580      	push	{r7, lr}
@@ -1376,6 +1393,10 @@ _Bool Init_Lcd(void){
  8000b04:	08003a0c 	.word	0x08003a0c
 
 08000b08 <DelayLcd>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void DelayLcd(uint32_t demora){
  8000b08:	b580      	push	{r7, lr}
@@ -1392,7 +1413,10 @@ static void DelayLcd(uint32_t demora){
  8000b1c:	bd80      	pop	{r7, pc}
 
 08000b1e <ControlLcd>:
-
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void ControlLcd(uint8_t valor){
  8000b1e:	b580      	push	{r7, lr}
@@ -1412,6 +1436,10 @@ static void ControlLcd(uint8_t valor){
  8000b38:	bd80      	pop	{r7, pc}
 
 08000b3a <DatoLcd>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void DatoLcd (uint8_t dato){
  8000b3a:	b580      	push	{r7, lr}
@@ -1431,6 +1459,10 @@ void DatoLcd (uint8_t dato){
  8000b54:	bd80      	pop	{r7, pc}
 
 08000b56 <DatoAsciiLcd>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void DatoAsciiLcd (uint8_t dato){
  8000b56:	b580      	push	{r7, lr}
@@ -1452,6 +1484,10 @@ void DatoAsciiLcd (uint8_t dato){
  8000b74:	bd80      	pop	{r7, pc}
 
 08000b76 <DatoBCD>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void DatoBCD (uint8_t dato){
  8000b76:	b580      	push	{r7, lr}
@@ -1480,6 +1516,10 @@ void DatoBCD (uint8_t dato){
  8000ba0:	bd80      	pop	{r7, pc}
 
 08000ba2 <Send8bitsLcd>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void Send8bitsLcd (uint8_t valor,_Bool tipo){
  8000ba2:	b580      	push	{r7, lr}
@@ -1513,6 +1553,10 @@ void Send8bitsLcd (uint8_t valor,_Bool tipo){
  8000bda:	bd80      	pop	{r7, pc}
 
 08000bdc <Send4bitsLcd>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void Send4bitsLcd (uint8_t valor,_Bool tipo){
  8000bdc:	b580      	push	{r7, lr}
@@ -1555,10 +1599,10 @@ static void Send4bitsLcd (uint8_t valor,_Bool tipo){
  8000c22:	bd80      	pop	{r7, pc}
 
 08000c24 <ClrLcd>:
-
-void OutTextLcd (int8_t *texto){
-	while(*texto)DatoLcd(*texto++);
-}
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void ClrLcd(void){
  8000c24:	b580      	push	{r7, lr}
@@ -1575,6 +1619,9 @@ void ClrLcd(void){
  8000c36:	bd80      	pop	{r7, pc}
 
 08000c38 <PosCaracHLcd>:
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 
 void PosCaracHLcd(uint8_t posH){
@@ -1596,6 +1643,10 @@ void PosCaracHLcd(uint8_t posH){
  8000c56:	bd80      	pop	{r7, pc}
 
 08000c58 <PosCaracLLcd>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void PosCaracLLcd(uint8_t posL){
  8000c58:	b580      	push	{r7, lr}
@@ -1616,6 +1667,10 @@ void PosCaracLLcd(uint8_t posL){
  8000c76:	bd80      	pop	{r7, pc}
 
 08000c78 <CursorOffLcd>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void CursorOffLcd(void){
  8000c78:	b580      	push	{r7, lr}
@@ -1628,6 +1683,10 @@ void CursorOffLcd(void){
  8000c84:	bd80      	pop	{r7, pc}
 
 08000c86 <CursorOnLcd>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void CursorOnLcd(void){
  8000c86:	b580      	push	{r7, lr}
@@ -1640,10 +1699,10 @@ void CursorOnLcd(void){
  8000c92:	bd80      	pop	{r7, pc}
 
 08000c94 <LCD_Write_Byte>:
-#include"API_Lcd_port.h"
-#include"API_init.h"
-
-extern I2C_HandleTypeDef hi2c1;
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void LCD_Write_Byte(uint8_t valor){
  8000c94:	b580      	push	{r7, lr}
@@ -1673,10 +1732,10 @@ void LCD_Write_Byte(uint8_t valor){
  8000cc4:	20000034 	.word	0x20000034
 
 08000cc8 <PresentaFechaLCD>:
-static void ConfiguraHora(reloj* reloj1);
-static void ConfiguraMin(reloj* reloj1);
-static void ConfiguraSeg(reloj* reloj1);
-
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
  8000cc8:	b580      	push	{r7, lr}
@@ -1729,6 +1788,10 @@ static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
  8000d20:	bd80      	pop	{r7, pc}
 
 08000d22 <PresentaHoraLCD>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void PresentaHoraLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
  8000d22:	b580      	push	{r7, lr}
@@ -1781,6 +1844,11 @@ static void PresentaHoraLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
  8000d7a:	bd80      	pop	{r7, pc}
 
 08000d7c <RelojInit>:
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 void RelojInit(reloj* reloj1){
  8000d7c:	b480      	push	{r7}
  8000d7e:	b083      	sub	sp, #12
@@ -1805,6 +1873,10 @@ void RelojInit(reloj* reloj1){
  8000d98:	200000a8 	.word	0x200000a8
 
 08000d9c <Reloj_Read>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void Reloj_Read(reloj* reloj1){
  8000d9c:	b580      	push	{r7, lr}
@@ -1823,6 +1895,10 @@ void Reloj_Read(reloj* reloj1){
  8000db0:	bd80      	pop	{r7, pc}
 
 08000db2 <Reloj_Write>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void Reloj_Write(reloj reloj1){
  8000db2:	b580      	push	{r7, lr}
@@ -1842,6 +1918,10 @@ void Reloj_Write(reloj reloj1){
  8000dce:	bd80      	pop	{r7, pc}
 
 08000dd0 <RelojFSM_Update>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void RelojFSM_Update(reloj* reloj1){
  8000dd0:	b580      	push	{r7, lr}
@@ -1941,6 +2021,10 @@ void RelojFSM_Update(reloj* reloj1){
  8000e70:	200000a8 	.word	0x200000a8
 
 08000e74 <ConfiguraDia>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void ConfiguraDia(reloj* reloj1){
  8000e74:	b580      	push	{r7, lr}
@@ -2097,8 +2181,10 @@ static void ConfiguraDia(reloj* reloj1){
  8000f88:	200000a8 	.word	0x200000a8
 
 08000f8c <ConfiguraMes>:
-
-
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void ConfiguraMes(reloj* reloj1){
  8000f8c:	b580      	push	{r7, lr}
@@ -2128,7 +2214,7 @@ static void ConfiguraMes(reloj* reloj1){
  8000fb6:	7bfb      	ldrb	r3, [r7, #15]
  8000fb8:	2b01      	cmp	r3, #1
  8000fba:	d126      	bne.n	800100a <ConfiguraMes+0x7e>
-		if((reloj1->dia)!=0x31)Decrementa(&(reloj1->mes),MESMIN,MESMAX);
+		if((reloj1->dia)!=0x31)Decrementa(&(reloj1->mes),MESMIN,MESMAX);	//si el mes no tiene 31, lo dejo decrementar libremente
  8000fbc:	687b      	ldr	r3, [r7, #4]
  8000fbe:	791b      	ldrb	r3, [r3, #4]
  8000fc0:	2b31      	cmp	r3, #49	; 0x31
@@ -2141,7 +2227,7 @@ static void ConfiguraMes(reloj* reloj1){
  8000fce:	f000 f975 	bl	80012bc <Decrementa>
  8000fd2:	e015      	b.n	8001000 <ConfiguraMes+0x74>
 		else{
-			uint8_t indice=buscar_indice((uint8_t *)mes31,reloj1->mes,sizeof(mes31));
+			uint8_t indice=buscar_indice((uint8_t *)mes31,reloj1->mes,sizeof(mes31));  //busco el limite
  8000fd4:	687b      	ldr	r3, [r7, #4]
  8000fd6:	795b      	ldrb	r3, [r3, #5]
  8000fd8:	2207      	movs	r2, #7
@@ -2176,7 +2262,7 @@ static void ConfiguraMes(reloj* reloj1){
  800100a:	7bfb      	ldrb	r3, [r7, #15]
  800100c:	2b02      	cmp	r3, #2
  800100e:	d126      	bne.n	800105e <ConfiguraMes+0xd2>
-		if((reloj1->dia)!=0x31)Incrementa(&(reloj1->mes),MESMIN,MESMAX);
+		if((reloj1->dia)!=0x31)Incrementa(&(reloj1->mes),MESMIN,MESMAX); //si el mes no tiene 31, lo dejo incrementar  libremente
  8001010:	687b      	ldr	r3, [r7, #4]
  8001012:	791b      	ldrb	r3, [r3, #4]
  8001014:	2b31      	cmp	r3, #49	; 0x31
@@ -2189,7 +2275,7 @@ static void ConfiguraMes(reloj* reloj1){
  8001022:	f000 f98f 	bl	8001344 <Incrementa>
  8001026:	e015      	b.n	8001054 <ConfiguraMes+0xc8>
 		else{
-			uint8_t indice=buscar_indice((uint8_t *)mes31,reloj1->mes,sizeof(mes31));
+			uint8_t indice=buscar_indice((uint8_t *)mes31,reloj1->mes,sizeof(mes31)); //busco el limite
  8001028:	687b      	ldr	r3, [r7, #4]
  800102a:	795b      	ldrb	r3, [r3, #5]
  800102c:	2207      	movs	r2, #7
@@ -2230,6 +2316,10 @@ static void ConfiguraMes(reloj* reloj1){
  800106c:	08003a14 	.word	0x08003a14
 
 08001070 <ConfiguraAnio>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void ConfiguraAnio(reloj* reloj1){
  8001070:	b580      	push	{r7, lr}
@@ -2353,6 +2443,10 @@ static void ConfiguraAnio(reloj* reloj1){
  800113c:	200000a8 	.word	0x200000a8
 
 08001140 <ConfiguraHora>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void ConfiguraHora(reloj* reloj1){
  8001140:	b580      	push	{r7, lr}
@@ -2421,6 +2515,11 @@ static void ConfiguraHora(reloj* reloj1){
  80011b0:	200000a8 	.word	0x200000a8
 
 080011b4 <ConfiguraMin>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
 static void ConfiguraMin(reloj* reloj1){
  80011b4:	b580      	push	{r7, lr}
  80011b6:	b084      	sub	sp, #16
@@ -2488,6 +2587,11 @@ static void ConfiguraMin(reloj* reloj1){
  8001224:	200000a8 	.word	0x200000a8
 
 08001228 <ConfiguraSeg>:
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 static void ConfiguraSeg(reloj* reloj1){
  8001228:	b580      	push	{r7, lr}
  800122a:	b084      	sub	sp, #16
@@ -2573,6 +2677,11 @@ static void ConfiguraSeg(reloj* reloj1){
  80012b8:	200000a8 	.word	0x200000a8
 
 080012bc <Decrementa>:
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 static void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
  80012bc:	b480      	push	{r7}
  80012be:	b085      	sub	sp, #20
@@ -2647,7 +2756,11 @@ static void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
  8001340:	cccccccd 	.word	0xcccccccd
 
 08001344 <Incrementa>:
-
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 static void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
  8001344:	b480      	push	{r7}
  8001346:	b085      	sub	sp, #20
@@ -2719,6 +2832,10 @@ static void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
  80013c4:	cccccccd 	.word	0xcccccccd
 
 080013c8 <buscar_indice>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
  80013c8:	b480      	push	{r7}
@@ -2751,7 +2868,7 @@ static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
  80013fa:	68fa      	ldr	r2, [r7, #12]
  80013fc:	429a      	cmp	r2, r3
  80013fe:	dbee      	blt.n	80013de <buscar_indice+0x16>
-	return -1;
+	return ERROR;
  8001400:	23ff      	movs	r3, #255	; 0xff
 
 
@@ -2764,11 +2881,11 @@ static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
 	...
 
 08001410 <RTC_Write_Cal>:
-#include "API_rtc.h"
-
-
-extern I2C_HandleTypeDef hi2c1;
-
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 void RTC_Write_Cal(reloj reloj1){
  8001410:	b580      	push	{r7, lr}
  8001412:	b086      	sub	sp, #24
@@ -2776,7 +2893,7 @@ void RTC_Write_Cal(reloj reloj1){
  8001416:	463b      	mov	r3, r7
  8001418:	e883 0003 	stmia.w	r3, {r0, r1}
 
-	if(HAL_I2C_Mem_Write(&hi2c1,0x68<<1,0,I2C_MEMADD_SIZE_8BIT,(uint8_t *)&reloj1,sizeof(reloj),HAL_MAX_DELAY)!=HAL_OK)Error_Handler();
+	if(HAL_I2C_Mem_Write(&hi2c1,RTC_DIR<<1,0,I2C_MEMADD_SIZE_8BIT,(uint8_t *)&reloj1,sizeof(reloj),HAL_MAX_DELAY)!=HAL_OK)Error_Handler();
  800141c:	f04f 33ff 	mov.w	r3, #4294967295
  8001420:	9302      	str	r3, [sp, #8]
  8001422:	2307      	movs	r3, #7
@@ -2801,13 +2918,17 @@ void RTC_Write_Cal(reloj reloj1){
  8001448:	20000034 	.word	0x20000034
 
 0800144c <RTC_Read_Cal>:
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void RTC_Read_Cal(reloj * reloj1){
  800144c:	b580      	push	{r7, lr}
  800144e:	b086      	sub	sp, #24
  8001450:	af04      	add	r7, sp, #16
  8001452:	6078      	str	r0, [r7, #4]
-	if(HAL_I2C_Mem_Read(&hi2c1,0x68<<1,0,I2C_MEMADD_SIZE_8BIT,(uint8_t *)reloj1,sizeof(reloj),HAL_MAX_DELAY)!=HAL_OK)Error_Handler();
+	if(HAL_I2C_Mem_Read(&hi2c1,RTC_DIR<<1,0,I2C_MEMADD_SIZE_8BIT,(uint8_t *)reloj1,sizeof(reloj),HAL_MAX_DELAY)!=HAL_OK)Error_Handler();
  8001454:	f04f 33ff 	mov.w	r3, #4294967295
  8001458:	9302      	str	r3, [sp, #8]
  800145a:	2307      	movs	r3, #7
@@ -9153,10 +9274,10 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  800390c:	08003a34 	.word	0x08003a34
 
 08003910 <main>:
-  * @retval None
   */
 
 reloj reloj1;
+
 
 int main(void){
  8003910:	b580      	push	{r7, lr}
@@ -9177,24 +9298,24 @@ int main(void){
  8003928:	2b00      	cmp	r3, #0
  800392a:	d001      	beq.n	8003930 <main+0x20>
  800392c:	f7fc feae 	bl	800068c <Error_Handler>
-  RelojInit(&reloj1);
+  RelojInit(&reloj1);			//inicializo el reloj
  8003930:	4808      	ldr	r0, [pc, #32]	; (8003954 <main+0x44>)
  8003932:	f7fd fa23 	bl	8000d7c <RelojInit>
   ClrLcd();
  8003936:	f7fd f975 	bl	8000c24 <ClrLcd>
-  Init_Enc();
+  Init_Enc();					//inicializo el encoder
  800393a:	f7fc ffe9 	bl	8000910 <Init_Enc>
-  debounceFSM_init();
+  debounceFSM_init();			//inicializo el debounce del pulsador del enconder
  800393e:	f7fc feab 	bl	8000698 <debounceFSM_init>
   while (true){
-	  RelojFSM_Update(&reloj1);
+	  RelojFSM_Update(&reloj1);		//actualizo la MEF del reloj
  8003942:	4804      	ldr	r0, [pc, #16]	; (8003954 <main+0x44>)
  8003944:	f7fd fa44 	bl	8000dd0 <RelojFSM_Update>
-  	  EncFSM_Update();
+  	  EncFSM_Update();				//actualizo la MEF del enconder
  8003948:	f7fc fff4 	bl	8000934 <EncFSM_Update>
-  	  debounceFSM_update();
+  	  debounceFSM_update();			//actualizo la MEF del putlsador del enconder
  800394c:	f7fc feb4 	bl	80006b8 <debounceFSM_update>
-	  RelojFSM_Update(&reloj1);
+	  RelojFSM_Update(&reloj1);		//actualizo la MEF del reloj
  8003950:	e7f7      	b.n	8003942 <main+0x32>
  8003952:	bf00      	nop
  8003954:	200000b0 	.word	0x200000b0

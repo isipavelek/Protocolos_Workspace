@@ -12,11 +12,12 @@
 #include "stm32f4xx_hal.h"  		/* <- HAL include */
 #include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
 #include <stdbool.h>
-
+#define ERROR -1
 typedef enum{
 	ENERO=1,FEBRERO,MARZO,ABRIL,MAYO,JUNIO,JULIO,AGOSTO,SEPTIEMBRE,OCTUBRE=0x10,NOVIEMBRE,DICIEMBRE
 
 }meses_BCD;
+
 
 
 

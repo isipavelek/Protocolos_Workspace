@@ -30,6 +30,17 @@ static void ConfiguraHora(reloj* reloj1);
 static void ConfiguraMin(reloj* reloj1);
 static void ConfiguraSeg(reloj* reloj1);
 
+/********************************************************************************
+ *Funcion:PresentaFechaLCD
+ * Acción: Función que presenta en el LCD la fecha
+ * Recibe: el reloj con el que se trabaje, posición donde colocarlo y linea
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 
@@ -43,6 +54,18 @@ static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 
 }
 
+/********************************************************************************
+ *Funcion: PresentaHoraLCD
+ * Acción: Función que presenta en el LCD la hora
+ * Recibe: el reloj con el que se trabaje, posición donde colocarlo y linea
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
 static void PresentaHoraLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 
 	  if(linea==1)PosCaracHLcd(pos);
@@ -54,6 +77,17 @@ static void PresentaHoraLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 	  DatoBCD (reloj1->seg);
 
 }
+/********************************************************************************
+ *Funcion: RelojInit
+ * Acción: Función que inicializa la MEF del reloj
+ * Recibe: el reloj a inicializar
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 void RelojInit(reloj* reloj1){
 	estado_reloj=PRESENTAR;
 	/*reloj1->seg=0;
@@ -66,16 +100,52 @@ void RelojInit(reloj* reloj1){
 
 }
 
+/********************************************************************************
+ *Funcion: Reloj_Read
+ * Acción: Función que interfacea con el HW del RTC y lee el calendario
+ * Recibe:  Puntero a donde dejar los datos del reloj
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
 void Reloj_Read(reloj* reloj1){
 
 	RTC_Read_Cal(reloj1);
 
 }
 
+/********************************************************************************
+ *Funcion: Reloj_Write
+ * Acción: Función que interfacea con el HW del RTC y escribe  el calendario
+ * Recibe:  Puntero a donde estan los datos a grabar en el reloj
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
 void Reloj_Write(reloj reloj1){
 	RTC_Write_Cal(reloj1);
 
 }
+
+/********************************************************************************
+ *Funcion: RelojFSM_Update
+ * Acción: Función que actauliza la MEF del reloj
+ * Recibe: Reloj con el que trabaja
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 void RelojFSM_Update(reloj* reloj1){
 
@@ -111,6 +181,18 @@ void RelojFSM_Update(reloj* reloj1){
 
 }
 
+/********************************************************************************
+ *Funcion:ConfiguraDia
+ * Acción: Función que configura el dia en el reloj y lo presenta en pantalla.
+ * Recibe: Puntero al reloj que trabaja
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
 static void ConfiguraDia(reloj* reloj1){
 	uint8_t encoder=0;
 
@@ -134,6 +216,18 @@ static void ConfiguraDia(reloj* reloj1){
 }
 
 
+/********************************************************************************
+ *Funcion ConfiguraMes
+ * Acción: Función que configura el mes en el reloj y lo presenta en pantalla.
+ * 			tiene en cuenta segun el dìa ingresado los limites del mes en cuestion
+ * Recibe: Puntero al reloj que trabaja
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void ConfiguraMes(reloj* reloj1){
 	uint8_t encoder=0;
@@ -142,24 +236,36 @@ static void ConfiguraMes(reloj* reloj1){
 	if(readKey()==true)estado_reloj=CONFIGURAR_ANIO;
 	encoder=ReadEncoder();
 	if(encoder==IZQ){
-		if((reloj1->dia)!=0x31)Decrementa(&(reloj1->mes),MESMIN,MESMAX);
+		if((reloj1->dia)!=0x31)Decrementa(&(reloj1->mes),MESMIN,MESMAX);	//si el mes no tiene 31, lo dejo decrementar libremente
 		else{
-			uint8_t indice=buscar_indice((uint8_t *)mes31,reloj1->mes,sizeof(mes31));
+			uint8_t indice=buscar_indice((uint8_t *)mes31,reloj1->mes,sizeof(mes31));  //busco el limite
 			if(indice==0)reloj1->mes=mes31[sizeof(mes31)-1];
 			else reloj1->mes=mes31[indice-1];
 		}
 		PresentaFechaLCD(reloj1,POSCOMIENZAFECHA,LINEA_1);
 	}
 	if(encoder==DER){
-		if((reloj1->dia)!=0x31)Incrementa(&(reloj1->mes),MESMIN,MESMAX);
+		if((reloj1->dia)!=0x31)Incrementa(&(reloj1->mes),MESMIN,MESMAX); //si el mes no tiene 31, lo dejo incrementar  libremente
 		else{
-			uint8_t indice=buscar_indice((uint8_t *)mes31,reloj1->mes,sizeof(mes31));
+			uint8_t indice=buscar_indice((uint8_t *)mes31,reloj1->mes,sizeof(mes31)); //busco el limite
 			if(indice==sizeof(mes31)-1)reloj1->mes=mes31[0];
 			else reloj1->mes=mes31[indice+1];
 		}
 		PresentaFechaLCD(reloj1,POSCOMIENZAFECHA,LINEA_1);
 	}
 }
+
+/********************************************************************************
+ *Funcion: ConfiguraAnio
+ * Acción: Función que configura el año en el reloj y lo presenta en pantalla.
+ * Recibe: Puntero al reloj que trabaja
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 static void ConfiguraAnio(reloj* reloj1){
 	uint8_t encoder=0;
@@ -188,6 +294,18 @@ static void ConfiguraAnio(reloj* reloj1){
 	}
 }
 
+/********************************************************************************
+ *Funcion: ConfiguraHora
+ * Acción: Función que configura el hora en el reloj y lo presenta en pantalla.
+ * Recibe: Puntero al reloj que trabaja
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
 static void ConfiguraHora(reloj* reloj1){
 	uint8_t encoder=0;
 
@@ -203,6 +321,19 @@ static void ConfiguraHora(reloj* reloj1){
 		PresentaHoraLCD(reloj1,POSCOMIENZAHORA,LINEA_2);
 	}
 }
+
+/********************************************************************************
+ *Funcion: ConfiguraMin
+ * Acción: Función que configura los minutos en el reloj y lo presenta en pantalla.
+ * Recibe: Puntero al reloj que trabaja
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
 static void ConfiguraMin(reloj* reloj1){
 	uint8_t encoder=0;
 
@@ -218,6 +349,18 @@ static void ConfiguraMin(reloj* reloj1){
 		PresentaHoraLCD(reloj1,POSCOMIENZAHORA,LINEA_2);
 	}
 }
+
+/********************************************************************************
+ *Funcion: ConfiguraSeg
+ * Acción: Función que configura los segundos en el reloj y lo presenta en pantalla.
+ * Recibe: Puntero al reloj que trabaja
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 static void ConfiguraSeg(reloj* reloj1){
 	uint8_t encoder=0;
 
@@ -238,6 +381,18 @@ static void ConfiguraSeg(reloj* reloj1){
 	}
 
 }
+
+/********************************************************************************
+ *Funcion:  Decrementa
+ * Acción: Función que se encarga de decrementar un variable y mantenerla entre los limites
+ * Recibe: puntero a la variable a decrementar, limite inferior, y limite superior.
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 static void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 
 	uint8_t aux;
@@ -248,6 +403,17 @@ static void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 
 }
 
+/********************************************************************************
+ *Funcion:  Incrementa
+ * Acción: Función que se encarga de incrementar  un variable y mantenerla entre los limites
+ * Recibe: puntero a la variable a incrementar, limite inferior, y limite superior.
+ * Devuelve: nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 static void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 	uint8_t aux;
 	aux=(*valor&0x0f)+(((*valor&0xf0)>>4)*10);
@@ -257,10 +423,22 @@ static void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 
 }
 
+/********************************************************************************
+ *Funcion: buscar_indice
+ * Acción: Función que busca el limite de acuerdo al día ingresado
+ * Recibe: el puntero donde buscarlo, el valor a buscar, y el limite de datos donde buscarlo
+ * Devuelve: el indice donde se encuentra o ERROR si no lo encuentra
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
 static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
 
 	for(int i=0;i<limite;i++)if(valor[i]==abuscar)return i;
-	return -1;
+	return ERROR;
 
 
 }

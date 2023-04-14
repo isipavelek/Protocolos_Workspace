@@ -18,7 +18,17 @@ _Bool Init_Enc(void){
     estado=INI;
 	return 0;
 }
-
+/********************************************************************************
+ *Funcion: EncFSM_Update
+ * Acción: Función que actualiza la maquina de estados finitos del Encoder
+ * Recibe: nada
+ * Devuelve:nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 void EncFSM_Update(){
 
 	uint8_t estados_pines=Leer_Enc_Pin();
@@ -61,6 +71,18 @@ void EncFSM_Update(){
 
 	}
 }
+
+/********************************************************************************
+ *Funcion:ReadEncoder
+ * Acción: Función que devuelve para donde giró el encoder, si giró, IZQ o DER
+ * Recibe: nada
+ * Devuelve: giro_encoder_t NO GIRA, IZQ  o DER
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 giro_encoder_t ReadEncoder(){
 	uint8_t aux=0;

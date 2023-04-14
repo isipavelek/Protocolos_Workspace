@@ -15,6 +15,7 @@
 #include "API_reloj.h"
 #include "API_init.h"
 
+#define RTC_DIR 0x68
 
 void RTC_Write_Cal(reloj reloj1);
 void RTC_Read_Cal(reloj * reloj1);

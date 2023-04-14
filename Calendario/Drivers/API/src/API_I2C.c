@@ -9,6 +9,19 @@
 
 I2C_HandleTypeDef hi2c1;
 
+/********************************************************************************
+ *Funcion: I2C_HW_init
+ * Acción: Inicializa el Puerto I2C
+ * Recibe:  Nada
+ * Devuelve: HAL_ERROR si hubo algun problema o HAL_OK si todo funciono
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
+
 static void GPIO_I2C(I2C_HandleTypeDef  *hi2c);
 
 _Bool I2C_HW_init(void){
@@ -28,8 +41,19 @@ _Bool I2C_HW_init(void){
 
 }
 
-static void GPIO_I2C(I2C_HandleTypeDef  *hi2c)
-{
+
+/********************************************************************************
+ *Funcion:GPIO_I2C
+ * Acción:  Funciòn que inicializa la funcón alternativa en los pines de I2C 9 y 8
+ * Recibe: Manejador de I2C I2C_HandleTypeDef
+ * Devuelve:  nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+static void GPIO_I2C(I2C_HandleTypeDef  *hi2c){
 	 GPIO_InitTypeDef GPIO_InitStruct;
 
 	  /* GPIO Ports Clock Enable */

@@ -2,6 +2,7 @@
 #include "API_delay.h"
 #include "API_enc_port.h"
 
+
 typedef enum{
 	BUTTON_UP,
 	BUTTON_FALLING,
@@ -14,12 +15,36 @@ static debounceState_t estado;
 static delay_t estructura_tiempo;
 static bool_t tecla=0;
 
+/********************************************************************************
+ *Funcion:
+ * Acción:
+ * Recibe
+ * Devuelve
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 
 void debounceFSM_init(){
 	delayInit(&estructura_tiempo,DEMORA_BASE);
 	estado=BUTTON_UP;
 }
+
+/********************************************************************************
+ *Funcion: debounceFSM_update
+ * Acción: Función que actualiza la FSM antirebote
+ * Recibe: Nada
+ * Devuelve: Nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
 void debounceFSM_update(){
 	switch (estado){
 			case (BUTTON_UP): if(Leer_Enc_Sw()){
@@ -39,7 +64,6 @@ void debounceFSM_update(){
 									estado=BUTTON_RAISING;
 									delayRead(&estructura_tiempo);
 								}
-
 								break;
 			case (BUTTON_RAISING):
 								if(delayRead(&estructura_tiempo)){
@@ -54,6 +78,18 @@ void debounceFSM_update(){
 
 	}
 }
+
+/********************************************************************************
+ *Funcion: readKey
+ * Acción: Función para consultar si fue presionada o no la tecla del Encoder
+ * Recibe: Nada
+ * Devuelve: True si la tecla fue presionada false si no
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
 
 
 
