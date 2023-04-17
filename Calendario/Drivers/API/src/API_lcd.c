@@ -180,7 +180,7 @@ static void Send4bitsLcd (uint8_t valor,_Bool tipo){
  **********************************************************************************/
 
 
-void OutTextLcd (int8_t *texto){
+void OutTextLcd (uint8_t *texto){
 	while(*texto)DatoLcd(*texto++);
 }
 

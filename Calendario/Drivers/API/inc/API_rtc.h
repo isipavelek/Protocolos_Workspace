@@ -15,11 +15,23 @@
 #include "API_reloj.h"
 #include "API_init.h"
 
+typedef struct {
+	uint8_t temp_ent;
+	uint8_t temp_dec;
+
+}temp_t;
+
+
 #define RTC_DIR 0x68
+#define RTC_DIR_SEG 0x00
+#define RTC_TEMP_DIR 0x11
 
 void RTC_Write_Cal(reloj reloj1);
 void RTC_Read_Cal(reloj * reloj1);
 void RTC_Write_Byte(uint8_t valor,uint8_t dir);
-void RTC_Read_Byte(uint8_t * valor,uint8_t dir);
+void RTC_Read_Byte(uint8_t * valo,uint8_t dir);
+temp_t RTC_Read_Temp(void);
+
+
 
 #endif /* API_INC_API_RTC_H_ */

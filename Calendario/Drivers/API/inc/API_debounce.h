@@ -16,12 +16,19 @@
 #include <stdbool.h>
 #include "API_delay.h"
 
+#define DEMORA_LARGA 3000
 #define DEMORA_BASE 40
 
 void debounceFSM_init();
 void debounceFSM_update();
 
-bool_t readKey(void);
+typedef enum{
+	SUELTO,
+	PRESIONADO,
+	PRES_LARGO_TIEMPO,
+} estado_boton;
+
+estado_boton readKey(void);
 
 
 #endif /* API_INC_API_DEBOUNCE_H_ */

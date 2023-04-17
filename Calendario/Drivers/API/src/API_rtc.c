@@ -8,6 +8,7 @@
 #include "API_rtc.h"
 
 
+
 extern I2C_HandleTypeDef hi2c1;
 /********************************************************************************
  *Funcion:RTC_Write_Cal
@@ -39,7 +40,7 @@ void RTC_Write_Cal(reloj reloj1){
  **********************************************************************************/
 
 void RTC_Read_Cal(reloj * reloj1){
-	if(HAL_I2C_Mem_Read(&hi2c1,RTC_DIR<<1,0,I2C_MEMADD_SIZE_8BIT,(uint8_t *)reloj1,sizeof(reloj),HAL_MAX_DELAY)!=HAL_OK)Error_Handler();
+	if(HAL_I2C_Mem_Read(&hi2c1,RTC_DIR<<1,RTC_DIR_SEG,I2C_MEMADD_SIZE_8BIT,(uint8_t *)reloj1,sizeof(reloj),HAL_MAX_DELAY)!=HAL_OK)Error_Handler();
 
 }
 
@@ -74,6 +75,12 @@ void RTC_Write_Byte(uint8_t valor,uint8_t dir){
 void RTC_Read_Byte(uint8_t * valor,uint8_t dir){
 	if(HAL_I2C_Mem_Read(&hi2c1,RTC_DIR<<1,dir,I2C_MEMADD_SIZE_8BIT,(uint8_t *)valor,1,HAL_MAX_DELAY)!=HAL_OK)Error_Handler();
 
+}
+
+temp_t RTC_Read_Temp(void){
+	temp_t temp;
+	if(HAL_I2C_Mem_Read(&hi2c1,RTC_DIR<<1,RTC_TEMP_DIR,I2C_MEMADD_SIZE_8BIT,(uint8_t*)&temp,sizeof(temp),HAL_MAX_DELAY)!=HAL_OK)Error_Handler();
+	return temp;
 }
 
 
