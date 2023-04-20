@@ -37,9 +37,10 @@ int main(void){
   Init_Enc();					//inicializo el encoder
   debounceFSM_init();			//inicializo el debounce del pulsador del enconder
   while (true){
+
 	  RelojFSM_Update(&reloj1);		//actualizo la MEF del reloj
   	  EncFSM_Update();				//actualizo la MEF del enconder
-  	  debounceFSM_update();			//actualizo la MEF del putlsador del enconder
+  	  debounceFSM_update();			//actualizo la MEF del putlsador del enconder*/
 
   }
 }

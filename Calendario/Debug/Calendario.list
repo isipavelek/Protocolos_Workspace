@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_ranges 000008f8  00000000  00000000  0002ccc8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  000278d5  00000000  00000000  0002d5c0  2**0
+ 17 .debug_macro  000278e1  00000000  00000000  0002d5c0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00012dc4  00000000  00000000  00054e95  2**0
+ 18 .debug_line   00012dc4  00000000  00000000  00054ea1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e28ff  00000000  00000000  00067c59  2**0
+ 19 .debug_str    000e290a  00000000  00000000  00067c65  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  0014a558  2**0
+ 20 .comment      00000050  00000000  00000000  0014a56f  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  000025e8  00000000  00000000  0014a5a8  2**2
+ 21 .debug_frame  000025e8  00000000  00000000  0014a5c0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1913,8 +1913,8 @@ static void PresentaTempLCD(uint8_t pos){
  8000e02:	b2db      	uxtb	r3, r3
  8000e04:	4618      	mov	r0, r3
  8000e06:	f7ff fec4 	bl	8000b92 <DatoAsciiLcd>
-	DatoLcd('^');
- 8000e0a:	205e      	movs	r0, #94	; 0x5e
+	DatoLcd(GRADOS);
+ 8000e0a:	20df      	movs	r0, #223	; 0xdf
  8000e0c:	f7ff feb3 	bl	8000b76 <DatoLcd>
 	DatoLcd('C');
  8000e10:	2043      	movs	r0, #67	; 0x43
@@ -10407,12 +10407,13 @@ int main(void){
   debounceFSM_init();			//inicializo el debounce del pulsador del enconder
  80040a2:	f7fc faf9 	bl	8000698 <debounceFSM_init>
   while (true){
+
 	  RelojFSM_Update(&reloj1);		//actualizo la MEF del reloj
  80040a6:	4804      	ldr	r0, [pc, #16]	; (80040b8 <main+0x44>)
  80040a8:	f7fc ff74 	bl	8000f94 <RelojFSM_Update>
   	  EncFSM_Update();				//actualizo la MEF del enconder
  80040ac:	f7fc fc60 	bl	8000970 <EncFSM_Update>
-  	  debounceFSM_update();			//actualizo la MEF del putlsador del enconder
+  	  debounceFSM_update();			//actualizo la MEF del putlsador del enconder*/
  80040b0:	f7fc fb08 	bl	80006c4 <debounceFSM_update>
 	  RelojFSM_Update(&reloj1);		//actualizo la MEF del reloj
  80040b4:	e7f7      	b.n	80040a6 <main+0x32>

@@ -79,7 +79,7 @@ static void PresentaTempLCD(uint8_t pos){
 																	//me quedo con cada bit y lo llevo al peso que corresponde
 	DatoAsciiLcd(temp.temp_dec/10);				//me quedo con las decenas  y presento
 	DatoAsciiLcd(temp.temp_dec%10);				//me quedo con las unidades  y presento
-	DatoLcd('^');
+	DatoLcd(GRADOS);
 	DatoLcd('C');
 
 }

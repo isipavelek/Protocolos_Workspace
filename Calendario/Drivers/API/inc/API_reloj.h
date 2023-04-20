@@ -48,6 +48,8 @@ typedef struct{
 
 }reloj;
 
+#define GRADOS 223   //valor ASCII del simbolo de º en el LCD
+
 #define POSIDIOMA 5
 #define POSIDIOMA1 1
 #define POSIDIOMA2 10
