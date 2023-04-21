@@ -41,8 +41,6 @@ static void Configuro_idioma(void);
 static void PresentarHoraYFecha(reloj* reloj1);
 static void PresentarTempe(reloj* reloj1);
 
-static uint8_t BCD_a_Dec (uint8_t dato);
-
 static void ConfiguraDiaEsp(reloj* reloj1);
 static void ConfiguraMesEsp(reloj* reloj1);
 static void ConfiguraDiaEng(reloj* reloj1);
@@ -750,30 +748,12 @@ static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
 
 static void calcula_dia_semana(reloj* reloj1){
 	int dia,n,anio,mes;
-	dia=BCD_a_Dec(reloj1->dia);
-	mes=BCD_a_Dec(reloj1->mes);
-	anio=BCD_a_Dec(reloj1->anio)+2000 ; 		//supone que todos los calendarios que se utilizaran son a partir del 2000
+	dia=reloj1->dia;
+	mes=reloj1->mes;
+	anio=reloj1->anio+2000 ; 		//supone que todos los calendarios que se utilizaran son a partir del 2000
 	n = ((14 - mes) / 12);
 	anio = (anio - n);
 	mes = (mes + (12 * n) - 2);
-	reloj1->diasem=(((dia + anio + (anio / 4) - (anio / 100) + (anio / 400) + ((31 * mes) / 12))%7 )+1);
-
-}
-
-/********************************************************************************
- *Funcion: BCD_a_Dec
- * Acción: Funcion que pasa un numero de BCD a decimal
- * Recibe: Recibe el valor en BCD
- * Devuelve: Devuelve el valor convertido a decimal
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 16/4/23
-  *
-  *
- **********************************************************************************/
-
-static uint8_t BCD_a_Dec (uint8_t dato){
-	return ((((dato&0xf0)>>4)*10) + (dato&0x0f));
+	reloj1->diasem=(((dia + anio + (anio / 4) - (anio / 100) + (anio / 400) + ((31 * mes) / 12))%7 ));
 
 }

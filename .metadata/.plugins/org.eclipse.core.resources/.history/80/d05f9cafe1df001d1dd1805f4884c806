@@ -760,19 +760,6 @@ static void calcula_dia_semana(reloj* reloj1){
 
 }
 
-/********************************************************************************
- *Funcion: BCD_a_Dec
- * Acción: Funcion que pasa un numero de BCD a decimal
- * Recibe: Recibe el valor en BCD
- * Devuelve: Devuelve el valor convertido a decimal
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 16/4/23
-  *
-  *
- **********************************************************************************/
-
 static uint8_t BCD_a_Dec (uint8_t dato){
 	return ((((dato&0xf0)>>4)*10) + (dato&0x0f));
 
