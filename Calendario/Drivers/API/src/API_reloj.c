@@ -68,17 +68,17 @@ static void PresentaTempLCD(uint8_t pos){
 
 	temp_t temp=RTC_Read_Temp();
 	PosCaracHLcd(POSTEMPTIT);
-	if(idioma==ESP)OutTextLcd((uint8_t*)"Temperatura:");
-	else OutTextLcd((uint8_t*)"Temperature:");
+	if(idioma==ESP)SacaTextoLcd((uint8_t*)"Temperatura:");
+	else SacaTextoLcd((uint8_t*)"Temperature:");
 	PosCaracLLcd(POSTEMP);
 	DatoAsciiLcd(temp.temp_ent/10);				//me quedo con las decenas y presento
 	DatoAsciiLcd(temp.temp_ent%10);				//me quedo con las unidades  y presento
 	DatoLcd('.');
 	temp.temp_dec=((temp.temp_dec&bit7)>>7)*50+((temp.temp_dec&bit6)>>6)*25;  //como los bits mas significativos de esta posicion
 																	//representan los bits luego de la coma de acuerdo
-																	//a si están en 1 o 0 es el peso que representan en el formato de
-																	//coma fija .50 o .25 (presicion de .25ºC)
-																	//me quedo con cada bit y lo llevo al peso que corresponde
+																	//a si están en 1 o 0resicion de .25ºC)
+																	//me quedo con  es el peso que representan en el formato de
+																	//coma fija .50 o .25 (pcada bit y lo llevo al peso que corresponde
 	DatoAsciiLcd(temp.temp_dec/10);				//me quedo con las decenas  y presento
 	DatoAsciiLcd(temp.temp_dec%10);				//me quedo con las unidades  y presento
 	DatoLcd(GRADOS);
@@ -102,7 +102,7 @@ static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 	  if(linea==1)PosCaracHLcd(pos);
 	  else PosCaracLLcd(pos);
 	  calcula_dia_semana(reloj1);
-	  OutTextLcd((uint8_t *)dia[idioma][(reloj1->diasem)-1]);
+	  SacaTextoLcd((uint8_t *)dia[idioma][(reloj1->diasem)-1]);
 	  DatoLcd(' ');
 	  if(idioma==ENG){
 		  DatoBCD (reloj1->mes);
@@ -261,7 +261,7 @@ static void PresentarTempe(reloj* reloj1){
 	uint8_t SW;
 	Reloj_Read(reloj1);
 	PresentaTempLCD(POSTEMP);
-	SW=readKey();
+	SW=LeerSW();
 	if(SW==PRESIONADO){
 		PresentaFechaLCD(reloj1,POSCOMIENZAFECHA,LINEA_1);
 		PresentaHoraLCD(reloj1,POSCOMIENZAHORA,LINEA_2);
@@ -298,7 +298,7 @@ static void PresentarHoraYFecha(reloj* reloj1){
 	Reloj_Read(reloj1);
 	PresentaFechaLCD(reloj1,POSCOMIENZAFECHA,LINEA_1);
 	PresentaHoraLCD(reloj1,POSCOMIENZAHORA,LINEA_2);
-	SW=readKey();
+	SW=LeerSW();
 	if(SW==PRESIONADO){
 		PresentaFechaLCD(reloj1,POSCOMIENZAFECHA,LINEA_1);
 		PresentaHoraLCD(reloj1,POSCOMIENZAHORA,LINEA_2);
@@ -331,13 +331,13 @@ static void ConfiguraDiaEsp(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracHLcd(POSFECHA);
-	if(readKey()==PRESIONADO){
+	if(LeerSW()==PRESIONADO){
 		if(reloj1->dia==0x30 && reloj1->mes==FEBRERO)reloj1->mes=MARZO;
 		if(reloj1->dia==0x31 && (reloj1->mes==FEBRERO || reloj1->mes==ABRIL || reloj1->mes==JUNIO || reloj1->mes==SEPTIEMBRE || reloj1->mes==NOVIEMBRE))(reloj1->mes)++;
 		PresentaFechaLCD(reloj1,POSCOMIENZAFECHA,LINEA_1);
 		estado_reloj=CONFIGURAR_MES_ESP;
 	}
-	encoder=ReadEncoder();
+	encoder=LeerEncoder();
 	if(encoder==IZQ){
 		Decrementa(&(reloj1->dia),DIAMIN,DIAMAX);
 		PresentaFechaLCD(reloj1,POSCOMIENZAFECHA,LINEA_1);
@@ -365,13 +365,13 @@ static void ConfiguraMesEng(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracHLcd(POSMESENG);
-	if(readKey()==PRESIONADO){
+	if(LeerSW()==PRESIONADO){
 		if((reloj1->mes==FEBRERO || reloj1->mes==ABRIL || reloj1->mes==JUNIO || reloj1->mes==SEPTIEMBRE || reloj1->mes==NOVIEMBRE) && reloj1->dia==0x31)(reloj1->dia)--;
 		if(reloj1->mes==FEBRERO && reloj1->dia==0x30)(reloj1->dia)--;
 		PresentaFechaLCD(reloj1,POSCOMIENZAFECHA,LINEA_1);
 		estado_reloj=CONFIGURAR_DIA_ENG;
 	}
-	encoder=ReadEncoder();
+	encoder=LeerEncoder();
 	if(encoder==IZQ){
 		Decrementa(&(reloj1->mes),MESMIN,MESMAX);
 
@@ -398,11 +398,11 @@ static void ConfiguraDiaEng(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracHLcd(POSFECHAENG);
-	if(readKey()==PRESIONADO){
+	if(LeerSW()==PRESIONADO){
 		PresentaFechaLCD(reloj1,POSCOMIENZAFECHA,LINEA_1);
 		estado_reloj=CONFIGURAR_ANIO;
 	}
-	encoder=ReadEncoder();
+	encoder=LeerEncoder();
 	if(encoder==IZQ){
 
 		if(reloj1->mes==ENERO || reloj1->mes==MARZO || reloj1->mes==MAYO || reloj1->mes==JULIO || reloj1->mes==AGOSTO || reloj1->mes==OCTUBRE || reloj1->mes==DICIEMBRE)
@@ -439,7 +439,7 @@ static void ConfiguraMesEsp(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracHLcd(POSMES);
-	if(readKey()==PRESIONADO){
+	if(LeerSW()==PRESIONADO){
 		if(reloj1->mes==FEBRERO && reloj1->dia==0x29){
 			do Incrementa(&(reloj1->anio),ANIOMIN,ANIOMAX);
 			while((reloj1->anio)%4);
@@ -449,7 +449,7 @@ static void ConfiguraMesEsp(reloj* reloj1){
 		estado_reloj=CONFIGURAR_ANIO;
 
 	}
-	encoder=ReadEncoder();
+	encoder=LeerEncoder();
 	/*
 	 * Como el limite del mes depende del dia ingresado al decrementar
 	 * o incrementar tengo que tener en cuenta lo ingresado en el dia.
@@ -499,8 +499,8 @@ static void ConfiguraAnio(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracHLcd(POSANIO);
-	if(readKey()==PRESIONADO)estado_reloj=CONFIGURAR_HORA;
-	encoder=ReadEncoder();
+	if(LeerSW()==PRESIONADO)estado_reloj=CONFIGURAR_HORA;
+	encoder=LeerEncoder();
 	if(encoder==IZQ){
 		if(reloj1->mes==FEBRERO && reloj1->dia==0x29){
 			do{
@@ -538,8 +538,8 @@ static void ConfiguraHora(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracLLcd(POSHORA);
-	if(readKey()==PRESIONADO)estado_reloj=CONFIGURAR_MIN;
-	encoder=ReadEncoder();
+	if(LeerSW()==PRESIONADO)estado_reloj=CONFIGURAR_MIN;
+	encoder=LeerEncoder();
 	if(encoder==IZQ){
 		Decrementa(&(reloj1->hora),HORAMIN,HORAMAX);
 		PresentaHoraLCD(reloj1,POSCOMIENZAHORA,LINEA_2);
@@ -566,8 +566,8 @@ static void ConfiguraMin(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracLLcd(POSMIN);
-	if(readKey()==PRESIONADO)estado_reloj=CONFIGURAR_SEG;
-	encoder=ReadEncoder();
+	if(LeerSW()==PRESIONADO)estado_reloj=CONFIGURAR_SEG;
+	encoder=LeerEncoder();
 	if(encoder==IZQ){
 		Decrementa(&(reloj1->min),MINMIN,MINMAX);
 		PresentaHoraLCD(reloj1,POSCOMIENZAHORA,LINEA_2);
@@ -593,12 +593,12 @@ static void ConfiguraSeg(reloj* reloj1){
 	uint8_t encoder=0;
 
 	PosCaracLLcd(POSSEG);
-	if(readKey()==PRESIONADO){
+	if(LeerSW()==PRESIONADO){
 		CursorOffLcd();
 		Reloj_Write(*reloj1);
 		estado_reloj=PRESENTARHORA;
 	}
-	encoder=ReadEncoder();
+	encoder=LeerEncoder();
 	if(encoder==IZQ){
 		Decrementa(&(reloj1->seg),SEGMIN,SEGMAX);
 		PresentaHoraLCD(reloj1,POSCOMIENZAHORA,LINEA_2);
@@ -624,9 +624,9 @@ static void ConfiguraSeg(reloj* reloj1){
 static void Configuro_idioma_ini(void){
 	ClrLcd();
 	PosCaracHLcd(POSIDIOMA);
-	OutTextLcd((uint8_t *)"IDIOMA");
+	SacaTextoLcd((uint8_t *)"IDIOMA");
 	PosCaracLLcd(0);
-	OutTextLcd((uint8_t *)"  ESP      ENG  ");
+	SacaTextoLcd((uint8_t *)"  ESP      ENG  ");
 	PosCaracLLcd(POSIDIOMA_SELEC[idioma]);
 	DatoLcd('>');
 	estado_reloj=CONFIGURAR_IDIOMA;
@@ -647,12 +647,12 @@ static void Configuro_idioma_ini(void){
 
 static void Configuro_idioma(void){
 
-	if(readKey()==PRESIONADO){
+	if(LeerSW()==PRESIONADO){
 			CursorOffLcd();
 				ClrLcd();
 			estado_reloj=PRESENTARHORA;
 	}
-	uint8_t encoder=ReadEncoder();
+	uint8_t encoder=LeerEncoder();
 	if(encoder==IZQ){
 		Decrementa((uint8_t *)&idioma,0,CANT_IDIOMAS-1);
 

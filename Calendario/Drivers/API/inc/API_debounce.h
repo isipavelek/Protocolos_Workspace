@@ -28,7 +28,7 @@ typedef enum{
 	PRES_LARGO_TIEMPO,
 } estado_boton;
 
-estado_boton readKey(void);
+estado_boton LeerSW(void);
 
 
 #endif /* API_INC_API_DEBOUNCE_H_ */

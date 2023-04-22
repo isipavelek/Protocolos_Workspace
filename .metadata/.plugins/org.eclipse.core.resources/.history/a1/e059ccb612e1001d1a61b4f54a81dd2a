@@ -1,0 +1,115 @@
+#include "API_debounce.h"
+#include "API_delay.h"
+#include "API_enc_port.h"
+
+
+typedef enum{
+	BUTTON_UP,
+	BUTTON_FALLING,
+	BUTTON_DOWN,
+	BUTTON_RAISING,
+} debounceState_t;
+
+static debounceState_t estado;
+static delay_t tiempo1,tiempo2;
+static uint8_t tecla=false;
+
+/********************************************************************************
+ *Funcion:
+ * Acción:
+ * Recibe
+ * Devuelve
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
+
+void debounceFSM_init(){
+	delayInit(&tiempo1,DEMORA_BASE);
+	delayInit(&tiempo2,DEMORA_LARGA);
+
+	estado=BUTTON_UP;
+
+}
+
+/********************************************************************************
+ *Funcion: debounceFSM_update
+ * Acción: Función que actualiza la FSM antirebote
+ * Recibe: Nada
+ * Devuelve: Nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
+void debounceFSM_update(){
+	switch (estado){
+			case (BUTTON_UP): if(Leer_Enc_Sw()==true){
+								estado=BUTTON_FALLING;
+								delayRead(&tiempo1);
+							  }
+							  break;
+			case (BUTTON_FALLING): if(delayRead(&tiempo1)){
+									 if(Leer_Enc_Sw()==false)estado=BUTTON_UP;
+									 else {
+										 estado=BUTTON_DOWN;
+										 delayRead(&tiempo2);
+									 }
+									}
+									break;
+			case (BUTTON_DOWN):if(Leer_Enc_Sw()==false){
+									estado=BUTTON_RAISING;
+									delayRead(&tiempo1);
+
+
+								}
+			 	 	 	 	 	if(delayRead(&tiempo2))tecla=PRES_LARGO_TIEMPO;
+								break;
+			case (BUTTON_RAISING):
+								if(delayRead(&tiempo1)){
+									 if(Leer_Enc_Sw()==true)estado=BUTTON_DOWN;
+									 else {
+										 if(tecla!=PRES_LARGO_TIEMPO)tecla=PRESIONADO;
+										 else tecla=SUELTO;
+										 estado=BUTTON_UP;
+									 }
+
+								}
+								break;
+
+
+	}
+}
+
+/********************************************************************************
+ *Funcion: readKey
+ * Acción: Función para consultar si fue presionada o no la tecla del Encoder
+ * Recibe: Nada
+ * Devuelve: True si la tecla fue presionada false si no
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
+
+
+estado_boton readKey(void){
+
+	if(tecla==PRESIONADO){
+		tecla=SUELTO;
+		return PRESIONADO;
+	}
+	if(tecla==PRES_LARGO_TIEMPO){
+		return PRES_LARGO_TIEMPO;
+	}
+
+	return SUELTO;
+
+}

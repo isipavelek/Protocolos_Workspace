@@ -4,9 +4,9 @@ API_lcd.c:79:13:ControlLcd	1
 API_lcd.c:95:6:DatoLcd	1
 API_lcd.c:110:6:DatoAsciiLcd	1
 API_lcd.c:126:6:DatoBCD	1
-API_lcd.c:145:6:Send8bitsLcd	1
-API_lcd.c:162:13:Send4bitsLcd	1
-API_lcd.c:183:6:OutTextLcd	2
+API_lcd.c:145:6:Envia8bitsLcd	1
+API_lcd.c:162:13:Envia4bitsLcd	1
+API_lcd.c:183:6:SacaTextoLcd	2
 API_lcd.c:199:6:ClrLcd	1
 API_lcd.c:218:6:PosCaracHLcd	1
 API_lcd.c:234:6:PosCaracLLcd	1

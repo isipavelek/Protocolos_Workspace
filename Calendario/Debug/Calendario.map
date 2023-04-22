@@ -11908,8 +11908,8 @@ LOAD c:/st/stm32cubeide_1.11.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .text.debounceFSM_update
                 0x00000000080006c4       0xfc ./Drivers/API/src/API_debounce.o
                 0x00000000080006c4                debounceFSM_update
- .text.readKey  0x00000000080007c0       0x34 ./Drivers/API/src/API_debounce.o
-                0x00000000080007c0                readKey
+ .text.LeerSW   0x00000000080007c0       0x34 ./Drivers/API/src/API_debounce.o
+                0x00000000080007c0                LeerSW
  .text.delayInit
                 0x00000000080007f4       0x22 ./Drivers/API/src/API_delay.o
                 0x00000000080007f4                delayInit
@@ -11932,9 +11932,9 @@ LOAD c:/st/stm32cubeide_1.11.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .text.EncFSM_Update
                 0x0000000008000970      0x134 ./Drivers/API/src/API_encoder.o
                 0x0000000008000970                EncFSM_Update
- .text.ReadEncoder
+ .text.LeerEncoder
                 0x0000000008000aa4       0x28 ./Drivers/API/src/API_encoder.o
-                0x0000000008000aa4                ReadEncoder
+                0x0000000008000aa4                LeerEncoder
  .text.Init_Lcd
                 0x0000000008000acc       0x78 ./Drivers/API/src/API_lcd.o
                 0x0000000008000acc                Init_Lcd
@@ -11949,13 +11949,13 @@ LOAD c:/st/stm32cubeide_1.11.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000008000b92                DatoAsciiLcd
  .text.DatoBCD  0x0000000008000bb2       0x2c ./Drivers/API/src/API_lcd.o
                 0x0000000008000bb2                DatoBCD
- .text.Send8bitsLcd
+ .text.Envia8bitsLcd
                 0x0000000008000bde       0x3a ./Drivers/API/src/API_lcd.o
- .text.Send4bitsLcd
+ .text.Envia4bitsLcd
                 0x0000000008000c18       0x48 ./Drivers/API/src/API_lcd.o
- .text.OutTextLcd
+ .text.SacaTextoLcd
                 0x0000000008000c60       0x2a ./Drivers/API/src/API_lcd.o
-                0x0000000008000c60                OutTextLcd
+                0x0000000008000c60                SacaTextoLcd
  .text.ClrLcd   0x0000000008000c8a       0x14 ./Drivers/API/src/API_lcd.o
                 0x0000000008000c8a                ClrLcd
  .text.PosCaracHLcd
@@ -12776,50 +12776,50 @@ LOAD c:/st/stm32cubeide_1.11.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x0000000000012192      0xbd5 ./Src/main.o
  .debug_line    0x0000000000012d67       0x7e ./Startup/startup_stm32f429xx.o
 
-.debug_str      0x0000000000000000    0xe2914
+.debug_str      0x0000000000000000    0xe2917
  .debug_str     0x0000000000000000    0xdf533 ./Drivers/API/src/API_I2C.o
                                       0xdf820 (size before relaxing)
  .debug_str     0x00000000000df533      0x1d0 ./Drivers/API/src/API_Init.o
                                       0xdf44f (size before relaxing)
- .debug_str     0x00000000000df703      0x1fe ./Drivers/API/src/API_debounce.o
-                                      0xdf316 (size before relaxing)
- .debug_str     0x00000000000df901       0x3c ./Drivers/API/src/API_delay.o
+ .debug_str     0x00000000000df703      0x1fd ./Drivers/API/src/API_debounce.o
+                                      0xdf315 (size before relaxing)
+ .debug_str     0x00000000000df900       0x3c ./Drivers/API/src/API_delay.o
                                       0xdf19d (size before relaxing)
- .debug_str     0x00000000000df93d       0x78 ./Drivers/API/src/API_enc_port.o
+ .debug_str     0x00000000000df93c       0x78 ./Drivers/API/src/API_enc_port.o
                                       0xdf3c5 (size before relaxing)
- .debug_str     0x00000000000df9b5       0xae ./Drivers/API/src/API_encoder.o
+ .debug_str     0x00000000000df9b4       0xae ./Drivers/API/src/API_encoder.o
                                       0xdf2d9 (size before relaxing)
- .debug_str     0x00000000000dfa63      0x499 ./Drivers/API/src/API_lcd.o
-                                      0xdf5e9 (size before relaxing)
- .debug_str     0x00000000000dfefc       0x3a ./Drivers/API/src/API_lcd_port.o
+ .debug_str     0x00000000000dfa62      0x49d ./Drivers/API/src/API_lcd.o
+                                      0xdf5ed (size before relaxing)
+ .debug_str     0x00000000000dfeff       0x3a ./Drivers/API/src/API_lcd_port.o
                                       0xdf86d (size before relaxing)
- .debug_str     0x00000000000dff36      0x3cc ./Drivers/API/src/API_reloj.o
-                                      0xdf9b5 (size before relaxing)
- .debug_str     0x00000000000e0302       0x5d ./Drivers/API/src/API_rtc.o
+ .debug_str     0x00000000000dff39      0x3cc ./Drivers/API/src/API_reloj.o
+                                      0xdf9b6 (size before relaxing)
+ .debug_str     0x00000000000e0305       0x5d ./Drivers/API/src/API_rtc.o
                                       0xdf92a (size before relaxing)
- .debug_str     0x00000000000e035f      0x89e ./Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.o
+ .debug_str     0x00000000000e0362      0x89e ./Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.o
                                       0xdbe68 (size before relaxing)
- .debug_str     0x00000000000e0bfd       0xf5 ./Drivers/CMSIS/system_stm32f4xx.o
+ .debug_str     0x00000000000e0c00       0xf5 ./Drivers/CMSIS/system_stm32f4xx.o
                                       0xdad4f (size before relaxing)
- .debug_str     0x00000000000e0cf2      0x2ae ./Drivers/Core/Src/stm32f4xx_it.o
+ .debug_str     0x00000000000e0cf5      0x2ae ./Drivers/Core/Src/stm32f4xx_it.o
                                       0xdf39a (size before relaxing)
- .debug_str     0x00000000000e0fa0      0x651 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_str     0x00000000000e0fa3      0x651 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
                                       0xdb958 (size before relaxing)
- .debug_str     0x00000000000e15f1      0x32d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_str     0x00000000000e15f4      0x32d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
                                       0xdb63d (size before relaxing)
- .debug_str     0x00000000000e191e       0xf8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_str     0x00000000000e1921       0xf8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
                                       0xdaeb0 (size before relaxing)
- .debug_str     0x00000000000e1a16      0xafc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_str     0x00000000000e1a19      0xafc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
                                       0xdbcf2 (size before relaxing)
- .debug_str     0x00000000000e2512       0x63 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.o
+ .debug_str     0x00000000000e2515       0x63 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.o
                                       0xdaba2 (size before relaxing)
- .debug_str     0x00000000000e2575      0x135 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
+ .debug_str     0x00000000000e2578      0x135 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
                                       0xdaf0d (size before relaxing)
- .debug_str     0x00000000000e26aa      0x213 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_str     0x00000000000e26ad      0x213 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
                                       0xdb169 (size before relaxing)
- .debug_str     0x00000000000e28bd       0x28 ./Src/main.o
+ .debug_str     0x00000000000e28c0       0x28 ./Src/main.o
                                       0xdf8c1 (size before relaxing)
- .debug_str     0x00000000000e28e5       0x2f ./Startup/startup_stm32f429xx.o
+ .debug_str     0x00000000000e28e8       0x2f ./Startup/startup_stm32f429xx.o
                                          0x75 (size before relaxing)
 
 .comment        0x0000000000000000       0x50

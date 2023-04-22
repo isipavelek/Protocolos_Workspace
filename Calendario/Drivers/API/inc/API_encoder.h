@@ -37,6 +37,6 @@ typedef enum{
 
 _Bool Init_Enc(void);
 void EncFSM_Update();
-giro_encoder_t ReadEncoder();
+giro_encoder_t LeerEncoder();
 
 #endif /* API_INC_API_ENCODER_H_ */

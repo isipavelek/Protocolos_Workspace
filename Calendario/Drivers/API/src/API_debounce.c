@@ -100,7 +100,7 @@ void debounceFSM_update(){
 
 
 
-estado_boton readKey(void){
+estado_boton LeerSW(void){
 
 	if(tecla==PRESIONADO){
 		tecla=SUELTO;

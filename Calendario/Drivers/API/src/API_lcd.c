@@ -13,8 +13,8 @@
 
 static void DelayLcd(uint32_t demora);
 static void ControlLcd(uint8_t valor);
-static void Send8bitsLcd (uint8_t valor,_Bool tipo);
-static void Send4bitsLcd (uint8_t valor,_Bool tipo);
+static void Envia8bitsLcd (uint8_t valor,_Bool tipo);
+static void Envia4bitsLcd (uint8_t valor,_Bool tipo);
 
 static const uint8_t LCD_INIT_CMD[]={
 		_4BIT_MODE,DISPLAY_CONTROL,RETURN_HOME,ENTRY_MODE+AUTOINCREMENT,DISPLAY_CONTROL+DISPLAY_ON,CLR_LCD
@@ -36,12 +36,12 @@ _Bool Init_Lcd(void){
 
    if(I2C_HW_init()==LCD_ERROR)return LCD_ERROR;
    DelayLcd(DELAY20ms);
-   Send4bitsLcd(COMANDO_INI1,CONTROL);
+   Envia4bitsLcd(COMANDO_INI1,CONTROL);
    DelayLcd(DELAY10ms);
-   Send4bitsLcd(COMANDO_INI1,CONTROL);
+   Envia4bitsLcd(COMANDO_INI1,CONTROL);
    DelayLcd(DELAY1ms);
-   Send4bitsLcd(COMANDO_INI1,CONTROL);
-   Send4bitsLcd(COMANDO_INI2,CONTROL);
+   Envia4bitsLcd(COMANDO_INI1,CONTROL);
+   Envia4bitsLcd(COMANDO_INI2,CONTROL);
    for(uint8_t i=0;i<sizeof(LCD_INIT_CMD);i++)ControlLcd(LCD_INIT_CMD[i]);
    DelayLcd(DELAY2ms);
    return LCD_OK;
@@ -77,7 +77,7 @@ static void DelayLcd(uint32_t demora){
  **********************************************************************************/
 
 static void ControlLcd(uint8_t valor){
-	Send8bitsLcd(valor,CONTROL);
+	Envia8bitsLcd(valor,CONTROL);
 }
 
 /********************************************************************************
@@ -93,7 +93,7 @@ static void ControlLcd(uint8_t valor){
  **********************************************************************************/
 
 void DatoLcd (uint8_t dato){
-	Send8bitsLcd(dato,DATOS);
+	Envia8bitsLcd(dato,DATOS);
 }
 /********************************************************************************
  *Funcion:DatoAsciiLcd
@@ -108,7 +108,7 @@ void DatoLcd (uint8_t dato){
  **********************************************************************************/
 
 void DatoAsciiLcd (uint8_t dato){
-	Send8bitsLcd(dato+ '0',DATOS);
+	Envia8bitsLcd(dato+ '0',DATOS);
 }
 
 /********************************************************************************
@@ -142,9 +142,9 @@ void DatoBCD (uint8_t dato){
   *
  **********************************************************************************/
 
-void Send8bitsLcd (uint8_t valor,_Bool tipo){
-	Send4bitsLcd(valor&HIGH_NIBBLE,tipo); 		//me con quedo y envio los 4 bits más significaticos.
-	Send4bitsLcd(valor<<LOW_NIBBLE,tipo);   	//me quedo y envio los 4 bits menos significativos.
+void Envia8bitsLcd (uint8_t valor,_Bool tipo){
+	Envia4bitsLcd(valor&HIGH_NIBBLE,tipo); 		//me con quedo y envio los 4 bits más significaticos.
+	Envia4bitsLcd(valor<<LOW_NIBBLE,tipo);   	//me quedo y envio los 4 bits menos significativos.
 }
 
 /********************************************************************************
@@ -159,7 +159,7 @@ void Send8bitsLcd (uint8_t valor,_Bool tipo){
   *
  **********************************************************************************/
 
-static void Send4bitsLcd (uint8_t valor,_Bool tipo){
+static void Envia4bitsLcd (uint8_t valor,_Bool tipo){
 
 	LCD_Write_Byte(valor+tipo+EN+BL);
 	DelayLcd(DelayTime);
@@ -180,7 +180,7 @@ static void Send4bitsLcd (uint8_t valor,_Bool tipo){
  **********************************************************************************/
 
 
-void OutTextLcd (uint8_t *texto){
+void SacaTextoLcd (uint8_t *texto){
 	while(*texto)DatoLcd(*texto++);
 }
 

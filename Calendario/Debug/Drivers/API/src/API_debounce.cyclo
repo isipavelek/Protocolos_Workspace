@@ -1,3 +1,3 @@
 API_debounce.c:30:6:debounceFSM_init	1
 API_debounce.c:50:6:debounceFSM_update	13
-API_debounce.c:103:14:readKey	3
+API_debounce.c:103:14:LeerSW	3

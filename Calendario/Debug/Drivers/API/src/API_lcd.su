@@ -4,9 +4,9 @@
 ../Drivers/API/src/API_lcd.c:95:6:DatoLcd	16	static
 ../Drivers/API/src/API_lcd.c:110:6:DatoAsciiLcd	16	static
 ../Drivers/API/src/API_lcd.c:126:6:DatoBCD	16	static
-../Drivers/API/src/API_lcd.c:145:6:Send8bitsLcd	16	static
-../Drivers/API/src/API_lcd.c:162:13:Send4bitsLcd	16	static
-../Drivers/API/src/API_lcd.c:183:6:OutTextLcd	16	static
+../Drivers/API/src/API_lcd.c:145:6:Envia8bitsLcd	16	static
+../Drivers/API/src/API_lcd.c:162:13:Envia4bitsLcd	16	static
+../Drivers/API/src/API_lcd.c:183:6:SacaTextoLcd	16	static
 ../Drivers/API/src/API_lcd.c:199:6:ClrLcd	8	static
 ../Drivers/API/src/API_lcd.c:218:6:PosCaracHLcd	16	static
 ../Drivers/API/src/API_lcd.c:234:6:PosCaracLLcd	16	static

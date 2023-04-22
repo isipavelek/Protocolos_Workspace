@@ -41,11 +41,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   00012de5  00000000  00000000  00054ee1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e2914  00000000  00000000  00067cc6  2**0
+ 19 .debug_str    000e2917  00000000  00000000  00067cc6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  0014a5da  2**0
+ 20 .comment      00000050  00000000  00000000  0014a5dd  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  0000260c  00000000  00000000  0014a62c  2**2
+ 21 .debug_frame  0000260c  00000000  00000000  0014a630  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -827,37 +827,37 @@ void debounceFSM_update(){
  80007b8:	20000098 	.word	0x20000098
  80007bc:	200000a4 	.word	0x200000a4
 
-080007c0 <readKey>:
+080007c0 <LeerSW>:
   *
  **********************************************************************************/
 
 
 
-estado_boton readKey(void){
+estado_boton LeerSW(void){
  80007c0:	b480      	push	{r7}
  80007c2:	af00      	add	r7, sp, #0
 
 	if(tecla==PRESIONADO){
- 80007c4:	4b0a      	ldr	r3, [pc, #40]	; (80007f0 <readKey+0x30>)
+ 80007c4:	4b0a      	ldr	r3, [pc, #40]	; (80007f0 <LeerSW+0x30>)
  80007c6:	781b      	ldrb	r3, [r3, #0]
  80007c8:	2b01      	cmp	r3, #1
- 80007ca:	d104      	bne.n	80007d6 <readKey+0x16>
+ 80007ca:	d104      	bne.n	80007d6 <LeerSW+0x16>
 		tecla=SUELTO;
- 80007cc:	4b08      	ldr	r3, [pc, #32]	; (80007f0 <readKey+0x30>)
+ 80007cc:	4b08      	ldr	r3, [pc, #32]	; (80007f0 <LeerSW+0x30>)
  80007ce:	2200      	movs	r2, #0
  80007d0:	701a      	strb	r2, [r3, #0]
 		return PRESIONADO;
  80007d2:	2301      	movs	r3, #1
- 80007d4:	e006      	b.n	80007e4 <readKey+0x24>
+ 80007d4:	e006      	b.n	80007e4 <LeerSW+0x24>
 	}
 	if(tecla==PRES_LARGO_TIEMPO){
- 80007d6:	4b06      	ldr	r3, [pc, #24]	; (80007f0 <readKey+0x30>)
+ 80007d6:	4b06      	ldr	r3, [pc, #24]	; (80007f0 <LeerSW+0x30>)
  80007d8:	781b      	ldrb	r3, [r3, #0]
  80007da:	2b02      	cmp	r3, #2
- 80007dc:	d101      	bne.n	80007e2 <readKey+0x22>
+ 80007dc:	d101      	bne.n	80007e2 <LeerSW+0x22>
 		return PRES_LARGO_TIEMPO;
  80007de:	2302      	movs	r3, #2
- 80007e0:	e000      	b.n	80007e4 <readKey+0x24>
+ 80007e0:	e000      	b.n	80007e4 <LeerSW+0x24>
 	}
 
 	return SUELTO;
@@ -1324,13 +1324,13 @@ void EncFSM_Update(){
  8000a9c:	200000a5 	.word	0x200000a5
  8000aa0:	200000a6 	.word	0x200000a6
 
-08000aa4 <ReadEncoder>:
+08000aa4 <LeerEncoder>:
  * Version: 1.0
  * Fecha 13/4/23
   *
  **********************************************************************************/
 
-giro_encoder_t ReadEncoder(){
+giro_encoder_t LeerEncoder(){
  8000aa4:	b480      	push	{r7}
  8000aa6:	b083      	sub	sp, #12
  8000aa8:	af00      	add	r7, sp, #0
@@ -1338,11 +1338,11 @@ giro_encoder_t ReadEncoder(){
  8000aaa:	2300      	movs	r3, #0
  8000aac:	71fb      	strb	r3, [r7, #7]
 	aux=giro;
- 8000aae:	4b06      	ldr	r3, [pc, #24]	; (8000ac8 <ReadEncoder+0x24>)
+ 8000aae:	4b06      	ldr	r3, [pc, #24]	; (8000ac8 <LeerEncoder+0x24>)
  8000ab0:	781b      	ldrb	r3, [r3, #0]
  8000ab2:	71fb      	strb	r3, [r7, #7]
 	giro=NOGIRA;
- 8000ab4:	4b04      	ldr	r3, [pc, #16]	; (8000ac8 <ReadEncoder+0x24>)
+ 8000ab4:	4b04      	ldr	r3, [pc, #16]	; (8000ac8 <LeerEncoder+0x24>)
  8000ab6:	2200      	movs	r2, #0
  8000ab8:	701a      	strb	r2, [r3, #0]
 	return aux;
@@ -1377,28 +1377,28 @@ _Bool Init_Lcd(void){
    DelayLcd(DELAY20ms);
  8000ae0:	2014      	movs	r0, #20
  8000ae2:	f000 f82f 	bl	8000b44 <DelayLcd>
-   Send4bitsLcd(COMANDO_INI1,CONTROL);
+   Envia4bitsLcd(COMANDO_INI1,CONTROL);
  8000ae6:	2100      	movs	r1, #0
  8000ae8:	2030      	movs	r0, #48	; 0x30
- 8000aea:	f000 f895 	bl	8000c18 <Send4bitsLcd>
+ 8000aea:	f000 f895 	bl	8000c18 <Envia4bitsLcd>
    DelayLcd(DELAY10ms);
  8000aee:	200a      	movs	r0, #10
  8000af0:	f000 f828 	bl	8000b44 <DelayLcd>
-   Send4bitsLcd(COMANDO_INI1,CONTROL);
+   Envia4bitsLcd(COMANDO_INI1,CONTROL);
  8000af4:	2100      	movs	r1, #0
  8000af6:	2030      	movs	r0, #48	; 0x30
- 8000af8:	f000 f88e 	bl	8000c18 <Send4bitsLcd>
+ 8000af8:	f000 f88e 	bl	8000c18 <Envia4bitsLcd>
    DelayLcd(DELAY1ms);
  8000afc:	2001      	movs	r0, #1
  8000afe:	f000 f821 	bl	8000b44 <DelayLcd>
-   Send4bitsLcd(COMANDO_INI1,CONTROL);
+   Envia4bitsLcd(COMANDO_INI1,CONTROL);
  8000b02:	2100      	movs	r1, #0
  8000b04:	2030      	movs	r0, #48	; 0x30
- 8000b06:	f000 f887 	bl	8000c18 <Send4bitsLcd>
-   Send4bitsLcd(COMANDO_INI2,CONTROL);
+ 8000b06:	f000 f887 	bl	8000c18 <Envia4bitsLcd>
+   Envia4bitsLcd(COMANDO_INI2,CONTROL);
  8000b0a:	2100      	movs	r1, #0
  8000b0c:	2020      	movs	r0, #32
- 8000b0e:	f000 f883 	bl	8000c18 <Send4bitsLcd>
+ 8000b0e:	f000 f883 	bl	8000c18 <Envia4bitsLcd>
    for(uint8_t i=0;i<sizeof(LCD_INIT_CMD);i++)ControlLcd(LCD_INIT_CMD[i]);
  8000b12:	2300      	movs	r3, #0
  8000b14:	71fb      	strb	r3, [r7, #7]
@@ -1459,11 +1459,11 @@ static void ControlLcd(uint8_t valor){
  8000b5e:	af00      	add	r7, sp, #0
  8000b60:	4603      	mov	r3, r0
  8000b62:	71fb      	strb	r3, [r7, #7]
-	Send8bitsLcd(valor,CONTROL);
+	Envia8bitsLcd(valor,CONTROL);
  8000b64:	79fb      	ldrb	r3, [r7, #7]
  8000b66:	2100      	movs	r1, #0
  8000b68:	4618      	mov	r0, r3
- 8000b6a:	f000 f838 	bl	8000bde <Send8bitsLcd>
+ 8000b6a:	f000 f838 	bl	8000bde <Envia8bitsLcd>
 }
  8000b6e:	bf00      	nop
  8000b70:	3708      	adds	r7, #8
@@ -1482,11 +1482,11 @@ void DatoLcd (uint8_t dato){
  8000b7a:	af00      	add	r7, sp, #0
  8000b7c:	4603      	mov	r3, r0
  8000b7e:	71fb      	strb	r3, [r7, #7]
-	Send8bitsLcd(dato,DATOS);
+	Envia8bitsLcd(dato,DATOS);
  8000b80:	79fb      	ldrb	r3, [r7, #7]
  8000b82:	2101      	movs	r1, #1
  8000b84:	4618      	mov	r0, r3
- 8000b86:	f000 f82a 	bl	8000bde <Send8bitsLcd>
+ 8000b86:	f000 f82a 	bl	8000bde <Envia8bitsLcd>
 }
  8000b8a:	bf00      	nop
  8000b8c:	3708      	adds	r7, #8
@@ -1505,13 +1505,13 @@ void DatoAsciiLcd (uint8_t dato){
  8000b96:	af00      	add	r7, sp, #0
  8000b98:	4603      	mov	r3, r0
  8000b9a:	71fb      	strb	r3, [r7, #7]
-	Send8bitsLcd(dato+ '0',DATOS);
+	Envia8bitsLcd(dato+ '0',DATOS);
  8000b9c:	79fb      	ldrb	r3, [r7, #7]
  8000b9e:	3330      	adds	r3, #48	; 0x30
  8000ba0:	b2db      	uxtb	r3, r3
  8000ba2:	2101      	movs	r1, #1
  8000ba4:	4618      	mov	r0, r3
- 8000ba6:	f000 f81a 	bl	8000bde <Send8bitsLcd>
+ 8000ba6:	f000 f81a 	bl	8000bde <Envia8bitsLcd>
 }
  8000baa:	bf00      	nop
  8000bac:	3708      	adds	r7, #8
@@ -1550,13 +1550,13 @@ void DatoBCD (uint8_t dato){
  8000bda:	46bd      	mov	sp, r7
  8000bdc:	bd80      	pop	{r7, pc}
 
-08000bde <Send8bitsLcd>:
+08000bde <Envia8bitsLcd>:
  * Version: 1.0
  * Fecha 13/4/23
   *
  **********************************************************************************/
 
-void Send8bitsLcd (uint8_t valor,_Bool tipo){
+void Envia8bitsLcd (uint8_t valor,_Bool tipo){
  8000bde:	b580      	push	{r7, lr}
  8000be0:	b082      	sub	sp, #8
  8000be2:	af00      	add	r7, sp, #0
@@ -1565,35 +1565,35 @@ void Send8bitsLcd (uint8_t valor,_Bool tipo){
  8000be8:	71fb      	strb	r3, [r7, #7]
  8000bea:	4613      	mov	r3, r2
  8000bec:	71bb      	strb	r3, [r7, #6]
-	Send4bitsLcd(valor&HIGH_NIBBLE,tipo); 		//me con quedo y envio los 4 bits más significaticos.
+	Envia4bitsLcd(valor&HIGH_NIBBLE,tipo); 		//me con quedo y envio los 4 bits más significaticos.
  8000bee:	79fb      	ldrb	r3, [r7, #7]
  8000bf0:	f023 030f 	bic.w	r3, r3, #15
  8000bf4:	b2db      	uxtb	r3, r3
  8000bf6:	79ba      	ldrb	r2, [r7, #6]
  8000bf8:	4611      	mov	r1, r2
  8000bfa:	4618      	mov	r0, r3
- 8000bfc:	f000 f80c 	bl	8000c18 <Send4bitsLcd>
-	Send4bitsLcd(valor<<LOW_NIBBLE,tipo);   	//me quedo y envio los 4 bits menos significativos.
+ 8000bfc:	f000 f80c 	bl	8000c18 <Envia4bitsLcd>
+	Envia4bitsLcd(valor<<LOW_NIBBLE,tipo);   	//me quedo y envio los 4 bits menos significativos.
  8000c00:	79fb      	ldrb	r3, [r7, #7]
  8000c02:	011b      	lsls	r3, r3, #4
  8000c04:	b2db      	uxtb	r3, r3
  8000c06:	79ba      	ldrb	r2, [r7, #6]
  8000c08:	4611      	mov	r1, r2
  8000c0a:	4618      	mov	r0, r3
- 8000c0c:	f000 f804 	bl	8000c18 <Send4bitsLcd>
+ 8000c0c:	f000 f804 	bl	8000c18 <Envia4bitsLcd>
 }
  8000c10:	bf00      	nop
  8000c12:	3708      	adds	r7, #8
  8000c14:	46bd      	mov	sp, r7
  8000c16:	bd80      	pop	{r7, pc}
 
-08000c18 <Send4bitsLcd>:
+08000c18 <Envia4bitsLcd>:
  * Version: 1.0
  * Fecha 13/4/23
   *
  **********************************************************************************/
 
-static void Send4bitsLcd (uint8_t valor,_Bool tipo){
+static void Envia4bitsLcd (uint8_t valor,_Bool tipo){
  8000c18:	b580      	push	{r7, lr}
  8000c1a:	b082      	sub	sp, #8
  8000c1c:	af00      	add	r7, sp, #0
@@ -1633,19 +1633,19 @@ static void Send4bitsLcd (uint8_t valor,_Bool tipo){
  8000c5c:	46bd      	mov	sp, r7
  8000c5e:	bd80      	pop	{r7, pc}
 
-08000c60 <OutTextLcd>:
+08000c60 <SacaTextoLcd>:
  * Fecha 13/4/23
   *
  **********************************************************************************/
 
 
-void OutTextLcd (uint8_t *texto){
+void SacaTextoLcd (uint8_t *texto){
  8000c60:	b580      	push	{r7, lr}
  8000c62:	b082      	sub	sp, #8
  8000c64:	af00      	add	r7, sp, #0
  8000c66:	6078      	str	r0, [r7, #4]
 	while(*texto)DatoLcd(*texto++);
- 8000c68:	e006      	b.n	8000c78 <OutTextLcd+0x18>
+ 8000c68:	e006      	b.n	8000c78 <SacaTextoLcd+0x18>
  8000c6a:	687b      	ldr	r3, [r7, #4]
  8000c6c:	1c5a      	adds	r2, r3, #1
  8000c6e:	607a      	str	r2, [r7, #4]
@@ -1655,7 +1655,7 @@ void OutTextLcd (uint8_t *texto){
  8000c78:	687b      	ldr	r3, [r7, #4]
  8000c7a:	781b      	ldrb	r3, [r3, #0]
  8000c7c:	2b00      	cmp	r3, #0
- 8000c7e:	d1f4      	bne.n	8000c6a <OutTextLcd+0xa>
+ 8000c7e:	d1f4      	bne.n	8000c6a <SacaTextoLcd+0xa>
 }
  8000c80:	bf00      	nop
  8000c82:	bf00      	nop
@@ -1817,7 +1817,7 @@ static void PresentaTempLCD(uint8_t pos){
 	PosCaracHLcd(POSTEMPTIT);
  8000d42:	2002      	movs	r0, #2
  8000d44:	f7ff ffab 	bl	8000c9e <PosCaracHLcd>
-	if(idioma==ESP)OutTextLcd((uint8_t*)"Temperatura:");
+	if(idioma==ESP)SacaTextoLcd((uint8_t*)"Temperatura:");
  8000d48:	4b35      	ldr	r3, [pc, #212]	; (8000e20 <PresentaTempLCD+0xf0>)
  8000d4a:	781b      	ldrb	r3, [r3, #0]
  8000d4c:	f083 0301 	eor.w	r3, r3, #1
@@ -1825,11 +1825,11 @@ static void PresentaTempLCD(uint8_t pos){
  8000d52:	2b00      	cmp	r3, #0
  8000d54:	d003      	beq.n	8000d5e <PresentaTempLCD+0x2e>
  8000d56:	4833      	ldr	r0, [pc, #204]	; (8000e24 <PresentaTempLCD+0xf4>)
- 8000d58:	f7ff ff82 	bl	8000c60 <OutTextLcd>
+ 8000d58:	f7ff ff82 	bl	8000c60 <SacaTextoLcd>
  8000d5c:	e002      	b.n	8000d64 <PresentaTempLCD+0x34>
-	else OutTextLcd((uint8_t*)"Temperature:");
+	else SacaTextoLcd((uint8_t*)"Temperature:");
  8000d5e:	4832      	ldr	r0, [pc, #200]	; (8000e28 <PresentaTempLCD+0xf8>)
- 8000d60:	f7ff ff7e 	bl	8000c60 <OutTextLcd>
+ 8000d60:	f7ff ff7e 	bl	8000c60 <SacaTextoLcd>
 	PosCaracLLcd(POSTEMP);
  8000d64:	2005      	movs	r0, #5
  8000d66:	f7ff ffaa 	bl	8000cbe <PosCaracLLcd>
@@ -1889,9 +1889,9 @@ static void PresentaTempLCD(uint8_t pos){
  8000dd8:	b2db      	uxtb	r3, r3
  8000dda:	737b      	strb	r3, [r7, #13]
 																	//representan los bits luego de la coma de acuerdo
-																	//a si están en 1 o 0 es el peso que representan en el formato de
-																	//coma fija .50 o .25 (presicion de .25ºC)
-																	//me quedo con cada bit y lo llevo al peso que corresponde
+																	//a si están en 1 o 0resicion de .25ºC)
+																	//me quedo con  es el peso que representan en el formato de
+																	//coma fija .50 o .25 (pcada bit y lo llevo al peso que corresponde
 	DatoAsciiLcd(temp.temp_dec/10);				//me quedo con las decenas  y presento
  8000ddc:	7b7b      	ldrb	r3, [r7, #13]
  8000dde:	4a13      	ldr	r2, [pc, #76]	; (8000e2c <PresentaTempLCD+0xfc>)
@@ -1962,7 +1962,7 @@ static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 	  calcula_dia_semana(reloj1);
  8000e58:	6878      	ldr	r0, [r7, #4]
  8000e5a:	f000 fdff 	bl	8001a5c <calcula_dia_semana>
-	  OutTextLcd((uint8_t *)dia[idioma][(reloj1->diasem)-1]);
+	  SacaTextoLcd((uint8_t *)dia[idioma][(reloj1->diasem)-1]);
  8000e5e:	4b1f      	ldr	r3, [pc, #124]	; (8000edc <PresentaFechaLCD+0xac>)
  8000e60:	781b      	ldrb	r3, [r3, #0]
  8000e62:	4619      	mov	r1, r3
@@ -1977,7 +1977,7 @@ static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
  8000e74:	4a1a      	ldr	r2, [pc, #104]	; (8000ee0 <PresentaFechaLCD+0xb0>)
  8000e76:	4413      	add	r3, r2
  8000e78:	4618      	mov	r0, r3
- 8000e7a:	f7ff fef1 	bl	8000c60 <OutTextLcd>
+ 8000e7a:	f7ff fef1 	bl	8000c60 <SacaTextoLcd>
 	  DatoLcd(' ');
  8000e7e:	2020      	movs	r0, #32
  8000e80:	f7ff fe79 	bl	8000b76 <DatoLcd>
@@ -2291,8 +2291,8 @@ static void PresentarTempe(reloj* reloj1){
 	PresentaTempLCD(POSTEMP);
  8001052:	2005      	movs	r0, #5
  8001054:	f7ff fe6c 	bl	8000d30 <PresentaTempLCD>
-	SW=readKey();
- 8001058:	f7ff fbb2 	bl	80007c0 <readKey>
+	SW=LeerSW();
+ 8001058:	f7ff fbb2 	bl	80007c0 <LeerSW>
  800105c:	4603      	mov	r3, r0
  800105e:	73fb      	strb	r3, [r7, #15]
 	if(SW==PRESIONADO){
@@ -2386,8 +2386,8 @@ static void PresentarHoraYFecha(reloj* reloj1){
  80010ea:	2104      	movs	r1, #4
  80010ec:	6878      	ldr	r0, [r7, #4]
  80010ee:	f7ff fef9 	bl	8000ee4 <PresentaHoraLCD>
-	SW=readKey();
- 80010f2:	f7ff fb65 	bl	80007c0 <readKey>
+	SW=LeerSW();
+ 80010f2:	f7ff fb65 	bl	80007c0 <LeerSW>
  80010f6:	4603      	mov	r3, r0
  80010f8:	73fb      	strb	r3, [r7, #15]
 	if(SW==PRESIONADO){
@@ -2471,8 +2471,8 @@ static void ConfiguraDiaEsp(reloj* reloj1){
 	PosCaracHLcd(POSFECHA);
  8001174:	2007      	movs	r0, #7
  8001176:	f7ff fd92 	bl	8000c9e <PosCaracHLcd>
-	if(readKey()==PRESIONADO){
- 800117a:	f7ff fb21 	bl	80007c0 <readKey>
+	if(LeerSW()==PRESIONADO){
+ 800117a:	f7ff fb21 	bl	80007c0 <LeerSW>
  800117e:	4603      	mov	r3, r0
  8001180:	2b01      	cmp	r3, #1
  8001182:	d130      	bne.n	80011e6 <ConfiguraDiaEsp+0x7e>
@@ -2529,8 +2529,8 @@ static void ConfiguraDiaEsp(reloj* reloj1){
  80011e2:	2204      	movs	r2, #4
  80011e4:	701a      	strb	r2, [r3, #0]
 	}
-	encoder=ReadEncoder();
- 80011e6:	f7ff fc5d 	bl	8000aa4 <ReadEncoder>
+	encoder=LeerEncoder();
+ 80011e6:	f7ff fc5d 	bl	8000aa4 <LeerEncoder>
  80011ea:	4603      	mov	r3, r0
  80011ec:	73fb      	strb	r3, [r7, #15]
 	if(encoder==IZQ){
@@ -2594,8 +2594,8 @@ static void ConfiguraMesEng(reloj* reloj1){
 	PosCaracHLcd(POSMESENG);
  8001244:	2007      	movs	r0, #7
  8001246:	f7ff fd2a 	bl	8000c9e <PosCaracHLcd>
-	if(readKey()==PRESIONADO){
- 800124a:	f7ff fab9 	bl	80007c0 <readKey>
+	if(LeerSW()==PRESIONADO){
+ 800124a:	f7ff fab9 	bl	80007c0 <LeerSW>
  800124e:	4603      	mov	r3, r0
  8001250:	2b01      	cmp	r3, #1
  8001252:	d133      	bne.n	80012bc <ConfiguraMesEng+0x84>
@@ -2655,8 +2655,8 @@ static void ConfiguraMesEng(reloj* reloj1){
  80012b8:	2203      	movs	r2, #3
  80012ba:	701a      	strb	r2, [r3, #0]
 	}
-	encoder=ReadEncoder();
- 80012bc:	f7ff fbf2 	bl	8000aa4 <ReadEncoder>
+	encoder=LeerEncoder();
+ 80012bc:	f7ff fbf2 	bl	8000aa4 <LeerEncoder>
  80012c0:	4603      	mov	r3, r0
  80012c2:	73fb      	strb	r3, [r7, #15]
 	if(encoder==IZQ){
@@ -2720,8 +2720,8 @@ static void ConfiguraDiaEng(reloj* reloj1){
 	PosCaracHLcd(POSFECHAENG);
  8001318:	200a      	movs	r0, #10
  800131a:	f7ff fcc0 	bl	8000c9e <PosCaracHLcd>
-	if(readKey()==PRESIONADO){
- 800131e:	f7ff fa4f 	bl	80007c0 <readKey>
+	if(LeerSW()==PRESIONADO){
+ 800131e:	f7ff fa4f 	bl	80007c0 <LeerSW>
  8001322:	4603      	mov	r3, r0
  8001324:	2b01      	cmp	r3, #1
  8001326:	d107      	bne.n	8001338 <ConfiguraDiaEng+0x2c>
@@ -2735,8 +2735,8 @@ static void ConfiguraDiaEng(reloj* reloj1){
  8001334:	2206      	movs	r2, #6
  8001336:	701a      	strb	r2, [r3, #0]
 	}
-	encoder=ReadEncoder();
- 8001338:	f7ff fbb4 	bl	8000aa4 <ReadEncoder>
+	encoder=LeerEncoder();
+ 8001338:	f7ff fbb4 	bl	8000aa4 <LeerEncoder>
  800133c:	4603      	mov	r3, r0
  800133e:	73fb      	strb	r3, [r7, #15]
 	if(encoder==IZQ){
@@ -2899,8 +2899,8 @@ static void ConfiguraMesEsp(reloj* reloj1){
 	PosCaracHLcd(POSMES);
  8001454:	200a      	movs	r0, #10
  8001456:	f7ff fc22 	bl	8000c9e <PosCaracHLcd>
-	if(readKey()==PRESIONADO){
- 800145a:	f7ff f9b1 	bl	80007c0 <readKey>
+	if(LeerSW()==PRESIONADO){
+ 800145a:	f7ff f9b1 	bl	80007c0 <LeerSW>
  800145e:	4603      	mov	r3, r0
  8001460:	2b01      	cmp	r3, #1
  8001462:	d11d      	bne.n	80014a0 <ConfiguraMesEsp+0x58>
@@ -2940,8 +2940,8 @@ static void ConfiguraMesEsp(reloj* reloj1){
  800149e:	701a      	strb	r2, [r3, #0]
 
 	}
-	encoder=ReadEncoder();
- 80014a0:	f7ff fb00 	bl	8000aa4 <ReadEncoder>
+	encoder=LeerEncoder();
+ 80014a0:	f7ff fb00 	bl	8000aa4 <LeerEncoder>
  80014a4:	4603      	mov	r3, r0
  80014a6:	73fb      	strb	r3, [r7, #15]
 	 * o incrementar tengo que tener en cuenta lo ingresado en el dia.
@@ -3105,16 +3105,16 @@ static void ConfiguraAnio(reloj* reloj1){
 	PosCaracHLcd(POSANIO);
  80015a4:	200d      	movs	r0, #13
  80015a6:	f7ff fb7a 	bl	8000c9e <PosCaracHLcd>
-	if(readKey()==PRESIONADO)estado_reloj=CONFIGURAR_HORA;
- 80015aa:	f7ff f909 	bl	80007c0 <readKey>
+	if(LeerSW()==PRESIONADO)estado_reloj=CONFIGURAR_HORA;
+ 80015aa:	f7ff f909 	bl	80007c0 <LeerSW>
  80015ae:	4603      	mov	r3, r0
  80015b0:	2b01      	cmp	r3, #1
  80015b2:	d102      	bne.n	80015ba <ConfiguraAnio+0x22>
  80015b4:	4b2b      	ldr	r3, [pc, #172]	; (8001664 <ConfiguraAnio+0xcc>)
  80015b6:	2207      	movs	r2, #7
  80015b8:	701a      	strb	r2, [r3, #0]
-	encoder=ReadEncoder();
- 80015ba:	f7ff fa73 	bl	8000aa4 <ReadEncoder>
+	encoder=LeerEncoder();
+ 80015ba:	f7ff fa73 	bl	8000aa4 <LeerEncoder>
  80015be:	4603      	mov	r3, r0
  80015c0:	73fb      	strb	r3, [r7, #15]
 	if(encoder==IZQ){
@@ -3232,16 +3232,16 @@ static void ConfiguraHora(reloj* reloj1){
 	PosCaracLLcd(POSHORA);
  8001674:	2005      	movs	r0, #5
  8001676:	f7ff fb22 	bl	8000cbe <PosCaracLLcd>
-	if(readKey()==PRESIONADO)estado_reloj=CONFIGURAR_MIN;
- 800167a:	f7ff f8a1 	bl	80007c0 <readKey>
+	if(LeerSW()==PRESIONADO)estado_reloj=CONFIGURAR_MIN;
+ 800167a:	f7ff f8a1 	bl	80007c0 <LeerSW>
  800167e:	4603      	mov	r3, r0
  8001680:	2b01      	cmp	r3, #1
  8001682:	d102      	bne.n	800168a <ConfiguraHora+0x22>
  8001684:	4b14      	ldr	r3, [pc, #80]	; (80016d8 <ConfiguraHora+0x70>)
  8001686:	2208      	movs	r2, #8
  8001688:	701a      	strb	r2, [r3, #0]
-	encoder=ReadEncoder();
- 800168a:	f7ff fa0b 	bl	8000aa4 <ReadEncoder>
+	encoder=LeerEncoder();
+ 800168a:	f7ff fa0b 	bl	8000aa4 <LeerEncoder>
  800168e:	4603      	mov	r3, r0
  8001690:	73fb      	strb	r3, [r7, #15]
 	if(encoder==IZQ){
@@ -3304,16 +3304,16 @@ static void ConfiguraMin(reloj* reloj1){
 	PosCaracLLcd(POSMIN);
  80016e8:	2008      	movs	r0, #8
  80016ea:	f7ff fae8 	bl	8000cbe <PosCaracLLcd>
-	if(readKey()==PRESIONADO)estado_reloj=CONFIGURAR_SEG;
- 80016ee:	f7ff f867 	bl	80007c0 <readKey>
+	if(LeerSW()==PRESIONADO)estado_reloj=CONFIGURAR_SEG;
+ 80016ee:	f7ff f867 	bl	80007c0 <LeerSW>
  80016f2:	4603      	mov	r3, r0
  80016f4:	2b01      	cmp	r3, #1
  80016f6:	d102      	bne.n	80016fe <ConfiguraMin+0x22>
  80016f8:	4b14      	ldr	r3, [pc, #80]	; (800174c <ConfiguraMin+0x70>)
  80016fa:	2209      	movs	r2, #9
  80016fc:	701a      	strb	r2, [r3, #0]
-	encoder=ReadEncoder();
- 80016fe:	f7ff f9d1 	bl	8000aa4 <ReadEncoder>
+	encoder=LeerEncoder();
+ 80016fe:	f7ff f9d1 	bl	8000aa4 <LeerEncoder>
  8001702:	4603      	mov	r3, r0
  8001704:	73fb      	strb	r3, [r7, #15]
 	if(encoder==IZQ){
@@ -3376,8 +3376,8 @@ static void ConfiguraSeg(reloj* reloj1){
 	PosCaracLLcd(POSSEG);
  800175c:	200b      	movs	r0, #11
  800175e:	f7ff faae 	bl	8000cbe <PosCaracLLcd>
-	if(readKey()==PRESIONADO){
- 8001762:	f7ff f82d 	bl	80007c0 <readKey>
+	if(LeerSW()==PRESIONADO){
+ 8001762:	f7ff f82d 	bl	80007c0 <LeerSW>
  8001766:	4603      	mov	r3, r0
  8001768:	2b01      	cmp	r3, #1
  800176a:	d114      	bne.n	8001796 <ConfiguraSeg+0x46>
@@ -3403,8 +3403,8 @@ static void ConfiguraSeg(reloj* reloj1){
  8001792:	2201      	movs	r2, #1
  8001794:	701a      	strb	r2, [r3, #0]
 	}
-	encoder=ReadEncoder();
- 8001796:	f7ff f985 	bl	8000aa4 <ReadEncoder>
+	encoder=LeerEncoder();
+ 8001796:	f7ff f985 	bl	8000aa4 <LeerEncoder>
  800179a:	4603      	mov	r3, r0
  800179c:	73fb      	strb	r3, [r7, #15]
 	if(encoder==IZQ){
@@ -3462,15 +3462,15 @@ static void Configuro_idioma_ini(void){
 	PosCaracHLcd(POSIDIOMA);
  80017ec:	2005      	movs	r0, #5
  80017ee:	f7ff fa56 	bl	8000c9e <PosCaracHLcd>
-	OutTextLcd((uint8_t *)"IDIOMA");
+	SacaTextoLcd((uint8_t *)"IDIOMA");
  80017f2:	480c      	ldr	r0, [pc, #48]	; (8001824 <Configuro_idioma_ini+0x40>)
- 80017f4:	f7ff fa34 	bl	8000c60 <OutTextLcd>
+ 80017f4:	f7ff fa34 	bl	8000c60 <SacaTextoLcd>
 	PosCaracLLcd(0);
  80017f8:	2000      	movs	r0, #0
  80017fa:	f7ff fa60 	bl	8000cbe <PosCaracLLcd>
-	OutTextLcd((uint8_t *)"  ESP      ENG  ");
+	SacaTextoLcd((uint8_t *)"  ESP      ENG  ");
  80017fe:	480a      	ldr	r0, [pc, #40]	; (8001828 <Configuro_idioma_ini+0x44>)
- 8001800:	f7ff fa2e 	bl	8000c60 <OutTextLcd>
+ 8001800:	f7ff fa2e 	bl	8000c60 <SacaTextoLcd>
 	PosCaracLLcd(POSIDIOMA_SELEC[idioma]);
  8001804:	4b09      	ldr	r3, [pc, #36]	; (800182c <Configuro_idioma_ini+0x48>)
  8001806:	781b      	ldrb	r3, [r3, #0]
@@ -3507,8 +3507,8 @@ static void Configuro_idioma(void){
  800183a:	b084      	sub	sp, #16
  800183c:	af00      	add	r7, sp, #0
 
-	if(readKey()==PRESIONADO){
- 800183e:	f7fe ffbf 	bl	80007c0 <readKey>
+	if(LeerSW()==PRESIONADO){
+ 800183e:	f7fe ffbf 	bl	80007c0 <LeerSW>
  8001842:	4603      	mov	r3, r0
  8001844:	2b01      	cmp	r3, #1
  8001846:	d106      	bne.n	8001856 <Configuro_idioma+0x1e>
@@ -3521,8 +3521,8 @@ static void Configuro_idioma(void){
  8001852:	2201      	movs	r2, #1
  8001854:	701a      	strb	r2, [r3, #0]
 	}
-	uint8_t encoder=ReadEncoder();
- 8001856:	f7ff f925 	bl	8000aa4 <ReadEncoder>
+	uint8_t encoder=LeerEncoder();
+ 8001856:	f7ff f925 	bl	8000aa4 <LeerEncoder>
  800185a:	4603      	mov	r3, r0
  800185c:	71fb      	strb	r3, [r7, #7]
 	if(encoder==IZQ){

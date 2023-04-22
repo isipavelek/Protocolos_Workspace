@@ -84,7 +84,7 @@ void EncFSM_Update(){
   *
  **********************************************************************************/
 
-giro_encoder_t ReadEncoder(){
+giro_encoder_t LeerEncoder(){
 	uint8_t aux=0;
 	aux=giro;
 	giro=NOGIRA;

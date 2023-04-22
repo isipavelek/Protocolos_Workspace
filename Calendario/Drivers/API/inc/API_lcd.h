@@ -72,7 +72,7 @@ typedef enum
 
 //PROTOTIPOS DE FUNCIONES
 _Bool Init_Lcd(void);
-void OutTextLcd (uint8_t *texto);
+void SacaTextoLcd (uint8_t *texto);
 void DatoLcd (uint8_t dato);
 void DatoAsciiLcd (uint8_t dato);
 void DatoBCD (uint8_t dato);
