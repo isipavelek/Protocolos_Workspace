@@ -35,7 +35,7 @@ typedef enum{
 
 } EncState_t;
 
-_Bool Init_Enc(void);
+void Init_Enc(void);
 void EncFSM_Update();
 giro_encoder_t LeerEncoder();
 

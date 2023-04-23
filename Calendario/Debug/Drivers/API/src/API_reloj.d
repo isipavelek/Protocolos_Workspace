@@ -38,9 +38,8 @@ Drivers/API/src/API_reloj.o: ../Drivers/API/src/API_reloj.c \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_lcd.h \
- C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_lcd_port.h \
- C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_reloj.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_rtc.h \
+ C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_reloj.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_init.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_debounce.h \
  C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_delay.h \
@@ -84,9 +83,8 @@ C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/STM32F4x
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_lcd.h:
-C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_lcd_port.h:
-C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_reloj.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_rtc.h:
+C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_reloj.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_init.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_debounce.h:
 C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/inc/API_delay.h:

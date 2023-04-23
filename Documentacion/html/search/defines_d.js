@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['pinclk_0',['PINCLK',['../d9/dfa/API__enc__port_8h.html#a5fcd170d49ef066553dec29a5ee18386',1,'API_enc_port.h']]],
+  ['pindt_1',['PINDT',['../d9/dfa/API__enc__port_8h.html#a372731b70ace43d61d876ac87b7e2f3a',1,'API_enc_port.h']]],
+  ['pinsw_2',['PINSW',['../d9/dfa/API__enc__port_8h.html#af1149e9178d2a39ea9ecc6b3dce13c12',1,'API_enc_port.h']]],
+  ['portclk_3',['PORTCLK',['../d9/dfa/API__enc__port_8h.html#ac0fad074168f6d9655b08062dd4c36a4',1,'API_enc_port.h']]],
+  ['portdt_4',['PORTDT',['../d9/dfa/API__enc__port_8h.html#afe01c2b17db56d3c3182ee7fa92358a6',1,'API_enc_port.h']]],
+  ['portsw_5',['PORTSW',['../d9/dfa/API__enc__port_8h.html#a6ef25a60e8949e1c69b237822ae20487',1,'API_enc_port.h']]],
+  ['posanio_6',['POSANIO',['../d7/dbc/API__reloj_8h.html#a0658357eb66f155dac8a5936baecd0eb',1,'API_reloj.h']]],
+  ['poscomienzafecha_7',['POSCOMIENZAFECHA',['../d7/dbc/API__reloj_8h.html#a050e02dc17e194c2c081786123cf5232',1,'API_reloj.h']]],
+  ['poscomienzahora_8',['POSCOMIENZAHORA',['../d7/dbc/API__reloj_8h.html#a01df35837a1c7bb57d0a2d1cbf720cf3',1,'API_reloj.h']]],
+  ['posfecha_9',['POSFECHA',['../d7/dbc/API__reloj_8h.html#a9c8cf780f629dd14133ab1ec93efe77f',1,'API_reloj.h']]],
+  ['posfechaeng_10',['POSFECHAENG',['../d7/dbc/API__reloj_8h.html#a42bcb98a68aa9541dc6ca1e27245e6be',1,'API_reloj.h']]],
+  ['poshora_11',['POSHORA',['../d7/dbc/API__reloj_8h.html#ae11a8d2f915cc49facd061e0ef5f563b',1,'API_reloj.h']]],
+  ['posidioma_12',['POSIDIOMA',['../d7/dbc/API__reloj_8h.html#a27165f045dd125618bf8d75bee665d48',1,'API_reloj.h']]],
+  ['posidioma1_13',['POSIDIOMA1',['../d7/dbc/API__reloj_8h.html#a591a7c52e74c3b3b864e16d358378ac6',1,'API_reloj.h']]],
+  ['posidioma2_14',['POSIDIOMA2',['../d7/dbc/API__reloj_8h.html#a5a39b591529db18f652a2aa8af30b640',1,'API_reloj.h']]],
+  ['posmes_15',['POSMES',['../d7/dbc/API__reloj_8h.html#a8edc96915817b9a4aa235c9908a05b4b',1,'API_reloj.h']]],
+  ['posmeseng_16',['POSMESENG',['../d7/dbc/API__reloj_8h.html#a086a6e4b53f555c72be29462a2b98800',1,'API_reloj.h']]],
+  ['posmin_17',['POSMIN',['../d7/dbc/API__reloj_8h.html#a87c5b45cad1e6950d7436c1acc15756c',1,'API_reloj.h']]],
+  ['posseg_18',['POSSEG',['../d7/dbc/API__reloj_8h.html#a4945577ced9e6a72853231b1881efde9',1,'API_reloj.h']]],
+  ['postemp_19',['POSTEMP',['../d7/dbc/API__reloj_8h.html#a6116808bd5d0320f98795c0ab5fdfb65',1,'API_reloj.h']]],
+  ['postemptit_20',['POSTEMPTIT',['../d7/dbc/API__reloj_8h.html#ad69204a1bfa5a3fd3d52b82a1cdf742e',1,'API_reloj.h']]]
+];

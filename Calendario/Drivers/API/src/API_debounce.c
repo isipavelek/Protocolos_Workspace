@@ -1,8 +1,18 @@
+/// @file API_debounce.c
+/// @version 1.0
+/// @date 23/4/2023
+/// @author Ing. Pavelek Israel
+/// @title API de manejo de antirebote
+/// @brief funciones debounce.c
+
+
 #include "API_debounce.h"
 #include "API_delay.h"
 #include "API_enc_port.h"
 
-
+/**
+  * @brief  Enun sobre el estado de la FSM del boton del Encoder
+*/
 typedef enum{
 	BUTTON_UP,
 	BUTTON_FALLING,
@@ -14,17 +24,15 @@ static debounceState_t estado;
 static delay_t tiempo1,tiempo2;
 static uint8_t tecla=false;
 
-/********************************************************************************
- *Funcion:
- * Acción:
- * Recibe
- * Devuelve
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  debounceFSM_init
+  * @param  void
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 
 void debounceFSM_init(){
@@ -35,17 +43,16 @@ void debounceFSM_init(){
 
 }
 
-/********************************************************************************
- *Funcion: debounceFSM_update
- * Acción: Función que actualiza la FSM antirebote
- * Recibe: Nada
- * Devuelve: Nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+
+/**
+  * @brief  debounceFSM_update
+  * @param  void
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 void debounceFSM_update(){
 	switch (estado){
@@ -86,18 +93,16 @@ void debounceFSM_update(){
 	}
 }
 
-/********************************************************************************
- *Funcion: readKey
- * Acción: Función para consultar si fue presionada o no la tecla del Encoder
- * Recibe: Nada
- * Devuelve: True si la tecla fue presionada false si no
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
 
+
+/**
+  * @brief  LeerSW funcion que devuelve el estado del boton del encoder
+  * @param  void
+  * @return estado_boton
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 
 estado_boton LeerSW(void){

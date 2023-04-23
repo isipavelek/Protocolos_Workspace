@@ -1,9 +1,10 @@
-/*
- * API_lcd.c
- *
- *  Created on: 14 mar. 2023
- *      Author: ipave
- */
+/// @file API_lcd.c
+/// @version 1.0
+/// @date 23/4/2023
+/// @author Ing. Pavelek Israel
+/// @title API de manejo del LCD de alto nivel
+/// @brief funciones lcd_port.c de alto nivel
+
 
 
 #include "API_lcd.h"
@@ -20,17 +21,15 @@ static const uint8_t LCD_INIT_CMD[]={
 		_4BIT_MODE,DISPLAY_CONTROL,RETURN_HOME,ENTRY_MODE+AUTOINCREMENT,DISPLAY_CONTROL+DISPLAY_ON,CLR_LCD
 };
 
-/********************************************************************************
- *Funcion:Init_Lcd
- * Acción: Funciòn que inicializa el LCD modo de 4bits
- * Recibe: nada
- * Devuelve: LCD_ok si no hubo error, caso contrario LCD_ERROR
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  Init_Lcd
+  * @param  void
+  * @return Bool HAL_ERROR o HAL_OK
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 _Bool Init_Lcd(void){
 
@@ -48,80 +47,69 @@ _Bool Init_Lcd(void){
 
 }
 
-/********************************************************************************
- *Funcion: DelayLcd
- * Acción: demora bloqueante del LCD
- * Recibe: valor a demorar en ms
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  DelayLcd demora bloqueante para el uso del LCD
+  * @param  valor de la demora a realizar en ms
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 static void DelayLcd(uint32_t demora){
 	  HAL_Delay(demora);
 }
 
-/********************************************************************************
- *Funcion:ControlLcd
- * Acción: Envia un valor de CONTROL al LCD
- * Recibe: valor a enviar
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  ControlLcd envia una palabra de CONTROL al lcd
+  * @param  uint8_t valor de control a enviar
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 static void ControlLcd(uint8_t valor){
 	Envia8bitsLcd(valor,CONTROL);
 }
 
-/********************************************************************************
- *Funcion:DatoLcd
- * Acción:Envia un valor de DATOS al LCD
- * Recibe: valor a enviar
- * Devuelve: Nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  DatoLcd envia una palabra de DATOS al lcd
+  * @param  uint8_t valor de datos a enviar
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 void DatoLcd (uint8_t dato){
 	Envia8bitsLcd(dato,DATOS);
 }
-/********************************************************************************
- *Funcion:DatoAsciiLcd
- * Acción:Función que convierte a ASCII un valor y lo pone en el LCD
- * Recibe: valor a poner en el LCD
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  DatoAsciiLcd envia una palabra de DATOS al lcd
+  * @param  uint8_t valor de datos a enviar previo a su conversion en ASCII
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 void DatoAsciiLcd (uint8_t dato){
 	Envia8bitsLcd(dato+ '0',DATOS);
 }
 
-/********************************************************************************
- *Funcion:DatoAsciiLcd
- * Acción:Función que envia al LCD un valor en BCD
- * Recibe: valor a poner en el LCD
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  DatoAsciiLcd envia una palabra de DATOS al lcd
+  * @param  uint8_t valor de datos a enviar previo a su conversion en BCD
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void DatoBCD (uint8_t dato){
 
@@ -130,34 +118,30 @@ void DatoBCD (uint8_t dato){
 
 }
 
-/********************************************************************************
- *Funcion:Send8bitsLcd
- * Acción: Función que parte el envio de 1 byte en nible alto y bajo para el trabajo en 4 bits
- * Recibe: valor a enviar, y tipo: CONTROl O DATOS
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  DatoAsciiLcd Función que parte el envio de 1 byte en nible alto y bajo para el trabajo en 4 bits
+  * @param  uint8_t valor a enviar
+  * @param uint8_t tipo CONTROL o DATOS
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void Envia8bitsLcd (uint8_t valor,_Bool tipo){
 	Envia4bitsLcd(valor&HIGH_NIBBLE,tipo); 		//me con quedo y envio los 4 bits más significaticos.
 	Envia4bitsLcd(valor<<LOW_NIBBLE,tipo);   	//me quedo y envio los 4 bits menos significativos.
 }
 
-/********************************************************************************
- *Funcion: Send4bitsLcd
- * Acción: Funciòn que envia concretamente el valor (4bits) al LCD
- * Recibe: valor a enviar, y tipo CONTROL o DATOS
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  DatoAsciiLcd Función que parte el envio de 4 bits
+  * @param  uint8_t valor a enviar
+  * @param uint8_t tipo CONTROL o DATOS
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 static void Envia4bitsLcd (uint8_t valor,_Bool tipo){
 
@@ -167,34 +151,28 @@ static void Envia4bitsLcd (uint8_t valor,_Bool tipo){
 	DelayLcd(DelayTime);
 }
 
-/********************************************************************************
- *Funcion:OutTextLcd
- * Acción: FUnciòn que envia un texto al LCD
- * Recibe: Puntero a string a enviar
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  SacaTextoLcd Funcion que envia un texto al LCD
+  * @param  uint8_t * puntero a un string a enviar
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 
 void SacaTextoLcd (uint8_t *texto){
 	while(*texto)DatoLcd(*texto++);
 }
 
-/********************************************************************************
- *Funcion:ClrLcd
- * Acción: Función que borra el LCD
- * Recibe: nada
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  ClrLcd Funcion que borra el LCD
+  * @param  void
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void ClrLcd(void){
    ControlLcd(CLR_LCD);				//	Display Clear.
@@ -202,66 +180,56 @@ void ClrLcd(void){
 
 }
 
-/********************************************************************************
- *Funcion:PosCaracHLcd
- * Acción:Función que posiciona el cursor del LCD en la linea superior.
- * Recibe: un valor de 0 a la longitud de la pantalla
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+
+/**
+  * @brief  PosCaracHLcd Función que posiciona el cursor del LCD en la linea superior.
+  * @param  uint8_t un valor de 0 a la longitud de la pantalla
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 
 void PosCaracHLcd(uint8_t posH){
 	ControlLcd(posH | LINEA1);
 }
 
-/********************************************************************************
- *PosCaracLLcd
- * Acción:Función que posiciona el cursor del LCD en la linea inferior.
- * Recibe: un valor de 0 a la longitud de la pantalla
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  PosCaracLLcd Función que posiciona el cursor del LCD en la linea inferior.
+  * @param  uint8_t un valor de 0 a la longitud de la pantalla
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 void PosCaracLLcd(uint8_t posL){
 	ControlLcd(posL | LINEA2);
 }
 
-/********************************************************************************
- *Funcion:CursorOffLcd
- * Acción: Función que apaga el cursor del LCD
- * Recibe: nada
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  CursorOffLcd Funcion que apaga el cursor del LCD
+  * @param  void
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void CursorOffLcd(void){
 	ControlLcd(DISPLAY_CONTROL+DISPLAY_ON);
 }
 
-/********************************************************************************
- *Funcion: CursorOnLcd
- * Acción: Función que prende el cursor del LCD
- * Recibe: nada
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  CursorOnLcd Funcion que prende el cursor del LCD
+  * @param  void
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void CursorOnLcd(void){
 	ControlLcd(DISPLAY_CONTROL+CURSOR_ON+DISPLAY_ON+CURSOR_BLINK);

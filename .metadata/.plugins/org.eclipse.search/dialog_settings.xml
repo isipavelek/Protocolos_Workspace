@@ -20,7 +20,7 @@
 		<item key="DIALOG_X_ORIGIN" value="689"/>
 		<item key="DIALOG_Y_ORIGIN" value="233"/>
 		<item key="DIALOG_WIDTH" value="558"/>
-		<item key="DIALOG_HEIGHT" value="437"/>
+		<item key="DIALOG_HEIGHT" value="464"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.pdomSearchViewPage">
@@ -31,5 +31,16 @@
 	</section>
 	<section name="org.eclipse.search.text.FileSearchResultPage">
 		<item key="org.eclipse.search.resultpage.limit" value="1000"/>
+	</section>
+	<section name="TextSearchPage">
+		<item key="CASE_SENSITIVE" value="false"/>
+		<item key="REG_EX_SEARCH" value="false"/>
+		<item key="WHOLE_WORD" value="false"/>
+		<item key="SEARCH_DERIVED" value="false"/>
+		<item key="SEARCH_IN_BINARIES" value="false"/>
+		<item key="HISTORY_SIZE" value="0"/>
+		<section name="EXTENSIONS">
+			<item key="0" value="*"/>
+		</section>
 	</section>
 </section>

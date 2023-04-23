@@ -1,5 +1,5 @@
-../Drivers/API/src/API_rtc.c:24:6:RTC_Write_Cal	32	static
-../Drivers/API/src/API_rtc.c:42:6:RTC_Read_Cal	32	static
-../Drivers/API/src/API_rtc.c:59:6:RTC_Write_Byte	32	static
-../Drivers/API/src/API_rtc.c:75:6:RTC_Read_Byte	32	static
-../Drivers/API/src/API_rtc.c:80:8:RTC_Read_Temp	32	static
+../Drivers/API/src/API_rtc.c:19:6:RTC_Write_Cal	32	static
+../Drivers/API/src/API_rtc.c:34:6:RTC_Read_Cal	32	static
+../Drivers/API/src/API_rtc.c:49:6:RTC_Write_Byte	32	static
+../Drivers/API/src/API_rtc.c:63:6:RTC_Read_Byte	32	static
+../Drivers/API/src/API_rtc.c:76:8:RTC_Read_Temp	32	static

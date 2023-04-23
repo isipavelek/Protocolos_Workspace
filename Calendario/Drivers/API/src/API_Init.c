@@ -1,12 +1,9 @@
-/*
- * API_Init.c
- *
- *  Created on: 25 mar. 2023
- *      Author: ipave
- */
-
-
-//if(BSP_PB_GetState(BUTTON_USER)){
+/// @file API_init.c
+/// @version 1.0
+/// @date 23/4/2023
+/// @author Ing. Pavelek Israel
+/// @title API de inicializacion del HW
+/// @brief funciones de inicializacion del HW general
 
 
 /**

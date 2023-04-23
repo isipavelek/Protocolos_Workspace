@@ -22,7 +22,7 @@
 #define PORTSW	GPIOG
 
 
-_Bool Init_Enc_port(void);
+void Init_Enc_port(void);
 uint8_t Leer_Enc_Pin(void);
 _Bool Leer_Enc_Sw(void);
 

@@ -1,0 +1,1349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Calendario: Referencia del Archivo C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/src/API_reloj.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../lseUBA.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Calendario<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Calendario Perpetuo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_08131a51ea24834e81287804cbe8c10f.html">Calendario</a></li><li class="navelem"><a class="el" href="../../dir_c176c024a5c072df6c9692e629d2ae57.html">Drivers</a></li><li class="navelem"><a class="el" href="../../dir_4a31f76486e2a4b7b5679094f0445b42.html">API</a></li><li class="navelem"><a class="el" href="../../dir_7d51a36115bcaf2a4661b8ae9c8c238e.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">Enumeraciones</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del Archivo API_reloj.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funciones Reloj.c.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d7/dbc/API__reloj_8h.html">API_reloj.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d87/API__lcd_8h.html">API_lcd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/df8/API__rtc_8h.html">API_rtc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/d2a/API__debounce_8h.html">API_debounce.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/de5/API__encoder_8h.html">API_encoder.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a2892df168ea26950d38a9bede6f58f5f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a2892df168ea26950d38a9bede6f58f5f">idioma_t</a> { <a class="el" href="../../d2/d41/API__reloj_8c.html#a2892df168ea26950d38a9bede6f58f5fa1759dbb2b863e2aed1d506449bcdac39">ESP</a>
+, <a class="el" href="../../d2/d41/API__reloj_8c.html#a2892df168ea26950d38a9bede6f58f5fa28f3ccf23747ebc939611e527ed5108f">ENG</a>
+, <a class="el" href="../../d2/d41/API__reloj_8c.html#a2892df168ea26950d38a9bede6f58f5faaff69dd077058bf816ff97fd5fd8d584">CANT_IDIOMAS</a>
+ }</td></tr>
+<tr class="separator:a2892df168ea26950d38a9bede6f58f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:add130707fc5e5a64291b223956621251"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#add130707fc5e5a64291b223956621251">PresentaFechaLCD</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *, uint8_t pos, uint8_t linea)</td></tr>
+<tr class="separator:add130707fc5e5a64291b223956621251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77c95affd622f573a0912a602796c48b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a77c95affd622f573a0912a602796c48b">PresentaHoraLCD</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>, uint8_t pos, uint8_t linea)</td></tr>
+<tr class="memdesc:a77c95affd622f573a0912a602796c48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">PresentaHoraLCD.  <br /></td></tr>
+<tr class="separator:a77c95affd622f573a0912a602796c48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab7845bb06924090f956d1f9098b2a4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a1ab7845bb06924090f956d1f9098b2a4">PresentaTempLCD</a> (uint8_t pos)</td></tr>
+<tr class="memdesc:a1ab7845bb06924090f956d1f9098b2a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">PresentaTempLCD Acción: Función que presenta en el LCD la temperatura.  <br /></td></tr>
+<tr class="separator:a1ab7845bb06924090f956d1f9098b2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a975be8f59fae0e1cfbb7f213c2b2986e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a975be8f59fae0e1cfbb7f213c2b2986e">Decrementa</a> (uint8_t *valor, uint8_t limiteInf, uint8_t limiteSup)</td></tr>
+<tr class="memdesc:a975be8f59fae0e1cfbb7f213c2b2986e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrementa.  <br /></td></tr>
+<tr class="separator:a975be8f59fae0e1cfbb7f213c2b2986e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27038a8b3c1b73f0497ed51ab61d81f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a27038a8b3c1b73f0497ed51ab61d81f1">Incrementa</a> (uint8_t *valor, uint8_t limiteInf, uint8_t limiteSup)</td></tr>
+<tr class="memdesc:a27038a8b3c1b73f0497ed51ab61d81f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incrementa.  <br /></td></tr>
+<tr class="separator:a27038a8b3c1b73f0497ed51ab61d81f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a926d19e65c46db05db4c81e11757aefe"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a926d19e65c46db05db4c81e11757aefe">buscar_indice</a> (uint8_t *valor, uint8_t abuscar, uint8_t limite)</td></tr>
+<tr class="memdesc:a926d19e65c46db05db4c81e11757aefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">buscar_indice  <br /></td></tr>
+<tr class="separator:a926d19e65c46db05db4c81e11757aefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeacdd856779ee03ba72e864b7e1e584"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#adeacdd856779ee03ba72e864b7e1e584">calcula_dia_semana</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:adeacdd856779ee03ba72e864b7e1e584"><td class="mdescLeft">&#160;</td><td class="mdescRight">calcula_dia_semana  <br /></td></tr>
+<tr class="separator:adeacdd856779ee03ba72e864b7e1e584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44e33df98263472af23889658e68a1f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a44e33df98263472af23889658e68a1f1">Configuro_idioma_ini</a> (void)</td></tr>
+<tr class="memdesc:a44e33df98263472af23889658e68a1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuro_idioma_ini.  <br /></td></tr>
+<tr class="separator:a44e33df98263472af23889658e68a1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd8618519644f1d05d3038c53624d1f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#aebd8618519644f1d05d3038c53624d1f">Configuro_idioma</a> (void)</td></tr>
+<tr class="memdesc:aebd8618519644f1d05d3038c53624d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuro_idioma.  <br /></td></tr>
+<tr class="separator:aebd8618519644f1d05d3038c53624d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa20054be46f5fea1802c707901650e0f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#aa20054be46f5fea1802c707901650e0f">PresentarHoraYFecha</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:aa20054be46f5fea1802c707901650e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">PresentarHoraYFecha.  <br /></td></tr>
+<tr class="separator:aa20054be46f5fea1802c707901650e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4a2077797763f4abd6a75c9529663c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a8b4a2077797763f4abd6a75c9529663c">PresentarTempe</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:a8b4a2077797763f4abd6a75c9529663c"><td class="mdescLeft">&#160;</td><td class="mdescRight">PresentarTempe.  <br /></td></tr>
+<tr class="separator:a8b4a2077797763f4abd6a75c9529663c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab87fcf3f448fa232d8d6a6d7ff66be53"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#ab87fcf3f448fa232d8d6a6d7ff66be53">BCD_a_Dec</a> (uint8_t dato)</td></tr>
+<tr class="memdesc:ab87fcf3f448fa232d8d6a6d7ff66be53"><td class="mdescLeft">&#160;</td><td class="mdescRight">BCD_a_Dec.  <br /></td></tr>
+<tr class="separator:ab87fcf3f448fa232d8d6a6d7ff66be53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee16c2e5d934b3f6f44fe45e7716a4e1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#aee16c2e5d934b3f6f44fe45e7716a4e1">ConfiguraDiaEsp</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:aee16c2e5d934b3f6f44fe45e7716a4e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConfiguraDiaEsp.  <br /></td></tr>
+<tr class="separator:aee16c2e5d934b3f6f44fe45e7716a4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e67b72e863e95d4b192d67d1a3b7cec"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a9e67b72e863e95d4b192d67d1a3b7cec">ConfiguraMesEsp</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:a9e67b72e863e95d4b192d67d1a3b7cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConfiguraMesEsp.  <br /></td></tr>
+<tr class="separator:a9e67b72e863e95d4b192d67d1a3b7cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f0bdb169cfa1694b288f8aba5baa71"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a22f0bdb169cfa1694b288f8aba5baa71">ConfiguraDiaEng</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:a22f0bdb169cfa1694b288f8aba5baa71"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConfiguraDiaEng.  <br /></td></tr>
+<tr class="separator:a22f0bdb169cfa1694b288f8aba5baa71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dbe166a090d4402e9cbaafacb9e9af4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a2dbe166a090d4402e9cbaafacb9e9af4">ConfiguraMesEng</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:a2dbe166a090d4402e9cbaafacb9e9af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConfiguraMesEng.  <br /></td></tr>
+<tr class="separator:a2dbe166a090d4402e9cbaafacb9e9af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6340876377a46240a5e5ef07020d0138"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a6340876377a46240a5e5ef07020d0138">ConfiguraAnio</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:a6340876377a46240a5e5ef07020d0138"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConfiguraAnio.  <br /></td></tr>
+<tr class="separator:a6340876377a46240a5e5ef07020d0138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af73cf2d3155192091a53ee65b4c8b231"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#af73cf2d3155192091a53ee65b4c8b231">ConfiguraHora</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:af73cf2d3155192091a53ee65b4c8b231"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConfiguraHora.  <br /></td></tr>
+<tr class="separator:af73cf2d3155192091a53ee65b4c8b231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ae83a3378e3ced0c8c100a5c2d9443"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a15ae83a3378e3ced0c8c100a5c2d9443">ConfiguraMin</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:a15ae83a3378e3ced0c8c100a5c2d9443"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConfiguraMin.  <br /></td></tr>
+<tr class="separator:a15ae83a3378e3ced0c8c100a5c2d9443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5f2c51e0e9636c9436e8ae7e6473b34"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#ad5f2c51e0e9636c9436e8ae7e6473b34">ConfiguraSeg</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:ad5f2c51e0e9636c9436e8ae7e6473b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">ConfiguraSeg.  <br /></td></tr>
+<tr class="separator:ad5f2c51e0e9636c9436e8ae7e6473b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67458234bbe9ea6eb481a2525c1c5798"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a67458234bbe9ea6eb481a2525c1c5798">PresentaFechaLCD</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>, uint8_t pos, <a class="el" href="../../d7/dbc/API__reloj_8h.html#ade02c036c9c7af4517dd5609e563285f">lineasLCD</a> linea)</td></tr>
+<tr class="memdesc:a67458234bbe9ea6eb481a2525c1c5798"><td class="mdescLeft">&#160;</td><td class="mdescRight">PresentaFechaLCD.  <br /></td></tr>
+<tr class="separator:a67458234bbe9ea6eb481a2525c1c5798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a017b6ddbe929f0221aa2bf1304bfb438"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a017b6ddbe929f0221aa2bf1304bfb438">RelojInit</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:a017b6ddbe929f0221aa2bf1304bfb438"><td class="mdescLeft">&#160;</td><td class="mdescRight">RelojInit.  <br /></td></tr>
+<tr class="separator:a017b6ddbe929f0221aa2bf1304bfb438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47339c875dc075796f2ba78f612219b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a47339c875dc075796f2ba78f612219b4">Reloj_Read</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:a47339c875dc075796f2ba78f612219b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reloj_Read.  <br /></td></tr>
+<tr class="separator:a47339c875dc075796f2ba78f612219b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af56be25847a0a0248723c69b35e5bd06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#af56be25847a0a0248723c69b35e5bd06">Reloj_Write</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> <a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:af56be25847a0a0248723c69b35e5bd06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reloj_Write.  <br /></td></tr>
+<tr class="separator:af56be25847a0a0248723c69b35e5bd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a943c7aac41ffca2852d7a4e7c5c07421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a943c7aac41ffca2852d7a4e7c5c07421">RelojFSM_Update</a> (<a class="el" href="../../d4/db4/structreloj.html">reloj</a> *<a class="el" href="../../d0/d29/main_8c.html#a57c7c25620ec719dcdf33628e0f06e1c">reloj1</a>)</td></tr>
+<tr class="memdesc:a943c7aac41ffca2852d7a4e7c5c07421"><td class="mdescLeft">&#160;</td><td class="mdescRight">RelojFSM_Update.  <br /></td></tr>
+<tr class="separator:a943c7aac41ffca2852d7a4e7c5c07421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a5d73f1c2538e57fe53d99e437a84ba6b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d3/d25/API__delay_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a5d73f1c2538e57fe53d99e437a84ba6b">idioma</a> =<a class="el" href="../../d2/d41/API__reloj_8c.html#a2892df168ea26950d38a9bede6f58f5fa1759dbb2b863e2aed1d506449bcdac39">ESP</a></td></tr>
+<tr class="separator:a5d73f1c2538e57fe53d99e437a84ba6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2521c41c5a5c1683cdad9154366c020"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#af2521c41c5a5c1683cdad9154366c020">POSIDIOMA_SELEC</a> [] ={1,10}</td></tr>
+<tr class="separator:af2521c41c5a5c1683cdad9154366c020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2f0f4e83cba682e2334641d7232ab7"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a1d2f0f4e83cba682e2334641d7232ab7">estado_reloj</a></td></tr>
+<tr class="separator:a1d2f0f4e83cba682e2334641d7232ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4864fa1cebd9a235010d15801ae0366"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#ad4864fa1cebd9a235010d15801ae0366">dia</a> [][7][4]</td></tr>
+<tr class="separator:ad4864fa1cebd9a235010d15801ae0366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18eae73cfa0378350b1c737212167203"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/API__reloj_8c.html#a18eae73cfa0378350b1c737212167203">mes31</a> [] ={<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefaaeb7a5ffeddc5e7e8e058966202adae7">ENERO</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa3a9e73743853fa61769ba4d7c642665f">MARZO</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa994c336f9f6a8b45059b4565e36073a0">MAYO</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa018d7ca396e50add7daf88d8257626fa">JULIO</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa3159c3e28844f5ed19cf80df40abe42a">AGOSTO</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa765a316504c13235c66655688e73578d">OCTUBRE</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa2d81106138e1cd49d51680b06c726a4d">DICIEMBRE</a>}</td></tr>
+<tr class="separator:a18eae73cfa0378350b1c737212167203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Funciones Reloj.c. </p>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>23/4/2023 </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel @title API_Reloj.c </dd></dl>
+</div><h2 class="groupheader">Documentación de las enumeraciones</h2>
+<a id="a2892df168ea26950d38a9bede6f58f5f" name="a2892df168ea26950d38a9bede6f58f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2892df168ea26950d38a9bede6f58f5f">&#9670;&#160;</a></span>idioma_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d2/d41/API__reloj_8c.html#a2892df168ea26950d38a9bede6f58f5f">idioma_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a2892df168ea26950d38a9bede6f58f5fa1759dbb2b863e2aed1d506449bcdac39" name="a2892df168ea26950d38a9bede6f58f5fa1759dbb2b863e2aed1d506449bcdac39"></a>ESP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2892df168ea26950d38a9bede6f58f5fa28f3ccf23747ebc939611e527ed5108f" name="a2892df168ea26950d38a9bede6f58f5fa28f3ccf23747ebc939611e527ed5108f"></a>ENG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2892df168ea26950d38a9bede6f58f5faaff69dd077058bf816ff97fd5fd8d584" name="a2892df168ea26950d38a9bede6f58f5faaff69dd077058bf816ff97fd5fd8d584"></a>CANT_IDIOMAS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="ab87fcf3f448fa232d8d6a6d7ff66be53" name="ab87fcf3f448fa232d8d6a6d7ff66be53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab87fcf3f448fa232d8d6a6d7ff66be53">&#9670;&#160;</a></span>BCD_a_Dec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t BCD_a_Dec </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>dato</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>BCD_a_Dec. </p>
+<p>Acción: Funcion que pasa un numero de BCD a decimal </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>el valor en BCD a convertir </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>uint8_t valor convertido en binario puro</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a926d19e65c46db05db4c81e11757aefe" name="a926d19e65c46db05db4c81e11757aefe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a926d19e65c46db05db4c81e11757aefe">&#9670;&#160;</a></span>buscar_indice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t buscar_indice </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>valor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>abuscar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>limite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>buscar_indice </p>
+<p>Acción: Función que busca el limite de acuerdo al día ingresado </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>* puntero al vector donde buscar, </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>valor a buscar </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>limite hasta donde buscar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>uint8_t posicion donde estaba en elemento o ERROR en caso de no encontrarlo</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="adeacdd856779ee03ba72e864b7e1e584" name="adeacdd856779ee03ba72e864b7e1e584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeacdd856779ee03ba72e864b7e1e584">&#9670;&#160;</a></span>calcula_dia_semana()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void calcula_dia_semana </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>calcula_dia_semana </p>
+<p>Acción: Funciòn que implementa el algoritmo de Zeller para determinar el dia de la semana Referncia de la congruencia de Zeller: <a href="https://es.wikipedia.org/wiki/Congruencia_de_Zeller">https://es.wikipedia.org/wiki/Congruencia_de_Zeller</a> </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a6340876377a46240a5e5ef07020d0138" name="a6340876377a46240a5e5ef07020d0138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6340876377a46240a5e5ef07020d0138">&#9670;&#160;</a></span>ConfiguraAnio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ConfiguraAnio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ConfiguraAnio. </p>
+<p>Acción: Funciòn que configura el anio </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a22f0bdb169cfa1694b288f8aba5baa71" name="a22f0bdb169cfa1694b288f8aba5baa71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f0bdb169cfa1694b288f8aba5baa71">&#9670;&#160;</a></span>ConfiguraDiaEng()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ConfiguraDiaEng </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ConfiguraDiaEng. </p>
+<p>Acción: Funciòn que configura el dia en ingles </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="aee16c2e5d934b3f6f44fe45e7716a4e1" name="aee16c2e5d934b3f6f44fe45e7716a4e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee16c2e5d934b3f6f44fe45e7716a4e1">&#9670;&#160;</a></span>ConfiguraDiaEsp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ConfiguraDiaEsp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ConfiguraDiaEsp. </p>
+<p>Acción: Funciòn que configura el dia en español </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="af73cf2d3155192091a53ee65b4c8b231" name="af73cf2d3155192091a53ee65b4c8b231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73cf2d3155192091a53ee65b4c8b231">&#9670;&#160;</a></span>ConfiguraHora()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ConfiguraHora </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ConfiguraHora. </p>
+<p>Acción: Funciòn que configura la hora </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a2dbe166a090d4402e9cbaafacb9e9af4" name="a2dbe166a090d4402e9cbaafacb9e9af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dbe166a090d4402e9cbaafacb9e9af4">&#9670;&#160;</a></span>ConfiguraMesEng()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ConfiguraMesEng </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ConfiguraMesEng. </p>
+<p>Acción: Funciòn que configura el mes en ingles </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a9e67b72e863e95d4b192d67d1a3b7cec" name="a9e67b72e863e95d4b192d67d1a3b7cec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e67b72e863e95d4b192d67d1a3b7cec">&#9670;&#160;</a></span>ConfiguraMesEsp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ConfiguraMesEsp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ConfiguraMesEsp. </p>
+<p>Acción: Funciòn que configura el mes en español </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a15ae83a3378e3ced0c8c100a5c2d9443" name="a15ae83a3378e3ced0c8c100a5c2d9443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15ae83a3378e3ced0c8c100a5c2d9443">&#9670;&#160;</a></span>ConfiguraMin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ConfiguraMin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ConfiguraMin. </p>
+<p>Acción: Funciòn que configura los minutos </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="ad5f2c51e0e9636c9436e8ae7e6473b34" name="ad5f2c51e0e9636c9436e8ae7e6473b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5f2c51e0e9636c9436e8ae7e6473b34">&#9670;&#160;</a></span>ConfiguraSeg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ConfiguraSeg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ConfiguraSeg. </p>
+<p>Acción: Funciòn que configura los segundos </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="aebd8618519644f1d05d3038c53624d1f" name="aebd8618519644f1d05d3038c53624d1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd8618519644f1d05d3038c53624d1f">&#9670;&#160;</a></span>Configuro_idioma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Configuro_idioma </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configuro_idioma. </p>
+<p>Acción: Funciòn que cambia el idioma </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nada</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a44e33df98263472af23889658e68a1f1" name="a44e33df98263472af23889658e68a1f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44e33df98263472af23889658e68a1f1">&#9670;&#160;</a></span>Configuro_idioma_ini()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Configuro_idioma_ini </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configuro_idioma_ini. </p>
+<p>Acción: Funciòn que presenta la posibilidad de cambiar el idioma </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nada</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a975be8f59fae0e1cfbb7f213c2b2986e" name="a975be8f59fae0e1cfbb7f213c2b2986e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a975be8f59fae0e1cfbb7f213c2b2986e">&#9670;&#160;</a></span>Decrementa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Decrementa </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>valor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>limiteInf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>limiteSup</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decrementa. </p>
+<p>Acción: Función que se encarga de decrementar un variable y mantenerla entre los limites </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>* puntero a la variable a decrementar, </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>limite inferior </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>liminte superior </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a27038a8b3c1b73f0497ed51ab61d81f1" name="a27038a8b3c1b73f0497ed51ab61d81f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27038a8b3c1b73f0497ed51ab61d81f1">&#9670;&#160;</a></span>Incrementa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Incrementa </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>valor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>limiteInf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>limiteSup</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Incrementa. </p>
+<p>Acción: Función que se encarga de Incrementar un variable y mantenerla entre los limites </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>* puntero a la variable a incrementar, </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>limite inferior </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>liminte superior </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="add130707fc5e5a64291b223956621251" name="add130707fc5e5a64291b223956621251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add130707fc5e5a64291b223956621251">&#9670;&#160;</a></span>PresentaFechaLCD() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PresentaFechaLCD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>linea</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67458234bbe9ea6eb481a2525c1c5798" name="a67458234bbe9ea6eb481a2525c1c5798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67458234bbe9ea6eb481a2525c1c5798">&#9670;&#160;</a></span>PresentaFechaLCD() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PresentaFechaLCD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/dbc/API__reloj_8h.html#ade02c036c9c7af4517dd5609e563285f">lineasLCD</a>&#160;</td>
+          <td class="paramname"><em>linea</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PresentaFechaLCD. </p>
+<p>Acción: Función que presenta en el LCD la Fecha </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>pos Posicion donde presentar en el LCD </td></tr>
+    <tr><td class="paramname">lineasLCD</td><td>linea Linea en donde presentar LINEA_1.... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a77c95affd622f573a0912a602796c48b" name="a77c95affd622f573a0912a602796c48b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77c95affd622f573a0912a602796c48b">&#9670;&#160;</a></span>PresentaHoraLCD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PresentaHoraLCD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>linea</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PresentaHoraLCD. </p>
+<p>Acción: Función que presenta en el LCD la Hora </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>pos Posicion donde presentar en el LCD </td></tr>
+    <tr><td class="paramname">lineasLCD</td><td>linea Linea en donde presentar LINEA_1.... </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="aa20054be46f5fea1802c707901650e0f" name="aa20054be46f5fea1802c707901650e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa20054be46f5fea1802c707901650e0f">&#9670;&#160;</a></span>PresentarHoraYFecha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PresentarHoraYFecha </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PresentarHoraYFecha. </p>
+<p>Acción: Funciòn que presenta la hora y fecha en el LCD </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a8b4a2077797763f4abd6a75c9529663c" name="a8b4a2077797763f4abd6a75c9529663c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b4a2077797763f4abd6a75c9529663c">&#9670;&#160;</a></span>PresentarTempe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PresentarTempe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PresentarTempe. </p>
+<p>Acción: Funciòn que presenta la temperatura en el LCD </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a1ab7845bb06924090f956d1f9098b2a4" name="a1ab7845bb06924090f956d1f9098b2a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ab7845bb06924090f956d1f9098b2a4">&#9670;&#160;</a></span>PresentaTempLCD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PresentaTempLCD </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PresentaTempLCD Acción: Función que presenta en el LCD la temperatura. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>pos posición donde colocarlo en la linea inferior </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a47339c875dc075796f2ba78f612219b4" name="a47339c875dc075796f2ba78f612219b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47339c875dc075796f2ba78f612219b4">&#9670;&#160;</a></span>Reloj_Read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Reloj_Read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reloj_Read. </p>
+<p>Acción: Función que lee el reloj </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="af56be25847a0a0248723c69b35e5bd06" name="af56be25847a0a0248723c69b35e5bd06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af56be25847a0a0248723c69b35e5bd06">&#9670;&#160;</a></span>Reloj_Write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Reloj_Write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a>&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reloj_Write. </p>
+<p>Acción: Función que escribe el reloj </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a943c7aac41ffca2852d7a4e7c5c07421" name="a943c7aac41ffca2852d7a4e7c5c07421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a943c7aac41ffca2852d7a4e7c5c07421">&#9670;&#160;</a></span>RelojFSM_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelojFSM_Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RelojFSM_Update. </p>
+<p>Acción: Función que actualiza la FSM del reloj </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<a id="a017b6ddbe929f0221aa2bf1304bfb438" name="a017b6ddbe929f0221aa2bf1304bfb438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a017b6ddbe929f0221aa2bf1304bfb438">&#9670;&#160;</a></span>RelojInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelojInit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db4/structreloj.html">reloj</a> *&#160;</td>
+          <td class="paramname"><em>reloj1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RelojInit. </p>
+<p>Acción: Función que Inicializa la FSM del reloj </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reloj*</td><td>reloj1 Puntero al reloj a trabajar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>nada</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Realizada por:Israel Pavelek </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Fecha 16/4/23 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a id="ad4864fa1cebd9a235010d15801ae0366" name="ad4864fa1cebd9a235010d15801ae0366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4864fa1cebd9a235010d15801ae0366">&#9670;&#160;</a></span>dia</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t dia[][7][4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">={{<span class="stringliteral">&quot;Dom&quot;</span>,<span class="stringliteral">&quot;Lun&quot;</span>,<span class="stringliteral">&quot;Mar&quot;</span>,<span class="stringliteral">&quot;Mie&quot;</span>,<span class="stringliteral">&quot;Jue&quot;</span>,<span class="stringliteral">&quot;Vie&quot;</span>,<span class="stringliteral">&quot;Sab&quot;</span>},</div>
+<div class="line">                                {<span class="stringliteral">&quot;Sun&quot;</span>,<span class="stringliteral">&quot;Mon&quot;</span>,<span class="stringliteral">&quot;Thu&quot;</span>,<span class="stringliteral">&quot;Wed&quot;</span>,<span class="stringliteral">&quot;Tue&quot;</span>,<span class="stringliteral">&quot;Fri&quot;</span>,<span class="stringliteral">&quot;Sat&quot;</span>}}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1d2f0f4e83cba682e2334641d7232ab7" name="a1d2f0f4e83cba682e2334641d7232ab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d2f0f4e83cba682e2334641d7232ab7">&#9670;&#160;</a></span>estado_reloj</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t estado_reloj</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d73f1c2538e57fe53d99e437a84ba6b" name="a5d73f1c2538e57fe53d99e437a84ba6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d73f1c2538e57fe53d99e437a84ba6b">&#9670;&#160;</a></span>idioma</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d25/API__delay_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a> idioma =<a class="el" href="../../d2/d41/API__reloj_8c.html#a2892df168ea26950d38a9bede6f58f5fa1759dbb2b863e2aed1d506449bcdac39">ESP</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18eae73cfa0378350b1c737212167203" name="a18eae73cfa0378350b1c737212167203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18eae73cfa0378350b1c737212167203">&#9670;&#160;</a></span>mes31</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t mes31[] ={<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefaaeb7a5ffeddc5e7e8e058966202adae7">ENERO</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa3a9e73743853fa61769ba4d7c642665f">MARZO</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa994c336f9f6a8b45059b4565e36073a0">MAYO</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa018d7ca396e50add7daf88d8257626fa">JULIO</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa3159c3e28844f5ed19cf80df40abe42a">AGOSTO</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa765a316504c13235c66655688e73578d">OCTUBRE</a>,<a class="el" href="../../d7/dbc/API__reloj_8h.html#aa5dcc4a78d7f307746b30383f943bdefa2d81106138e1cd49d51680b06c726a4d">DICIEMBRE</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2521c41c5a5c1683cdad9154366c020" name="af2521c41c5a5c1683cdad9154366c020"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2521c41c5a5c1683cdad9154366c020">&#9670;&#160;</a></span>POSIDIOMA_SELEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t POSIDIOMA_SELEC[] ={1,10}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

@@ -1,28 +1,31 @@
-/*
- * API_I2C.c
- *
- *  Created on: 8 abr. 2023
- *      Author: ipave
- */
-
+/// @file API_I2C.c
+/// @version 1.0
+/// @date 23/4/2023
+/// @author Ing. Pavelek Israel
+/// @title API de manejo I2C
+/// @brief funciones I2C.c
 #include "API_I2C.h"
 
+
+/**
+  * @brief  Handle del I2C utilziado para el bus del LCD y el RTC
+*/
 I2C_HandleTypeDef hi2c1;
 
-/********************************************************************************
- *Funcion: I2C_HW_init
- * Acción: Inicializa el Puerto I2C
- * Recibe:  Nada
- * Devuelve: HAL_ERROR si hubo algun problema o HAL_OK si todo funciono
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+
+
 
 
 static void GPIO_I2C(I2C_HandleTypeDef  *hi2c);
+
+/**
+  * @brief  I2C_HW_init
+  * @param  I2C_HandleTypeDef * puntero  a la estructura i2c
+  * @return _Bool HAL_ERROR o HAL_OK
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 _Bool I2C_HW_init(void){
 
@@ -41,18 +44,15 @@ _Bool I2C_HW_init(void){
 
 }
 
+/**
+  * @brief  GPIO_I2C
+  * @param  I2C_HandleTypeDef * puntero  a la estructura i2c
+  * @return _void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
-/********************************************************************************
- *Funcion:GPIO_I2C
- * Acción:  Funciòn que inicializa la funcón alternativa en los pines de I2C 9 y 8
- * Recibe: Manejador de I2C I2C_HandleTypeDef
- * Devuelve:  nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
 static void GPIO_I2C(I2C_HandleTypeDef  *hi2c){
 	 GPIO_InitTypeDef GPIO_InitStruct;
 

@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Calendario: Referencia del Archivo C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/src/API_lcd.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../lseUBA.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Calendario<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Calendario Perpetuo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_08131a51ea24834e81287804cbe8c10f.html">Calendario</a></li><li class="navelem"><a class="el" href="../../dir_c176c024a5c072df6c9692e629d2ae57.html">Drivers</a></li><li class="navelem"><a class="el" href="../../dir_4a31f76486e2a4b7b5679094f0445b42.html">API</a></li><li class="navelem"><a class="el" href="../../dir_7d51a36115bcaf2a4661b8ae9c8c238e.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del Archivo API_lcd.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>funciones lcd_port.c de alto nivel  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../db/d87/API__lcd_8h.html">API_lcd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d88/API__Lcd__port_8h.html">API_Lcd_port.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d25/API__delay_8h.html">API_delay.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/d9b/API__I2C_8h.html">API_I2C.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:adf45f82d13e33ba2a1254e5a86256663"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#adf45f82d13e33ba2a1254e5a86256663">DelayLcd</a> (uint32_t demora)</td></tr>
+<tr class="memdesc:adf45f82d13e33ba2a1254e5a86256663"><td class="mdescLeft">&#160;</td><td class="mdescRight">DelayLcd demora bloqueante para el uso del LCD.  <br /></td></tr>
+<tr class="separator:adf45f82d13e33ba2a1254e5a86256663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57653bfe3f55d6360d34034a98fa8c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#aa57653bfe3f55d6360d34034a98fa8c2">ControlLcd</a> (uint8_t valor)</td></tr>
+<tr class="memdesc:aa57653bfe3f55d6360d34034a98fa8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ControlLcd envia una palabra de CONTROL al lcd.  <br /></td></tr>
+<tr class="separator:aa57653bfe3f55d6360d34034a98fa8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e113eed994841ab2e3d8bd94abf16b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#ab5e113eed994841ab2e3d8bd94abf16b">Envia8bitsLcd</a> (uint8_t valor, _Bool tipo)</td></tr>
+<tr class="memdesc:ab5e113eed994841ab2e3d8bd94abf16b"><td class="mdescLeft">&#160;</td><td class="mdescRight">DatoAsciiLcd Función que parte el envio de 1 byte en nible alto y bajo para el trabajo en 4 bits.  <br /></td></tr>
+<tr class="separator:ab5e113eed994841ab2e3d8bd94abf16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac217e97a97383fe72ba09788922690b6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#ac217e97a97383fe72ba09788922690b6">Envia4bitsLcd</a> (uint8_t valor, _Bool tipo)</td></tr>
+<tr class="memdesc:ac217e97a97383fe72ba09788922690b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">DatoAsciiLcd Función que parte el envio de 4 bits.  <br /></td></tr>
+<tr class="separator:ac217e97a97383fe72ba09788922690b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9360ec81003ffbf40105477cf1d75e33"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#a9360ec81003ffbf40105477cf1d75e33">Init_Lcd</a> (void)</td></tr>
+<tr class="memdesc:a9360ec81003ffbf40105477cf1d75e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init_Lcd.  <br /></td></tr>
+<tr class="separator:a9360ec81003ffbf40105477cf1d75e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9412f59268251678c9dd3764a7fb9e17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#a9412f59268251678c9dd3764a7fb9e17">DatoLcd</a> (uint8_t dato)</td></tr>
+<tr class="memdesc:a9412f59268251678c9dd3764a7fb9e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">DatoLcd envia una palabra de DATOS al lcd.  <br /></td></tr>
+<tr class="separator:a9412f59268251678c9dd3764a7fb9e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af8638882328801ae5a993fa58063e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#a6af8638882328801ae5a993fa58063e7">DatoAsciiLcd</a> (uint8_t dato)</td></tr>
+<tr class="memdesc:a6af8638882328801ae5a993fa58063e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">DatoAsciiLcd envia una palabra de DATOS al lcd.  <br /></td></tr>
+<tr class="separator:a6af8638882328801ae5a993fa58063e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad778cc07b7e767fcd76efd7f1265f559"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#ad778cc07b7e767fcd76efd7f1265f559">DatoBCD</a> (uint8_t dato)</td></tr>
+<tr class="memdesc:ad778cc07b7e767fcd76efd7f1265f559"><td class="mdescLeft">&#160;</td><td class="mdescRight">DatoAsciiLcd envia una palabra de DATOS al lcd.  <br /></td></tr>
+<tr class="separator:ad778cc07b7e767fcd76efd7f1265f559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaae50235a94f9776be5ddd333b5414e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#aaaae50235a94f9776be5ddd333b5414e">SacaTextoLcd</a> (uint8_t *texto)</td></tr>
+<tr class="memdesc:aaaae50235a94f9776be5ddd333b5414e"><td class="mdescLeft">&#160;</td><td class="mdescRight">SacaTextoLcd Funcion que envia un texto al LCD.  <br /></td></tr>
+<tr class="separator:aaaae50235a94f9776be5ddd333b5414e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a345548e383cbea774fe1f111bb765031"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#a345548e383cbea774fe1f111bb765031">ClrLcd</a> (void)</td></tr>
+<tr class="memdesc:a345548e383cbea774fe1f111bb765031"><td class="mdescLeft">&#160;</td><td class="mdescRight">ClrLcd Funcion que borra el LCD.  <br /></td></tr>
+<tr class="separator:a345548e383cbea774fe1f111bb765031"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc00290b2e5b4e96b687116dd280fce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#a0bc00290b2e5b4e96b687116dd280fce">PosCaracHLcd</a> (uint8_t posH)</td></tr>
+<tr class="memdesc:a0bc00290b2e5b4e96b687116dd280fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">PosCaracHLcd Función que posiciona el cursor del LCD en la linea superior.  <br /></td></tr>
+<tr class="separator:a0bc00290b2e5b4e96b687116dd280fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c6595c448af8687144a1dcb0a0dc0a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#a8c6595c448af8687144a1dcb0a0dc0a0">PosCaracLLcd</a> (uint8_t posL)</td></tr>
+<tr class="memdesc:a8c6595c448af8687144a1dcb0a0dc0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">PosCaracLLcd Función que posiciona el cursor del LCD en la linea inferior.  <br /></td></tr>
+<tr class="separator:a8c6595c448af8687144a1dcb0a0dc0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e096fc9b5ee4fa806b31224f037646"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#ad0e096fc9b5ee4fa806b31224f037646">CursorOffLcd</a> (void)</td></tr>
+<tr class="memdesc:ad0e096fc9b5ee4fa806b31224f037646"><td class="mdescLeft">&#160;</td><td class="mdescRight">CursorOffLcd Funcion que apaga el cursor del LCD.  <br /></td></tr>
+<tr class="separator:ad0e096fc9b5ee4fa806b31224f037646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a352f59baa4c7b402466a02627d0acc18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#a352f59baa4c7b402466a02627d0acc18">CursorOnLcd</a> (void)</td></tr>
+<tr class="memdesc:a352f59baa4c7b402466a02627d0acc18"><td class="mdescLeft">&#160;</td><td class="mdescRight">CursorOnLcd Funcion que prende el cursor del LCD.  <br /></td></tr>
+<tr class="separator:a352f59baa4c7b402466a02627d0acc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac52ae101fc377f332b82629005f1e23b"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d27/API__lcd_8c.html#ac52ae101fc377f332b82629005f1e23b">LCD_INIT_CMD</a> []</td></tr>
+<tr class="separator:ac52ae101fc377f332b82629005f1e23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>funciones lcd_port.c de alto nivel </p>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>23/4/2023 </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel @title API de manejo del LCD de alto nivel </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a345548e383cbea774fe1f111bb765031" name="a345548e383cbea774fe1f111bb765031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a345548e383cbea774fe1f111bb765031">&#9670;&#160;</a></span>ClrLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClrLcd </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ClrLcd Funcion que borra el LCD. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="aa57653bfe3f55d6360d34034a98fa8c2" name="aa57653bfe3f55d6360d34034a98fa8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa57653bfe3f55d6360d34034a98fa8c2">&#9670;&#160;</a></span>ControlLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ControlLcd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>valor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ControlLcd envia una palabra de CONTROL al lcd. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>valor de control a enviar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="ad0e096fc9b5ee4fa806b31224f037646" name="ad0e096fc9b5ee4fa806b31224f037646"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e096fc9b5ee4fa806b31224f037646">&#9670;&#160;</a></span>CursorOffLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CursorOffLcd </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CursorOffLcd Funcion que apaga el cursor del LCD. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="a352f59baa4c7b402466a02627d0acc18" name="a352f59baa4c7b402466a02627d0acc18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a352f59baa4c7b402466a02627d0acc18">&#9670;&#160;</a></span>CursorOnLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CursorOnLcd </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CursorOnLcd Funcion que prende el cursor del LCD. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="a6af8638882328801ae5a993fa58063e7" name="a6af8638882328801ae5a993fa58063e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6af8638882328801ae5a993fa58063e7">&#9670;&#160;</a></span>DatoAsciiLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DatoAsciiLcd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>dato</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DatoAsciiLcd envia una palabra de DATOS al lcd. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>valor de datos a enviar previo a su conversion en ASCII </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="ad778cc07b7e767fcd76efd7f1265f559" name="ad778cc07b7e767fcd76efd7f1265f559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad778cc07b7e767fcd76efd7f1265f559">&#9670;&#160;</a></span>DatoBCD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DatoBCD </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>dato</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DatoAsciiLcd envia una palabra de DATOS al lcd. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>valor de datos a enviar previo a su conversion en BCD </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="a9412f59268251678c9dd3764a7fb9e17" name="a9412f59268251678c9dd3764a7fb9e17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9412f59268251678c9dd3764a7fb9e17">&#9670;&#160;</a></span>DatoLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DatoLcd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>dato</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DatoLcd envia una palabra de DATOS al lcd. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>valor de datos a enviar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="adf45f82d13e33ba2a1254e5a86256663" name="adf45f82d13e33ba2a1254e5a86256663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf45f82d13e33ba2a1254e5a86256663">&#9670;&#160;</a></span>DelayLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void DelayLcd </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>demora</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DelayLcd demora bloqueante para el uso del LCD. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>de la demora a realizar en ms </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="ac217e97a97383fe72ba09788922690b6" name="ac217e97a97383fe72ba09788922690b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac217e97a97383fe72ba09788922690b6">&#9670;&#160;</a></span>Envia4bitsLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Envia4bitsLcd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>valor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Bool&#160;</td>
+          <td class="paramname"><em>tipo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DatoAsciiLcd Función que parte el envio de 4 bits. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>valor a enviar </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>tipo CONTROL o DATOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="ab5e113eed994841ab2e3d8bd94abf16b" name="ab5e113eed994841ab2e3d8bd94abf16b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e113eed994841ab2e3d8bd94abf16b">&#9670;&#160;</a></span>Envia8bitsLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Envia8bitsLcd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>valor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Bool&#160;</td>
+          <td class="paramname"><em>tipo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>DatoAsciiLcd Función que parte el envio de 1 byte en nible alto y bajo para el trabajo en 4 bits. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>valor a enviar </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>tipo CONTROL o DATOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="a9360ec81003ffbf40105477cf1d75e33" name="a9360ec81003ffbf40105477cf1d75e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9360ec81003ffbf40105477cf1d75e33">&#9670;&#160;</a></span>Init_Lcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_Bool Init_Lcd </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Init_Lcd. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Bool HAL_ERROR o HAL_OK </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="a0bc00290b2e5b4e96b687116dd280fce" name="a0bc00290b2e5b4e96b687116dd280fce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bc00290b2e5b4e96b687116dd280fce">&#9670;&#160;</a></span>PosCaracHLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PosCaracHLcd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>posH</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PosCaracHLcd Función que posiciona el cursor del LCD en la linea superior. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>un valor de 0 a la longitud de la pantalla </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="a8c6595c448af8687144a1dcb0a0dc0a0" name="a8c6595c448af8687144a1dcb0a0dc0a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c6595c448af8687144a1dcb0a0dc0a0">&#9670;&#160;</a></span>PosCaracLLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PosCaracLLcd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>posL</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PosCaracLLcd Función que posiciona el cursor del LCD en la linea inferior. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>un valor de 0 a la longitud de la pantalla </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="aaaae50235a94f9776be5ddd333b5414e" name="aaaae50235a94f9776be5ddd333b5414e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaae50235a94f9776be5ddd333b5414e">&#9670;&#160;</a></span>SacaTextoLcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SacaTextoLcd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>texto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SacaTextoLcd Funcion que envia un texto al LCD. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>* puntero a un string a enviar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a id="ac52ae101fc377f332b82629005f1e23b" name="ac52ae101fc377f332b82629005f1e23b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac52ae101fc377f332b82629005f1e23b">&#9670;&#160;</a></span>LCD_INIT_CMD</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t LCD_INIT_CMD[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">={</div>
+<div class="line">        <a class="code hl_define" href="../../db/d87/API__lcd_8h.html#a9142da0b490144f24168c5dbdaff161e">_4BIT_MODE</a>,<a class="code hl_define" href="../../db/d87/API__lcd_8h.html#a74c80ace5656e5bdca4af4c7233921f5">DISPLAY_CONTROL</a>,<a class="code hl_define" href="../../db/d87/API__lcd_8h.html#a132a90af728916a595bcf5a52cfac21c">RETURN_HOME</a>,<a class="code hl_define" href="../../db/d87/API__lcd_8h.html#a7c67b7105bcd21f4bb1f978d0445dfe8">ENTRY_MODE</a>+<a class="code hl_define" href="../../db/d87/API__lcd_8h.html#a4065f0c24769fa34f05d476058520133">AUTOINCREMENT</a>,<a class="code hl_define" href="../../db/d87/API__lcd_8h.html#a74c80ace5656e5bdca4af4c7233921f5">DISPLAY_CONTROL</a>+<a class="code hl_define" href="../../db/d87/API__lcd_8h.html#a5ae6b05b3e1559c97f0d1b2daaaa0ee4">DISPLAY_ON</a>,<a class="code hl_define" href="../../db/d87/API__lcd_8h.html#a0ea0de856967743feadd228ea58fb729">CLR_LCD</a></div>
+<div class="line">}</div>
+<div class="ttc" id="aAPI__lcd_8h_html_a0ea0de856967743feadd228ea58fb729"><div class="ttname"><a href="../../db/d87/API__lcd_8h.html#a0ea0de856967743feadd228ea58fb729">CLR_LCD</a></div><div class="ttdeci">#define CLR_LCD</div><div class="ttdef"><b>Definition:</b> API_lcd.h:32</div></div>
+<div class="ttc" id="aAPI__lcd_8h_html_a132a90af728916a595bcf5a52cfac21c"><div class="ttname"><a href="../../db/d87/API__lcd_8h.html#a132a90af728916a595bcf5a52cfac21c">RETURN_HOME</a></div><div class="ttdeci">#define RETURN_HOME</div><div class="ttdef"><b>Definition:</b> API_lcd.h:33</div></div>
+<div class="ttc" id="aAPI__lcd_8h_html_a4065f0c24769fa34f05d476058520133"><div class="ttname"><a href="../../db/d87/API__lcd_8h.html#a4065f0c24769fa34f05d476058520133">AUTOINCREMENT</a></div><div class="ttdeci">#define AUTOINCREMENT</div><div class="ttdef"><b>Definition:</b> API_lcd.h:44</div></div>
+<div class="ttc" id="aAPI__lcd_8h_html_a5ae6b05b3e1559c97f0d1b2daaaa0ee4"><div class="ttname"><a href="../../db/d87/API__lcd_8h.html#a5ae6b05b3e1559c97f0d1b2daaaa0ee4">DISPLAY_ON</a></div><div class="ttdeci">#define DISPLAY_ON</div><div class="ttdef"><b>Definition:</b> API_lcd.h:41</div></div>
+<div class="ttc" id="aAPI__lcd_8h_html_a74c80ace5656e5bdca4af4c7233921f5"><div class="ttname"><a href="../../db/d87/API__lcd_8h.html#a74c80ace5656e5bdca4af4c7233921f5">DISPLAY_CONTROL</a></div><div class="ttdeci">#define DISPLAY_CONTROL</div><div class="ttdef"><b>Definition:</b> API_lcd.h:35</div></div>
+<div class="ttc" id="aAPI__lcd_8h_html_a7c67b7105bcd21f4bb1f978d0445dfe8"><div class="ttname"><a href="../../db/d87/API__lcd_8h.html#a7c67b7105bcd21f4bb1f978d0445dfe8">ENTRY_MODE</a></div><div class="ttdeci">#define ENTRY_MODE</div><div class="ttdef"><b>Definition:</b> API_lcd.h:34</div></div>
+<div class="ttc" id="aAPI__lcd_8h_html_a9142da0b490144f24168c5dbdaff161e"><div class="ttname"><a href="../../db/d87/API__lcd_8h.html#a9142da0b490144f24168c5dbdaff161e">_4BIT_MODE</a></div><div class="ttdeci">#define _4BIT_MODE</div><div class="ttdef"><b>Definition:</b> API_lcd.h:45</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

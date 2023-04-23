@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Calendario: Referencia del Archivo C:/Users/ipave/Documents/GitHub/Protocolos_workspace/Calendario/Drivers/API/src/API_debounce.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../lseUBA.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Calendario<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Calendario Perpetuo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_08131a51ea24834e81287804cbe8c10f.html">Calendario</a></li><li class="navelem"><a class="el" href="../../dir_c176c024a5c072df6c9692e629d2ae57.html">Drivers</a></li><li class="navelem"><a class="el" href="../../dir_4a31f76486e2a4b7b5679094f0445b42.html">API</a></li><li class="navelem"><a class="el" href="../../dir_7d51a36115bcaf2a4661b8ae9c8c238e.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">Enumeraciones</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del Archivo API_debounce.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>funciones debounce.c  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../dc/d2a/API__debounce_8h.html">API_debounce.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d25/API__delay_8h.html">API_delay.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/dfa/API__enc__port_8h.html">API_enc_port.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a2c469bba1f151ac8d334947718ecf022"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dab/API__debounce_8c.html#a2c469bba1f151ac8d334947718ecf022">debounceState_t</a> { <a class="el" href="../../d6/dab/API__debounce_8c.html#a2c469bba1f151ac8d334947718ecf022a37666936297216dce293b0aa31c474b8">BUTTON_UP</a>
+, <a class="el" href="../../d6/dab/API__debounce_8c.html#a2c469bba1f151ac8d334947718ecf022a4c5560be280ccf3e4ef5a385a6dd62dc">BUTTON_FALLING</a>
+, <a class="el" href="../../d6/dab/API__debounce_8c.html#a2c469bba1f151ac8d334947718ecf022a0c7746cfbcac16484b2266e6f51e5e0b">BUTTON_DOWN</a>
+, <a class="el" href="../../d6/dab/API__debounce_8c.html#a2c469bba1f151ac8d334947718ecf022a500751a83a5d2958bc7616c644919474">BUTTON_RAISING</a>
+ }</td></tr>
+<tr class="memdesc:a2c469bba1f151ac8d334947718ecf022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enun sobre el estado de la FSM del boton del Encoder.  <a href="../../d6/dab/API__debounce_8c.html#a2c469bba1f151ac8d334947718ecf022">Más...</a><br /></td></tr>
+<tr class="separator:a2c469bba1f151ac8d334947718ecf022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a8e3ca4463f914075e1c4b1388811728e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dab/API__debounce_8c.html#a8e3ca4463f914075e1c4b1388811728e">debounceFSM_init</a> ()</td></tr>
+<tr class="memdesc:a8e3ca4463f914075e1c4b1388811728e"><td class="mdescLeft">&#160;</td><td class="mdescRight">debounceFSM_init  <br /></td></tr>
+<tr class="separator:a8e3ca4463f914075e1c4b1388811728e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a1126f7ed9f93be4cd42651ecb5ed6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dab/API__debounce_8c.html#a6a1126f7ed9f93be4cd42651ecb5ed6f">debounceFSM_update</a> ()</td></tr>
+<tr class="memdesc:a6a1126f7ed9f93be4cd42651ecb5ed6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">debounceFSM_update  <br /></td></tr>
+<tr class="separator:a6a1126f7ed9f93be4cd42651ecb5ed6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37a170d8051e2da0a6f47bdf516fbd2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d2a/API__debounce_8h.html#a64a69338a1611dfe59a38903463bf951">estado_boton</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dab/API__debounce_8c.html#a37a170d8051e2da0a6f47bdf516fbd2c">LeerSW</a> (void)</td></tr>
+<tr class="memdesc:a37a170d8051e2da0a6f47bdf516fbd2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">LeerSW funcion que devuelve el estado del boton del encoder.  <br /></td></tr>
+<tr class="separator:a37a170d8051e2da0a6f47bdf516fbd2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ab3b801ff5a30ac7b78184a2307486771"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d6/dab/API__debounce_8c.html#a2c469bba1f151ac8d334947718ecf022">debounceState_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dab/API__debounce_8c.html#ab3b801ff5a30ac7b78184a2307486771">estado</a></td></tr>
+<tr class="separator:ab3b801ff5a30ac7b78184a2307486771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ce669539733a01af3c0fd678f333289"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d1d/structdelay__t.html">delay_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dab/API__debounce_8c.html#a1ce669539733a01af3c0fd678f333289">tiempo1</a></td></tr>
+<tr class="separator:a1ce669539733a01af3c0fd678f333289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8b72e857e1b62e206fc90a0fab9dc28"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d1d/structdelay__t.html">delay_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dab/API__debounce_8c.html#aa8b72e857e1b62e206fc90a0fab9dc28">tiempo2</a></td></tr>
+<tr class="separator:aa8b72e857e1b62e206fc90a0fab9dc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a6a41752dc8a3bd541c0ad7ccc38db"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dab/API__debounce_8c.html#ac9a6a41752dc8a3bd541c0ad7ccc38db">tecla</a> =false</td></tr>
+<tr class="separator:ac9a6a41752dc8a3bd541c0ad7ccc38db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>funciones debounce.c </p>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>23/4/2023 </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel @title API de manejo de antirebote </dd></dl>
+</div><h2 class="groupheader">Documentación de las enumeraciones</h2>
+<a id="a2c469bba1f151ac8d334947718ecf022" name="a2c469bba1f151ac8d334947718ecf022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c469bba1f151ac8d334947718ecf022">&#9670;&#160;</a></span>debounceState_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d6/dab/API__debounce_8c.html#a2c469bba1f151ac8d334947718ecf022">debounceState_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enun sobre el estado de la FSM del boton del Encoder. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a2c469bba1f151ac8d334947718ecf022a37666936297216dce293b0aa31c474b8" name="a2c469bba1f151ac8d334947718ecf022a37666936297216dce293b0aa31c474b8"></a>BUTTON_UP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2c469bba1f151ac8d334947718ecf022a4c5560be280ccf3e4ef5a385a6dd62dc" name="a2c469bba1f151ac8d334947718ecf022a4c5560be280ccf3e4ef5a385a6dd62dc"></a>BUTTON_FALLING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2c469bba1f151ac8d334947718ecf022a0c7746cfbcac16484b2266e6f51e5e0b" name="a2c469bba1f151ac8d334947718ecf022a0c7746cfbcac16484b2266e6f51e5e0b"></a>BUTTON_DOWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2c469bba1f151ac8d334947718ecf022a500751a83a5d2958bc7616c644919474" name="a2c469bba1f151ac8d334947718ecf022a500751a83a5d2958bc7616c644919474"></a>BUTTON_RAISING&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a8e3ca4463f914075e1c4b1388811728e" name="a8e3ca4463f914075e1c4b1388811728e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e3ca4463f914075e1c4b1388811728e">&#9670;&#160;</a></span>debounceFSM_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void debounceFSM_init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>debounceFSM_init </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="a6a1126f7ed9f93be4cd42651ecb5ed6f" name="a6a1126f7ed9f93be4cd42651ecb5ed6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a1126f7ed9f93be4cd42651ecb5ed6f">&#9670;&#160;</a></span>debounceFSM_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void debounceFSM_update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>debounceFSM_update </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<a id="a37a170d8051e2da0a6f47bdf516fbd2c" name="a37a170d8051e2da0a6f47bdf516fbd2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37a170d8051e2da0a6f47bdf516fbd2c">&#9670;&#160;</a></span>LeerSW()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d2a/API__debounce_8h.html#a64a69338a1611dfe59a38903463bf951">estado_boton</a> LeerSW </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LeerSW funcion que devuelve el estado del boton del encoder. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>estado_boton </dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Ing. Pavelek Israel </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>16/4/2023 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a id="ab3b801ff5a30ac7b78184a2307486771" name="ab3b801ff5a30ac7b78184a2307486771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b801ff5a30ac7b78184a2307486771">&#9670;&#160;</a></span>estado</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/dab/API__debounce_8c.html#a2c469bba1f151ac8d334947718ecf022">debounceState_t</a> <a class="el" href="../../d7/dbc/API__reloj_8h.html#a6d66b110c5c28df3807c8428061e047e">estado</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac9a6a41752dc8a3bd541c0ad7ccc38db" name="ac9a6a41752dc8a3bd541c0ad7ccc38db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9a6a41752dc8a3bd541c0ad7ccc38db">&#9670;&#160;</a></span>tecla</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t tecla =false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ce669539733a01af3c0fd678f333289" name="a1ce669539733a01af3c0fd678f333289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce669539733a01af3c0fd678f333289">&#9670;&#160;</a></span>tiempo1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d1d/structdelay__t.html">delay_t</a> tiempo1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8b72e857e1b62e206fc90a0fab9dc28" name="aa8b72e857e1b62e206fc90a0fab9dc28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8b72e857e1b62e206fc90a0fab9dc28">&#9670;&#160;</a></span>tiempo2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d1d/structdelay__t.html">delay_t</a> tiempo2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

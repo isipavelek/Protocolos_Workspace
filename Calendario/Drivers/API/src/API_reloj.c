@@ -1,25 +1,28 @@
-/*
- * API_reloj.c
- *
- *  Created on: 1 abr. 2023
- *      Author: ipave
- */
+/// @file API_reloj.c
+/// @version 1.0
+/// @date 23/4/2023
+/// @author Ing. Pavelek Israel
+/// @title API_Reloj.c
+/// @brief Funciones Reloj.c
 
 #include "API_reloj.h"
 #include "API_lcd.h"
-#include "API_lcd_port.h"
 #include "API_rtc.h"
 #include "API_debounce.h"
 #include "API_encoder.h"
-/*Configuracion del idioma*/
+
+
+
 typedef enum{
 	ESP,
 	ENG,
 	CANT_IDIOMAS
 
+
+
 }idioma_t;
 static bool_t idioma=ESP;
-static const uint8_t POSIDIOMA_SELEC[]={1,10};
+static const uint8_t POSIDIOMA_SELEC[]={1,10};			//Posicion del idioma indices
 /******************************/
 
 static uint8_t estado_reloj;
@@ -52,17 +55,17 @@ static void ConfiguraHora(reloj* reloj1);
 static void ConfiguraMin(reloj* reloj1);
 static void ConfiguraSeg(reloj* reloj1);
 
-/********************************************************************************
- *Funcion: PresentaTempLCD
- * Acción: Función que presenta en el LCD la temperatura
- * Recibe: posición donde colocarlo en la linea inferior
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 16/4/23
-  *
- **********************************************************************************/
+
+ /// @brief PresentaTempLCD
+ /// Acción: Función que presenta en el LCD la temperatura
+ /// @param uint8_t pos posición donde colocarlo en la linea inferior
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
+
 
 static void PresentaTempLCD(uint8_t pos){
 
@@ -85,21 +88,23 @@ static void PresentaTempLCD(uint8_t pos){
 	DatoLcd('C');
 
 }
-/********************************************************************************
- *Funcion:PresentaFechaLCD
- * Acción: Función que presenta en el LCD la fecha
- * Recibe: el reloj con el que se trabaje, posición donde colocarlo y linea
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
 
-static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
+/// @brief PresentaFechaLCD
+ /// Acción: Función que presenta en el LCD la Fecha
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @param uint8_t pos Posicion donde presentar en el LCD
+ /// @param lineasLCD linea Linea en donde presentar LINEA_1....
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
-	  if(linea==1)PosCaracHLcd(pos);
+
+
+static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,lineasLCD linea){
+
+	  if(linea==LINEA_1)PosCaracHLcd(pos);
 	  else PosCaracLLcd(pos);
 	  calcula_dia_semana(reloj1);
 	  SacaTextoLcd((uint8_t *)dia[idioma][(reloj1->diasem)-1]);
@@ -120,17 +125,17 @@ static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 }
 
 
-/********************************************************************************
- *Funcion: PresentaHoraLCD
- * Acción: Función que presenta en el LCD la hora
- * Recibe: el reloj con el que se trabaje, posición donde colocarlo y linea
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+
+/// @brief PresentaHoraLCD
+ /// Acción: Función que presenta en el LCD la Hora
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @param uint8_t pos Posicion donde presentar en el LCD
+ /// @param lineasLCD linea Linea en donde presentar LINEA_1....
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 static void PresentaHoraLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 
@@ -143,17 +148,18 @@ static void PresentaHoraLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 	  DatoBCD (reloj1->seg);
 
 }
-/********************************************************************************
- *Funcion: RelojInit
- * Acción: Función que inicializa la MEF del reloj
- * Recibe: el reloj a inicializar
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+
+
+/// @brief RelojInit
+ /// Acción: Función que Inicializa la FSM del reloj
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
+
 void RelojInit(reloj* reloj1){
 	estado_reloj=PRESENTARHORA;
 	/*reloj1->seg=0;
@@ -166,17 +172,15 @@ void RelojInit(reloj* reloj1){
 
 }
 
-/********************************************************************************
- *Funcion: Reloj_Read
- * Acción: Función que interfacea con el HW del RTC y lee el calendario
- * Recibe:  Puntero a donde dejar los datos del reloj
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+
+/// @brief Reloj_Read
+ /// Acción: Función que lee el reloj
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 void Reloj_Read(reloj* reloj1){
 
@@ -184,34 +188,27 @@ void Reloj_Read(reloj* reloj1){
 
 }
 
-/********************************************************************************
- *Funcion: Reloj_Write
- * Acción: Función que interfacea con el HW del RTC y escribe  el calendario
- * Recibe:  Puntero a donde estan los datos a grabar en el reloj
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
-
+/// @brief Reloj_Write
+ /// Acción: Función que escribe el reloj
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 void Reloj_Write(reloj reloj1){
 	RTC_Write_Cal(reloj1);
 
 }
 
-/********************************************************************************
- *Funcion: RelojFSM_Update
- * Acción: Función que actauliza la MEF del reloj
- * Recibe: Reloj con el que trabaja
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/// @brief RelojFSM_Update
+ /// Acción: Función que actualiza la FSM del reloj
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 void RelojFSM_Update(reloj* reloj1){
 	switch(estado_reloj){
@@ -256,6 +253,14 @@ void RelojFSM_Update(reloj* reloj1){
 
 
 }
+/// @brief PresentarTempe
+ /// Acción: Funciòn que presenta la temperatura en el LCD
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 static void PresentarTempe(reloj* reloj1){
 	uint8_t SW;
@@ -280,18 +285,14 @@ static void PresentarTempe(reloj* reloj1){
 
 }
 
-/********************************************************************************
- *Funcion: PresentarHoraYFecha
- * Acción: Funciòn que presenta en pantalla la hora y fecha, si por alguna razon se presiona el encoder cambia a configurar
- * 				el idioma o la fecha
- * Recibe: Puntero al reloj que trabaja
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 16/4/23
-  *
- **********************************************************************************/
+/// @brief PresentarHoraYFecha
+ /// Acción: Funciòn que presenta la hora y fecha en el LCD
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 static void PresentarHoraYFecha(reloj* reloj1){
 	uint8_t SW;
@@ -315,17 +316,14 @@ static void PresentarHoraYFecha(reloj* reloj1){
 	}
 }
 
-/********************************************************************************
- *Funcion:ConfiguraDiaEsp
- * Acción: Función que configura el dia en el reloj y lo presenta en pantalla.
- * Recibe: Puntero al reloj que trabaja
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/// @brief ConfiguraDiaEsp
+ /// Acción: Funciòn que configura el dia en español
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 static void ConfiguraDiaEsp(reloj* reloj1){
 	uint8_t encoder=0;
@@ -349,18 +347,17 @@ static void ConfiguraDiaEsp(reloj* reloj1){
 
 }
 
-/********************************************************************************
- *Funcion ConfiguraMesEng
- * Acción: Función que configura el mes en el reloj y lo presenta en pantalla.
- * 			tiene en cuenta segun el dìa ingresado los limites del mes en cuestion
- * Recibe: Puntero al reloj que trabaja
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+
+/// @brief ConfiguraMesEng
+ /// Acción: Funciòn que configura el mes en ingles
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
+
 static void ConfiguraMesEng(reloj* reloj1){
 	uint8_t encoder=0;
 
@@ -383,17 +380,15 @@ static void ConfiguraMesEng(reloj* reloj1){
 	}
 
 }
-/********************************************************************************
- *Funcion:ConfiguraDiaEng
- * Acción: Función que configura el dia en el reloj y lo presenta en pantalla.
- * Recibe: Puntero al reloj que trabaja
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/// @brief ConfiguraDiaEng
+ /// Acción: Funciòn que configura el dia en ingles
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 static void ConfiguraDiaEng(reloj* reloj1){
 	uint8_t encoder=0;
 
@@ -422,18 +417,14 @@ static void ConfiguraDiaEng(reloj* reloj1){
 	}
 }
 
-/********************************************************************************
- *Funcion ConfiguraMesEsp
- * Acción: Función que configura el mes en el reloj y lo presenta en pantalla.
- * 			tiene en cuenta segun el dìa ingresado los limites del mes en cuestion
- * Recibe: Puntero al reloj que trabaja
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/// @brief ConfiguraMesEsp
+ /// Acción: Funciòn que configura el mes en español
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 static void ConfiguraMesEsp(reloj* reloj1){
 	uint8_t encoder=0;
@@ -483,17 +474,15 @@ static void ConfiguraMesEsp(reloj* reloj1){
 	}
 }
 
-/********************************************************************************
- *Funcion: ConfiguraAnio
- * Acción: Función que configura el año en el reloj y lo presenta en pantalla.
- * Recibe: Puntero al reloj que trabaja
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/// @brief ConfiguraAnio
+ /// Acción: Funciòn que configura el anio
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void ConfiguraAnio(reloj* reloj1){
 	uint8_t encoder=0;
@@ -522,17 +511,15 @@ static void ConfiguraAnio(reloj* reloj1){
 	}
 }
 
-/********************************************************************************
- *Funcion: ConfiguraHora
- * Acción: Función que configura el hora en el reloj y lo presenta en pantalla.
- * Recibe: Puntero al reloj que trabaja
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/// @brief ConfiguraHora
+ /// Acción: Funciòn que configura la hora
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void ConfiguraHora(reloj* reloj1){
 	uint8_t encoder=0;
@@ -550,17 +537,15 @@ static void ConfiguraHora(reloj* reloj1){
 	}
 }
 
-/********************************************************************************
- *Funcion: ConfiguraMin
- * Acción: Función que configura los minutos en el reloj y lo presenta en pantalla.
- * Recibe: Puntero al reloj que trabaja
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/// @brief ConfiguraMin
+ /// Acción: Funciòn que configura los minutos
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void ConfiguraMin(reloj* reloj1){
 	uint8_t encoder=0;
@@ -578,17 +563,15 @@ static void ConfiguraMin(reloj* reloj1){
 	}
 }
 
-/********************************************************************************
- *Funcion: ConfiguraSeg
- * Acción: Función que configura los segundos en el reloj y lo presenta en pantalla.
- * Recibe: Puntero al reloj que trabaja
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/// @brief ConfiguraSeg
+ /// Acción: Funciòn que configura los segundos
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 static void ConfiguraSeg(reloj* reloj1){
 	uint8_t encoder=0;
 
@@ -609,17 +592,15 @@ static void ConfiguraSeg(reloj* reloj1){
 	}
 
 }
-/********************************************************************************
- *Funcion: Configuro_idioma_ini
- * Acción: Función que presenta en pantalla la opcion de cambiar de idioma.
- * Recibe: nada
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 16/4/23
-  *
- **********************************************************************************/
+/// @brief Configuro_idioma_ini
+ /// Acción: Funciòn que presenta la posibilidad de cambiar el idioma
+ /// @param nada
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void Configuro_idioma_ini(void){
 	ClrLcd();
@@ -633,17 +614,15 @@ static void Configuro_idioma_ini(void){
 
 }
 
-/********************************************************************************
- *Funcion: Configuro_idioma
- * Acción: Funcion que mueve la marca indicando el idioma elegido
- * Recibe: nada
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 16/4/23
-  *
- **********************************************************************************/
+/// @brief Configuro_idioma
+ /// Acción: Funciòn que cambia el idioma
+ /// @param nada
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void Configuro_idioma(void){
 
@@ -674,17 +653,18 @@ static void Configuro_idioma(void){
 
 }
 
-/********************************************************************************
- *Funcion:  Decrementa
- * Acción: Función que se encarga de decrementar un variable y mantenerla entre los limites
- * Recibe: puntero a la variable a decrementar, limite inferior, y limite superior.
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/// @brief Decrementa
+ /// Acción: Función que se encarga de decrementar un variable y mantenerla entre los limites
+ /// @param uint8_t * puntero a la variable a decrementar,
+ /// @param uint8_t limite inferior
+ /// @param uint8_t liminte superior
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
+
 static void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 
 	uint8_t aux;
@@ -695,17 +675,18 @@ static void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 
 }
 
-/********************************************************************************
- *Funcion:  Incrementa
- * Acción: Función que se encarga de incrementar  un variable y mantenerla entre los limites
- * Recibe: puntero a la variable a incrementar, limite inferior, y limite superior.
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+
+/// @brief Incrementa
+ /// Acción: Función que se encarga de Incrementar un variable y mantenerla entre los limites
+ /// @param uint8_t * puntero a la variable a incrementar,
+ /// @param uint8_t limite inferior
+ /// @param uint8_t liminte superior
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 static void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 	uint8_t aux;
 	aux=(*valor&0x0f)+(((*valor&0xf0)>>4)*10);
@@ -715,38 +696,38 @@ static void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
 
 }
 
-/********************************************************************************
- *Funcion: buscar_indice
- * Acción: Función que busca el limite de acuerdo al día ingresado
- * Recibe: el puntero donde buscarlo, el valor a buscar, y el limite de datos donde buscarlo
- * Devuelve: el indice donde se encuentra o ERROR si no lo encuentra
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+
+/// @brief buscar_indice
+ /// Acción: Función que busca el limite de acuerdo al día ingresado
+
+/// @param uint8_t * puntero al vector donde buscar,
+ /// @param uint8_t valor a buscar
+ /// @param uint8_t limite hasta donde buscar
+ /// @return uint8_t posicion donde estaba en elemento o ERROR en caso de no encontrarlo
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
 
 	for(int i=0;i<limite;i++)if(valor[i]==abuscar)return i;
 	return ERROR;
 
-
 }
 
-/********************************************************************************
- *Funcion: calcula_dia_semana
- * Acción: Funciòn que implementa el algoritmo de Zeller para determinar el dia de la semana
- * Recibe: el puntero al reloj a calcular el dia de la semana
- * Devuelve: nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 16/4/23
-  *
-  *Referncia de la congruencia de Zeller: https://es.wikipedia.org/wiki/Congruencia_de_Zeller
- **********************************************************************************/
+
+/// @brief calcula_dia_semana
+ /// Acción: Funciòn que implementa el algoritmo de Zeller para determinar el dia de la semana
+ /// Referncia de la congruencia de Zeller: https://es.wikipedia.org/wiki/Congruencia_de_Zeller
+ /// @param reloj* reloj1 Puntero al reloj a trabajar
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void calcula_dia_semana(reloj* reloj1){
 	int dia,n,anio,mes;
@@ -760,18 +741,17 @@ static void calcula_dia_semana(reloj* reloj1){
 
 }
 
-/********************************************************************************
- *Funcion: BCD_a_Dec
- * Acción: Funcion que pasa un numero de BCD a decimal
- * Recibe: Recibe el valor en BCD
- * Devuelve: Devuelve el valor convertido a decimal
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 16/4/23
-  *
-  *
- **********************************************************************************/
+
+
+/// @brief BCD_a_Dec
+ /// Acción: Funcion que pasa un numero de BCD a decimal
+ /// @param uint8_t  el valor en BCD a convertir
+ /// @return uint8_t valor convertido en binario puro
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static uint8_t BCD_a_Dec (uint8_t dato){
 	return ((((dato&0xf0)>>4)*10) + (dato&0x0f));

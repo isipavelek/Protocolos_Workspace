@@ -1,0 +1,93 @@
+/// @file API_encoder.c
+/// @version 1.0
+/// @date 23/4/2023
+/// @author Ing. Pavelek Israel
+/// @title API de manejo de antirebote
+/// @brief funciones debounce.c
+
+#include "API_encoder.h"
+#include "API_enc_port.h"
+
+static uint8_t estado;
+static uint8_t giro=NOGIRA;
+static delay_t encoder_time;
+
+_Bool Init_Enc(void){
+	Init_Enc_port();
+    delayInit(&encoder_time,DEMORA_BASE);
+    estado=INI;
+	return 0;
+}
+/********************************************************************************
+ *Funcion: EncFSM_Update
+ * Acción: Función que actualiza la maquina de estados finitos del Encoder
+ * Recibe: nada
+ * Devuelve:nada
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+void EncFSM_Update(){
+
+	uint8_t estados_pines=Leer_Enc_Pin();
+	switch (estado){
+		case INI: if(estados_pines==PINDT+PINCLK)estado=E11;
+				  if(estados_pines==NOENC)estado=E00;
+				  break;
+		case E00:if(estados_pines==PINCLK)estado=E01Der;
+				  if(estados_pines==PINDT)estado=E10Izq;
+				  break;
+		case E01Izq:if(estados_pines==PINDT+PINCLK)estado=E11;
+				  if(estados_pines==NOENC){
+					  giro=IZQ;
+					  estado=E00;
+				  }
+				  break;
+		case E10Der:
+				  if(estados_pines==NOENC){
+					  giro=DER;
+					  estado=E00;
+				  }
+				  if(estados_pines==PINDT+PINCLK)estado=E11;
+				  break;
+
+		case E01Der:if(estados_pines==PINDT+PINCLK){
+						giro=DER;
+						estado=E11;
+					}
+				  if(estados_pines==NOENC)estado=E00;
+				  break;
+		case E10Izq:if(estados_pines==PINDT+PINCLK){
+					giro=IZQ;
+					estado=E11;
+				  }
+				  if(estados_pines==NOENC)estado=E00;
+				  break;
+		case E11: if(estados_pines==PINCLK)estado=E01Izq;
+				  if(estados_pines==PINDT)estado=E10Der;
+				  break;
+
+	}
+}
+
+/********************************************************************************
+ *Funcion:ReadEncoder
+ * Acción: Función que devuelve para donde giró el encoder, si giró, IZQ o DER
+ * Recibe: nada
+ * Devuelve: giro_encoder_t NO GIRA, IZQ  o DER
+ *
+ * Realizada por:Israel Pavelek
+ * Version: 1.0
+ * Fecha 13/4/23
+  *
+ **********************************************************************************/
+
+giro_encoder_t LeerEncoder(){
+	uint8_t aux=0;
+	aux=giro;
+	giro=NOGIRA;
+	return aux;
+
+}

@@ -1,7 +1,33 @@
+/// @file main.c
+/// @version 1.0
+/// @date 23/4/2023
+/// @author Ing. Pavelek Israel
+/// @title funcion principal
+/// @brief archivo que maneja el main princial del dispositivo
+
+/*! \mainpage Calendario Perpetuo
+ *
+ *	Trabajo realizado como integrador de la asignatura Protocolos de microcontroladores y programacion de microcontroladores del posgrado Especializacion en sistemas embebidos de la UBA
+ *
+ * \section intro_sec Autor:
+ *
+ * Ing. Israel Pavelek
+ *
+ * \section install_sec Proposito
+ *
+ * El dispositivo desarrollado es un Reloj Calendario perpetuo (utiliza la congruencia de Zeller para calcular el día de la semana). El mismo indica en pantalla la hora y fecha completa y alterna con la indicación de la temperatura ambiente. Además se puede visualizar la fecha en ingles o español.
+ *
+ *\section install_sec Docentes
+ *
+ * Mg. Ing. Patricio Bos (Programacion de microcontroladores)
+ * Mg. Ing. Gonzalo Sanchez (Protocolos de microcontroladores)
+ *
+ *
+ */
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "API_debounce.h"
-#include "API_uart.h"
 #include "API_lcd.h"
 #include "API_Lcd_port.h"
 #include "API_init.h"
@@ -16,13 +42,16 @@
 /* Private variables ---------------------------------------------------------*/
 
 /**
-  * @brief  Main program
-  * @param  None
-  * @retval None
-  */
+  * @brief  reloj principal de todo el sistema
+*/
 
 reloj reloj1;
 
+/**
+  * @brief  Funcion Main
+  * @param  void
+  * @retval int
+  */
 
 int main(void){
   HAL_Init();

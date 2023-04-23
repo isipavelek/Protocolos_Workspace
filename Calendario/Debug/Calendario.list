@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  00020018  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0000a055  00000000  00000000  00020048  2**0
+ 13 .debug_info   0000a050  00000000  00000000  00020048  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 0000222f  00000000  00000000  0002a09d  2**0
+ 14 .debug_abbrev 00002224  00000000  00000000  0002a098  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000a30  00000000  00000000  0002c2d0  2**3
+ 15 .debug_aranges 00000a30  00000000  00000000  0002c2c0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_ranges 00000900  00000000  00000000  0002cd00  2**3
+ 16 .debug_ranges 00000900  00000000  00000000  0002ccf0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  000278e1  00000000  00000000  0002d600  2**0
+ 17 .debug_macro  000278d3  00000000  00000000  0002d5f0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00012de5  00000000  00000000  00054ee1  2**0
+ 18 .debug_line   00012dc1  00000000  00000000  00054ec3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e2917  00000000  00000000  00067cc6  2**0
+ 19 .debug_str    000e290c  00000000  00000000  00067c84  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  0014a5dd  2**0
+ 20 .comment      00000050  00000000  00000000  0014a590  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  0000260c  00000000  00000000  0014a630  2**2
+ 21 .debug_frame  0000260c  00000000  00000000  0014a5e0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -353,10 +353,10 @@ Disassembly of section .text:
  80004ee:	bf00      	nop
 
 080004f0 <I2C_HW_init>:
- **********************************************************************************/
-
-
-static void GPIO_I2C(I2C_HandleTypeDef  *hi2c);
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 _Bool I2C_HW_init(void){
  80004f0:	b580      	push	{r7, lr}
@@ -420,11 +420,11 @@ _Bool I2C_HW_init(void){
  8000550:	000186a0 	.word	0x000186a0
 
 08000554 <GPIO_I2C>:
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 static void GPIO_I2C(I2C_HandleTypeDef  *hi2c){
  8000554:	b580      	push	{r7, lr}
  8000556:	b08a      	sub	sp, #40	; 0x28
@@ -639,9 +639,9 @@ void Error_Handler(void)
  8000696:	e7fe      	b.n	8000696 <Error_Handler+0xa>
 
 08000698 <debounceFSM_init>:
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @date 16/4/2023
+*/
+
 
 
 void debounceFSM_init(){
@@ -669,10 +669,10 @@ void debounceFSM_init(){
  80006c0:	20000088 	.word	0x20000088
 
 080006c4 <debounceFSM_update>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 void debounceFSM_update(){
  80006c4:	b580      	push	{r7, lr}
@@ -828,9 +828,9 @@ void debounceFSM_update(){
  80007bc:	200000a4 	.word	0x200000a4
 
 080007c0 <LeerSW>:
-  *
- **********************************************************************************/
-
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 
 estado_boton LeerSW(void){
@@ -872,10 +872,10 @@ estado_boton LeerSW(void){
  80007f0:	200000a4 	.word	0x200000a4
 
 080007f4 <delayInit>:
- */
-
-#include "API_delay.h"
-
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void delayInit( delay_t * delay, tick_t duration ){
  80007f4:	b480      	push	{r7}
@@ -900,6 +900,11 @@ void delayInit( delay_t * delay, tick_t duration ){
  8000814:	4770      	bx	lr
 
 08000816 <delayRead>:
+  * @return true si paso el tiempo false si no en caso de no estar corriendo lo inicializa
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 bool_t delayRead( delay_t * delay ){
  8000816:	b580      	push	{r7, lr}
  8000818:	b082      	sub	sp, #8
@@ -954,12 +959,12 @@ bool_t delayRead( delay_t * delay ){
 	...
 
 08000868 <Init_Enc_port>:
- *  Created on: 1 abr. 2023
- *      Author: ipave
- */
-#include "API_enc_port.h"
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
-_Bool Init_Enc_port(void){
+void Init_Enc_port(void){
  8000868:	b580      	push	{r7, lr}
  800086a:	b088      	sub	sp, #32
  800086c:	af00      	add	r7, sp, #0
@@ -1030,19 +1035,22 @@ _Bool Init_Enc_port(void){
  80008d6:	4619      	mov	r1, r3
  80008d8:	4805      	ldr	r0, [pc, #20]	; (80008f0 <Init_Enc_port+0x88>)
  80008da:	f001 fbed 	bl	80020b8 <HAL_GPIO_Init>
-	return 0;
- 80008de:	2300      	movs	r3, #0
 
 }
- 80008e0:	4618      	mov	r0, r3
- 80008e2:	3720      	adds	r7, #32
- 80008e4:	46bd      	mov	sp, r7
- 80008e6:	bd80      	pop	{r7, pc}
+ 80008de:	bf00      	nop
+ 80008e0:	3720      	adds	r7, #32
+ 80008e2:	46bd      	mov	sp, r7
+ 80008e4:	bd80      	pop	{r7, pc}
+ 80008e6:	bf00      	nop
  80008e8:	40023800 	.word	0x40023800
  80008ec:	40020c00 	.word	0x40020c00
  80008f0:	40021800 	.word	0x40021800
 
 080008f4 <Leer_Enc_Pin>:
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 uint8_t Leer_Enc_Pin(void){
  80008f4:	b580      	push	{r7, lr}
@@ -1078,6 +1086,10 @@ uint8_t Leer_Enc_Pin(void){
  8000928:	40020c00 	.word	0x40020c00
 
 0800092c <Leer_Enc_Sw>:
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 _Bool Leer_Enc_Sw(void){
  800092c:	b580      	push	{r7, lr}
@@ -1100,12 +1112,12 @@ _Bool Leer_Enc_Sw(void){
  8000948:	40021800 	.word	0x40021800
 
 0800094c <Init_Enc>:
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
-static uint8_t estado;
-static uint8_t giro=NOGIRA;
-static delay_t encoder_time;
 
-_Bool Init_Enc(void){
+void Init_Enc(void){
  800094c:	b580      	push	{r7, lr}
  800094e:	af00      	add	r7, sp, #0
 	Init_Enc_port();
@@ -1118,20 +1130,19 @@ _Bool Init_Enc(void){
  800095c:	4b03      	ldr	r3, [pc, #12]	; (800096c <Init_Enc+0x20>)
  800095e:	2200      	movs	r2, #0
  8000960:	701a      	strb	r2, [r3, #0]
-	return 0;
- 8000962:	2300      	movs	r3, #0
 }
- 8000964:	4618      	mov	r0, r3
- 8000966:	bd80      	pop	{r7, pc}
+ 8000962:	bf00      	nop
+ 8000964:	bd80      	pop	{r7, pc}
+ 8000966:	bf00      	nop
  8000968:	200000a8 	.word	0x200000a8
  800096c:	200000a5 	.word	0x200000a5
 
 08000970 <EncFSM_Update>:
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 void EncFSM_Update(){
  8000970:	b580      	push	{r7, lr}
  8000972:	b082      	sub	sp, #8
@@ -1325,10 +1336,10 @@ void EncFSM_Update(){
  8000aa0:	200000a6 	.word	0x200000a6
 
 08000aa4 <LeerEncoder>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 giro_encoder_t LeerEncoder(){
  8000aa4:	b480      	push	{r7}
@@ -1357,10 +1368,10 @@ giro_encoder_t LeerEncoder(){
  8000ac8:	200000a6 	.word	0x200000a6
 
 08000acc <Init_Lcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 _Bool Init_Lcd(void){
  8000acc:	b580      	push	{r7, lr}
@@ -1428,10 +1439,10 @@ _Bool Init_Lcd(void){
  8000b40:	080041f4 	.word	0x080041f4
 
 08000b44 <DelayLcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 static void DelayLcd(uint32_t demora){
  8000b44:	b580      	push	{r7, lr}
@@ -1448,10 +1459,10 @@ static void DelayLcd(uint32_t demora){
  8000b58:	bd80      	pop	{r7, pc}
 
 08000b5a <ControlLcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 static void ControlLcd(uint8_t valor){
  8000b5a:	b580      	push	{r7, lr}
@@ -1471,10 +1482,10 @@ static void ControlLcd(uint8_t valor){
  8000b74:	bd80      	pop	{r7, pc}
 
 08000b76 <DatoLcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 void DatoLcd (uint8_t dato){
  8000b76:	b580      	push	{r7, lr}
@@ -1494,10 +1505,10 @@ void DatoLcd (uint8_t dato){
  8000b90:	bd80      	pop	{r7, pc}
 
 08000b92 <DatoAsciiLcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 void DatoAsciiLcd (uint8_t dato){
  8000b92:	b580      	push	{r7, lr}
@@ -1519,10 +1530,10 @@ void DatoAsciiLcd (uint8_t dato){
  8000bb0:	bd80      	pop	{r7, pc}
 
 08000bb2 <DatoBCD>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void DatoBCD (uint8_t dato){
  8000bb2:	b580      	push	{r7, lr}
@@ -1551,10 +1562,10 @@ void DatoBCD (uint8_t dato){
  8000bdc:	bd80      	pop	{r7, pc}
 
 08000bde <Envia8bitsLcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void Envia8bitsLcd (uint8_t valor,_Bool tipo){
  8000bde:	b580      	push	{r7, lr}
@@ -1588,10 +1599,10 @@ void Envia8bitsLcd (uint8_t valor,_Bool tipo){
  8000c16:	bd80      	pop	{r7, pc}
 
 08000c18 <Envia4bitsLcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 static void Envia4bitsLcd (uint8_t valor,_Bool tipo){
  8000c18:	b580      	push	{r7, lr}
@@ -1634,9 +1645,9 @@ static void Envia4bitsLcd (uint8_t valor,_Bool tipo){
  8000c5e:	bd80      	pop	{r7, pc}
 
 08000c60 <SacaTextoLcd>:
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 
 void SacaTextoLcd (uint8_t *texto){
@@ -1664,10 +1675,10 @@ void SacaTextoLcd (uint8_t *texto){
  8000c88:	bd80      	pop	{r7, pc}
 
 08000c8a <ClrLcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void ClrLcd(void){
  8000c8a:	b580      	push	{r7, lr}
@@ -1684,9 +1695,9 @@ void ClrLcd(void){
  8000c9c:	bd80      	pop	{r7, pc}
 
 08000c9e <PosCaracHLcd>:
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 
 void PosCaracHLcd(uint8_t posH){
@@ -1708,10 +1719,10 @@ void PosCaracHLcd(uint8_t posH){
  8000cbc:	bd80      	pop	{r7, pc}
 
 08000cbe <PosCaracLLcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 void PosCaracLLcd(uint8_t posL){
  8000cbe:	b580      	push	{r7, lr}
@@ -1732,10 +1743,10 @@ void PosCaracLLcd(uint8_t posL){
  8000cdc:	bd80      	pop	{r7, pc}
 
 08000cde <CursorOffLcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void CursorOffLcd(void){
  8000cde:	b580      	push	{r7, lr}
@@ -1748,10 +1759,10 @@ void CursorOffLcd(void){
  8000cea:	bd80      	pop	{r7, pc}
 
 08000cec <CursorOnLcd>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void CursorOnLcd(void){
  8000cec:	b580      	push	{r7, lr}
@@ -1765,10 +1776,10 @@ void CursorOnLcd(void){
 	...
 
 08000cfc <LCD_Write_Byte>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 
 void LCD_Write_Byte(uint8_t valor){
  8000cfc:	b580      	push	{r7, lr}
@@ -1798,10 +1809,10 @@ void LCD_Write_Byte(uint8_t valor){
  8000d2c:	20000034 	.word	0x20000034
 
 08000d30 <PresentaTempLCD>:
- * Version: 1.0
- * Fecha 16/4/23
-  *
- **********************************************************************************/
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
+
 
 static void PresentaTempLCD(uint8_t pos){
  8000d30:	b580      	push	{r7, lr}
@@ -1932,12 +1943,12 @@ static void PresentaTempLCD(uint8_t pos){
  8000e2c:	cccccccd 	.word	0xcccccccd
 
 08000e30 <PresentaFechaLCD>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
-static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
+
+
+static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,lineasLCD linea){
  8000e30:	b580      	push	{r7, lr}
  8000e32:	b082      	sub	sp, #8
  8000e34:	af00      	add	r7, sp, #0
@@ -1947,7 +1958,7 @@ static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
  8000e3c:	4613      	mov	r3, r2
  8000e3e:	70bb      	strb	r3, [r7, #2]
 
-	  if(linea==1)PosCaracHLcd(pos);
+	  if(linea==LINEA_1)PosCaracHLcd(pos);
  8000e40:	78bb      	ldrb	r3, [r7, #2]
  8000e42:	2b01      	cmp	r3, #1
  8000e44:	d104      	bne.n	8000e50 <PresentaFechaLCD+0x20>
@@ -2035,10 +2046,10 @@ static void PresentaFechaLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
  8000ee0:	08004200 	.word	0x08004200
 
 08000ee4 <PresentaHoraLCD>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 static void PresentaHoraLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
  8000ee4:	b580      	push	{r7, lr}
@@ -2092,11 +2103,11 @@ static void PresentaHoraLCD(reloj* reloj1,uint8_t pos,uint8_t linea){
 	...
 
 08000f40 <RelojInit>:
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
+
 void RelojInit(reloj* reloj1){
  8000f40:	b480      	push	{r7}
  8000f42:	b083      	sub	sp, #12
@@ -2121,10 +2132,10 @@ void RelojInit(reloj* reloj1){
  8000f5c:	200000b5 	.word	0x200000b5
 
 08000f60 <Reloj_Read>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 void Reloj_Read(reloj* reloj1){
  8000f60:	b580      	push	{r7, lr}
@@ -2143,11 +2154,11 @@ void Reloj_Read(reloj* reloj1){
  8000f74:	bd80      	pop	{r7, pc}
 
 08000f76 <Reloj_Write>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
-
+ /// @return nada
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 void Reloj_Write(reloj reloj1){
  8000f76:	b580      	push	{r7, lr}
  8000f78:	b082      	sub	sp, #8
@@ -2166,10 +2177,10 @@ void Reloj_Write(reloj reloj1){
  8000f92:	bd80      	pop	{r7, pc}
 
 08000f94 <RelojFSM_Update>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 void RelojFSM_Update(reloj* reloj1){
  8000f94:	b580      	push	{r7, lr}
@@ -2278,6 +2289,10 @@ void RelojFSM_Update(reloj* reloj1){
  8001040:	200000b5 	.word	0x200000b5
 
 08001044 <PresentarTempe>:
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 static void PresentarTempe(reloj* reloj1){
  8001044:	b580      	push	{r7, lr}
@@ -2362,10 +2377,10 @@ static void PresentarTempe(reloj* reloj1){
  80010cc:	200000b5 	.word	0x200000b5
 
 080010d0 <PresentarHoraYFecha>:
- * Version: 1.0
- * Fecha 16/4/23
-  *
- **********************************************************************************/
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 static void PresentarHoraYFecha(reloj* reloj1){
  80010d0:	b580      	push	{r7, lr}
@@ -2454,10 +2469,10 @@ static void PresentarHoraYFecha(reloj* reloj1){
  8001164:	200000b5 	.word	0x200000b5
 
 08001168 <ConfiguraDiaEsp>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 static void ConfiguraDiaEsp(reloj* reloj1){
  8001168:	b580      	push	{r7, lr}
@@ -2577,11 +2592,11 @@ static void ConfiguraDiaEsp(reloj* reloj1){
  8001234:	200000b5 	.word	0x200000b5
 
 08001238 <ConfiguraMesEng>:
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
+
 static void ConfiguraMesEng(reloj* reloj1){
  8001238:	b580      	push	{r7, lr}
  800123a:	b084      	sub	sp, #16
@@ -2703,11 +2718,11 @@ static void ConfiguraMesEng(reloj* reloj1){
  8001308:	200000b5 	.word	0x200000b5
 
 0800130c <ConfiguraDiaEng>:
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 static void ConfiguraDiaEng(reloj* reloj1){
  800130c:	b580      	push	{r7, lr}
  800130e:	b084      	sub	sp, #16
@@ -2882,10 +2897,10 @@ static void ConfiguraDiaEng(reloj* reloj1){
  8001444:	200000b5 	.word	0x200000b5
 
 08001448 <ConfiguraMesEsp>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
 
 static void ConfiguraMesEsp(reloj* reloj1){
  8001448:	b580      	push	{r7, lr}
@@ -3088,10 +3103,10 @@ static void ConfiguraMesEsp(reloj* reloj1){
  8001594:	08004238 	.word	0x08004238
 
 08001598 <ConfiguraAnio>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void ConfiguraAnio(reloj* reloj1){
  8001598:	b580      	push	{r7, lr}
@@ -3215,10 +3230,10 @@ static void ConfiguraAnio(reloj* reloj1){
  8001664:	200000b5 	.word	0x200000b5
 
 08001668 <ConfiguraHora>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void ConfiguraHora(reloj* reloj1){
  8001668:	b580      	push	{r7, lr}
@@ -3287,10 +3302,10 @@ static void ConfiguraHora(reloj* reloj1){
  80016d8:	200000b5 	.word	0x200000b5
 
 080016dc <ConfiguraMin>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void ConfiguraMin(reloj* reloj1){
  80016dc:	b580      	push	{r7, lr}
@@ -3359,11 +3374,11 @@ static void ConfiguraMin(reloj* reloj1){
  800174c:	200000b5 	.word	0x200000b5
 
 08001750 <ConfiguraSeg>:
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 static void ConfiguraSeg(reloj* reloj1){
  8001750:	b580      	push	{r7, lr}
  8001752:	b084      	sub	sp, #16
@@ -3449,10 +3464,10 @@ static void ConfiguraSeg(reloj* reloj1){
  80017e0:	200000b5 	.word	0x200000b5
 
 080017e4 <Configuro_idioma_ini>:
- * Version: 1.0
- * Fecha 16/4/23
-  *
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void Configuro_idioma_ini(void){
  80017e4:	b580      	push	{r7, lr}
@@ -3497,10 +3512,10 @@ static void Configuro_idioma_ini(void){
  8001834:	200000b5 	.word	0x200000b5
 
 08001838 <Configuro_idioma>:
- * Version: 1.0
- * Fecha 16/4/23
-  *
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void Configuro_idioma(void){
  8001838:	b580      	push	{r7, lr}
@@ -3623,11 +3638,11 @@ static void Configuro_idioma(void){
  8001904:	080041fc 	.word	0x080041fc
 
 08001908 <Decrementa>:
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
+
 static void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
  8001908:	b480      	push	{r7}
  800190a:	b085      	sub	sp, #20
@@ -3702,11 +3717,11 @@ static void Decrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
  800198c:	cccccccd 	.word	0xcccccccd
 
 08001990 <Incrementa>:
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ ///
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 static void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
  8001990:	b480      	push	{r7}
  8001992:	b085      	sub	sp, #20
@@ -3778,10 +3793,10 @@ static void Incrementa(uint8_t * valor,uint8_t limiteInf,uint8_t limiteSup){
  8001a10:	cccccccd 	.word	0xcccccccd
 
 08001a14 <buscar_indice>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
  8001a14:	b480      	push	{r7}
@@ -3817,7 +3832,6 @@ static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
 	return ERROR;
  8001a4c:	23ff      	movs	r3, #255	; 0xff
 
-
 }
  8001a4e:	4618      	mov	r0, r3
  8001a50:	3714      	adds	r7, #20
@@ -3827,10 +3841,10 @@ static uint8_t buscar_indice (uint8_t * valor,uint8_t abuscar,uint8_t limite){
 	...
 
 08001a5c <calcula_dia_semana>:
- * Fecha 16/4/23
-  *
-  *Referncia de la congruencia de Zeller: https://es.wikipedia.org/wiki/Congruencia_de_Zeller
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static void calcula_dia_semana(reloj* reloj1){
  8001a5c:	b580      	push	{r7, lr}
@@ -3946,10 +3960,10 @@ static void calcula_dia_semana(reloj* reloj1){
  8001b3c:	92492493 	.word	0x92492493
 
 08001b40 <BCD_a_Dec>:
- * Fecha 16/4/23
-  *
-  *
- **********************************************************************************/
+ /// @author Realizada por:Israel Pavelek
+ /// @version 1.0
+ /// @date Fecha 16/4/23
+
 
 static uint8_t BCD_a_Dec (uint8_t dato){
  8001b40:	b480      	push	{r7}
@@ -3981,11 +3995,11 @@ static uint8_t BCD_a_Dec (uint8_t dato){
 	...
 
 08001b74 <RTC_Write_Cal>:
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 void RTC_Write_Cal(reloj reloj1){
  8001b74:	b580      	push	{r7, lr}
  8001b76:	b086      	sub	sp, #24
@@ -4018,10 +4032,10 @@ void RTC_Write_Cal(reloj reloj1){
  8001bac:	20000034 	.word	0x20000034
 
 08001bb0 <RTC_Read_Cal>:
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 void RTC_Read_Cal(reloj * reloj1){
  8001bb0:	b580      	push	{r7, lr}
@@ -4053,10 +4067,10 @@ void RTC_Read_Cal(reloj * reloj1){
  8001be4:	20000034 	.word	0x20000034
 
 08001be8 <RTC_Read_Temp>:
-void RTC_Read_Byte(uint8_t * valor,uint8_t dir){
-	if(HAL_I2C_Mem_Read(&hi2c1,RTC_DIR<<1,dir,I2C_MEMADD_SIZE_8BIT,(uint8_t *)valor,1,HAL_MAX_DELAY)!=HAL_OK)Error_Handler();
-
-}
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 temp_t RTC_Read_Temp(void){
  8001be8:	b580      	push	{r7, lr}
@@ -10416,10 +10430,10 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  80040b8:	08004258 	.word	0x08004258
 
 080040bc <main>:
+  * @brief  Funcion Main
+  * @param  void
+  * @retval int
   */
-
-reloj reloj1;
-
 
 int main(void){
  80040bc:	b580      	push	{r7, lr}

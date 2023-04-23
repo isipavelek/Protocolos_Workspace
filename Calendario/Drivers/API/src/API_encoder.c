@@ -1,9 +1,9 @@
-/*
- * API_encoder.c
- *
- *  Created on: 1 abr. 2023
- *      Author: ipave
- */
+/// @file API_encoder.c
+/// @version 1.0
+/// @date 23/4/2023
+/// @author Ing. Pavelek Israel
+/// @title API de manejo del en encoder
+/// @brief funciones API_enconder.c
 
 #include "API_encoder.h"
 #include "API_enc_port.h"
@@ -12,23 +12,30 @@ static uint8_t estado;
 static uint8_t giro=NOGIRA;
 static delay_t encoder_time;
 
-_Bool Init_Enc(void){
+/**
+  * @brief  Init_Enc
+  * @param  void
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
+
+void Init_Enc(void){
 	Init_Enc_port();
     delayInit(&encoder_time,DEMORA_BASE);
     estado=INI;
-	return 0;
 }
-/********************************************************************************
- *Funcion: EncFSM_Update
- * Acción: Función que actualiza la maquina de estados finitos del Encoder
- * Recibe: nada
- * Devuelve:nada
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  EncFSM_Update funcion que realiza la FSM del enconder
+  * @param  void
+  * @return void
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
+
 void EncFSM_Update(){
 
 	uint8_t estados_pines=Leer_Enc_Pin();
@@ -72,17 +79,14 @@ void EncFSM_Update(){
 	}
 }
 
-/********************************************************************************
- *Funcion:ReadEncoder
- * Acción: Función que devuelve para donde giró el encoder, si giró, IZQ o DER
- * Recibe: nada
- * Devuelve: giro_encoder_t NO GIRA, IZQ  o DER
- *
- * Realizada por:Israel Pavelek
- * Version: 1.0
- * Fecha 13/4/23
-  *
- **********************************************************************************/
+/**
+  * @brief  LeerEncoder funciòn que devuelve el estado del enconder si esta girando y en que sentido
+  * @param  void
+  * @return giro_encoder_t el sentido de giro IZQ DER o no GIRA
+  * @author Ing. Pavelek Israel
+  * @version 1.0
+  * @date 16/4/2023
+*/
 
 giro_encoder_t LeerEncoder(){
 	uint8_t aux=0;
