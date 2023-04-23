@@ -6,25 +6,6 @@
 /// @brief archivo que maneja el main princial del dispositivo
 
 /*! \mainpage Calendario Perpetuo
- *
- *	Trabajo realizado como integrador de la asignatura Protocolos de microcontroladores y programacion de microcontroladores del posgrado Especializacion en sistemas embebidos de la UBA
- *
- * \section intro_sec Autor:
- *
- * Ing. Israel Pavelek
- *
- * \section install_sec Proposito
- *
- * El dispositivo desarrollado es un Reloj Calendario perpetuo (utiliza la congruencia de Zeller para calcular el día de la semana). El mismo indica en pantalla la hora y fecha completa y alterna con la indicación de la temperatura ambiente. Además se puede visualizar la fecha en ingles o español.
- *
- *\section install_sec Docentes
- *
- * Mg. Ing. Patricio Bos (Programacion de microcontroladores)
- * Mg. Ing. Gonzalo Sanchez (Protocolos de microcontroladores)
- *
- *
- */
-
 
 
 /* Includes ------------------------------------------------------------------*/

@@ -1,2 +1,2 @@
-API_Init.c:36:6:SystemClock_Config	4
-API_Init.c:86:6:Error_Handler	1
+API_Init.c:33:6:SystemClock_Config	4
+API_Init.c:83:6:Error_Handler	1

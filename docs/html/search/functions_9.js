@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['reloj_5fread_0',['Reloj_Read',['../d7/dbc/API__reloj_8h.html#a47339c875dc075796f2ba78f612219b4',1,'Reloj_Read(reloj *reloj1):&#160;API_reloj.c'],['../d2/d41/API__reloj_8c.html#a47339c875dc075796f2ba78f612219b4',1,'Reloj_Read(reloj *reloj1):&#160;API_reloj.c']]],
-  ['reloj_5fwrite_1',['Reloj_Write',['../d7/dbc/API__reloj_8h.html#af56be25847a0a0248723c69b35e5bd06',1,'Reloj_Write(reloj reloj1):&#160;API_reloj.c'],['../d2/d41/API__reloj_8c.html#af56be25847a0a0248723c69b35e5bd06',1,'Reloj_Write(reloj reloj1):&#160;API_reloj.c']]],
-  ['relojfsm_5fupdate_2',['RelojFSM_Update',['../d7/dbc/API__reloj_8h.html#a943c7aac41ffca2852d7a4e7c5c07421',1,'RelojFSM_Update(reloj *reloj1):&#160;API_reloj.c'],['../d2/d41/API__reloj_8c.html#a943c7aac41ffca2852d7a4e7c5c07421',1,'RelojFSM_Update(reloj *reloj1):&#160;API_reloj.c']]],
-  ['relojinit_3',['RelojInit',['../d7/dbc/API__reloj_8h.html#a8f8a476731b94c4b204eb73d6c7f3dd1',1,'RelojInit(reloj *):&#160;API_reloj.c'],['../d2/d41/API__reloj_8c.html#a017b6ddbe929f0221aa2bf1304bfb438',1,'RelojInit(reloj *reloj1):&#160;API_reloj.c']]],
-  ['rtc_5fread_5fbyte_4',['RTC_Read_Byte',['../d2/df8/API__rtc_8h.html#a26278ccd32cd72d03ee243bc96bef298',1,'RTC_Read_Byte(uint8_t *valo, uint8_t dir):&#160;API_rtc.c'],['../d2/d6d/API__rtc_8c.html#aa7af4e2ab52d4b1f993bc08fc1f5fd7f',1,'RTC_Read_Byte(uint8_t *valor, uint8_t dir):&#160;API_rtc.c']]],
-  ['rtc_5fread_5fcal_5',['RTC_Read_Cal',['../d2/df8/API__rtc_8h.html#a7f8e331813bfd235043db2d96eeeb968',1,'RTC_Read_Cal(reloj *reloj1):&#160;API_rtc.c'],['../d2/d6d/API__rtc_8c.html#a7f8e331813bfd235043db2d96eeeb968',1,'RTC_Read_Cal(reloj *reloj1):&#160;API_rtc.c']]],
-  ['rtc_5fread_5ftemp_6',['RTC_Read_Temp',['../d2/df8/API__rtc_8h.html#a38db8e03d66faeac9f7b90f83b11c5ff',1,'RTC_Read_Temp(void):&#160;API_rtc.c'],['../d2/d6d/API__rtc_8c.html#a38db8e03d66faeac9f7b90f83b11c5ff',1,'RTC_Read_Temp(void):&#160;API_rtc.c']]],
-  ['rtc_5fwrite_5fbyte_7',['RTC_Write_Byte',['../d2/df8/API__rtc_8h.html#a47900956ff40e9a04c92017da8db9b98',1,'RTC_Write_Byte(uint8_t valor, uint8_t dir):&#160;API_rtc.c'],['../d2/d6d/API__rtc_8c.html#a47900956ff40e9a04c92017da8db9b98',1,'RTC_Write_Byte(uint8_t valor, uint8_t dir):&#160;API_rtc.c']]],
-  ['rtc_5fwrite_5fcal_8',['RTC_Write_Cal',['../d2/df8/API__rtc_8h.html#a9a4c48385923613e06cc901339c34d32',1,'RTC_Write_Cal(reloj reloj1):&#160;API_rtc.c'],['../d2/d6d/API__rtc_8c.html#a9a4c48385923613e06cc901339c34d32',1,'RTC_Write_Cal(reloj reloj1):&#160;API_rtc.c']]]
+  ['poscarachlcd_0',['PosCaracHLcd',['../db/d87/API__lcd_8h.html#a0bc00290b2e5b4e96b687116dd280fce',1,'PosCaracHLcd(uint8_t posH):&#160;API_lcd.c'],['../df/d27/API__lcd_8c.html#a0bc00290b2e5b4e96b687116dd280fce',1,'PosCaracHLcd(uint8_t posH):&#160;API_lcd.c']]],
+  ['poscaracllcd_1',['PosCaracLLcd',['../db/d87/API__lcd_8h.html#a8c6595c448af8687144a1dcb0a0dc0a0',1,'PosCaracLLcd(uint8_t posL):&#160;API_lcd.c'],['../df/d27/API__lcd_8c.html#a8c6595c448af8687144a1dcb0a0dc0a0',1,'PosCaracLLcd(uint8_t posL):&#160;API_lcd.c']]],
+  ['presentafechalcd_2',['PresentaFechaLCD',['../d2/d41/API__reloj_8c.html#add130707fc5e5a64291b223956621251',1,'PresentaFechaLCD(reloj *, uint8_t pos, uint8_t linea):&#160;API_reloj.c'],['../d2/d41/API__reloj_8c.html#a67458234bbe9ea6eb481a2525c1c5798',1,'PresentaFechaLCD(reloj *reloj1, uint8_t pos, lineasLCD linea):&#160;API_reloj.c']]],
+  ['presentahoralcd_3',['PresentaHoraLCD',['../d2/d41/API__reloj_8c.html#a77c95affd622f573a0912a602796c48b',1,'API_reloj.c']]],
+  ['presentarhorayfecha_4',['PresentarHoraYFecha',['../d2/d41/API__reloj_8c.html#aa20054be46f5fea1802c707901650e0f',1,'API_reloj.c']]],
+  ['presentartempe_5',['PresentarTempe',['../d2/d41/API__reloj_8c.html#a8b4a2077797763f4abd6a75c9529663c',1,'API_reloj.c']]],
+  ['presentatemplcd_6',['PresentaTempLCD',['../d2/d41/API__reloj_8c.html#a1ab7845bb06924090f956d1f9098b2a4',1,'API_reloj.c']]]
 ];
